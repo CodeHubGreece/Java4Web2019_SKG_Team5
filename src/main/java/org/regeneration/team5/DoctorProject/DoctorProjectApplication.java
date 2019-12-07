@@ -24,7 +24,8 @@ public class DoctorProjectApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		List<User> userList = User.getUserList();
-		userList.add(new User("asd","asdasd","asda","asdsad"));
+		userList.add(new User("ijhouho",",bcxvkjxbc","qp8euroet","knzclvjzc"));
 		User.setUserList(userList);
+		userRepository.saveAll(userList);
 	}
 }

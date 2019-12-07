@@ -1,6 +1,7 @@
 package org.regeneration.team5.DoctorProject.entities;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -21,7 +22,7 @@ public class User {
     @OneToOne(mappedBy = "user")
     private Citizen citizen;
 
-    private static List<User> userList;
+    private static List<User> userList = new ArrayList<>();
 
 
 
