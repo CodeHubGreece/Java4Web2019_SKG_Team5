@@ -26,7 +26,7 @@ public class User {
 
 
 
-    public void User(){
+    public User(){
 
     }
 //    public void User(String username,String password){
@@ -94,6 +94,14 @@ public class User {
 
     public void setProperty(Integer property) {
         this.property = property;
+    }
+
+    public boolean getUserType(){
+        if (property==1){
+            return false;
+        }else {
+            return true;
+        }
     }
 
     public static List<User> getUserList() {

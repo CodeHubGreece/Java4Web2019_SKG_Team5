@@ -1,11 +1,12 @@
 package org.regeneration.team5.DoctorProject.entities;
 
 import javax.persistence.*;
+import java.util.*;
 
 @Entity
 public class Citizen {
     @Id
-    private Integer amka;
+    private String amka;
     @Column
     private String email;
     @Column
@@ -14,17 +15,20 @@ public class Citizen {
     @JoinColumn(name = "userID")
     private User user;
 
-    public void Citizen(){
+    private static List<Citizen> citizenList = new ArrayList<>();
+    public Citizen(){
 
     }
-    public void Citizen(Integer amka, String email, String mobile, User user){
+
+    public Citizen(String amka, String email, String mobile, User user) {
         this.amka = amka;
         this.email = email;
         this.mobile = mobile;
         this.user = user;
     }
 
-    public Integer getAmka() {
+
+    public String getAmka() {
         return amka;
     }
 
@@ -40,7 +44,7 @@ public class Citizen {
         return mobile;
     }
 
-    public void setAmka(Integer amka) {
+    public void setAmka(String amka) {
         this.amka = amka;
     }
 
@@ -52,4 +56,11 @@ public class Citizen {
         this.mobile = mobile;
     }
 
+    public static List<Citizen> getCitizenList() {
+        return citizenList;
+    }
+
+    public static void setCitizenList(List<Citizen> citizenList) {
+        Citizen.citizenList = citizenList;
+    }
 }
