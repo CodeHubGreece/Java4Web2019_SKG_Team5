@@ -1,74 +1,68 @@
 <!DOCTYPE html>
-<html>
-<head>
-<link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-	<div class="container">
+    <title>Register</title>
 
+    <!-- Bootstrap core CSS -->
+    <link href="./bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="./login.css" rel="stylesheet">
+  </head>
+
+  <body>
 	<header>
-	   <img id="photo" src="efka.png" alt="efka">
+		   <img id="photo" src="efka.png" alt="efka">
 	</header>
-	 
-		<div class="first">
-		  <nav></nav>
-		</div> 
-
-		<div class="second">
-		  <article>
-			  <section>
-					<h1>Registration</h1>
-					<form>
-						<table>
-							<tr>
-								<td>ΑΜΚΑ: </td>
-								<td> <input type="text" name="AMKA" size="20" required /> </td>
-							</tr>
-							
-							<tr>
-								<td>Όνομα: </td>
-								<td> <input type="text" name="FirstName" size="20" required /> </td>
-							</tr>
-							
-							<tr>
-								<td>Επίθετο: </td> 
-								<td> <input type="text" name="LastName" size="20" required /> </td>
-							</tr>
-							
-							<tr>
-								<td>Username: </td> 
-								<td> <input type="text" name="Username" size = "20" required /> </td>
-							</tr>
-							
-							<tr>
-								<td>Password:</td> 
-								<td> <input type="password" name="Password" size = "20" required /> </td>
-							</tr>
-							
-							<tr>
-								<td>E-mail: </td> 
-								<td><input type="email" name="Email" size = "20" required /> </td>
-							</tr>
-							
-							<tr>
-								<td>Τηλέφωνο: </td>
-								<td> <input type="text" name="Phone" maxlength="10" size="20" required /> </td>
-							</tr>						
-						
-						</table>
-						<br>
-						<button id="register" type="submit" formaction="./login.html">Register</button>
-					</form>
-			  </section>
-		  </article>
-		</div>
-		
-		<div class="third">
-			<aside>
-			</aside>
-		</div>
+	<div class="text-center">
+		<br>
+		<h2 class="form-signin">Registration</h2>
+		<form>
+			<table  align="center">
+				<tr>
+					<td>ΑΜΚΑ: </td>
+					<td> <input type="text" name="AMKA" size="20" required /> </td>
+				</tr>
+				
+				<tr>
+					<td>Όνομα: </td>
+					<td> <input type="text" name="FirstName" size="20" required /> </td>
+				</tr>
+				
+				<tr>
+					<td>Επίθετο: </td> 
+					<td> <input type="text" name="LastName" size="20" required /> </td>
+				</tr>
+				
+				<tr>
+					<td>Username: </td> 
+					<td> <input type="text" name="Username" size = "20" required /> </td>
+				</tr>
+				
+				<tr>
+					<td>Password:</td> 
+					<td> <input type="password" name="Password" size = "20" required /> </td>
+				</tr>
+				
+				<tr>
+					<td>E-mail: </td> 
+					<td><input type="email" name="Email" size = "20" required /> </td>
+				</tr>
+				
+				<tr>
+					<td>Τηλέφωνο: </td>
+					<td> <input type="text" name="Phone" maxlength="10" size="20" required /> </td>
+				</tr>						
+			
+			</table>
+		</form>
+		<form class="form-signin">
+			<button class="btn btn-lg btn-success btn-block" type="submit" formaction="./login.html">Register</button>
+		</form>
 	</div>
 
-</body>
-</html>
+</body></html>

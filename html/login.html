@@ -1,56 +1,41 @@
 <!DOCTYPE html>
-<html>
-<head>
-<link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-	<div class="container">
-		<header>
+    <title>Signin</title>
+    <!-- Bootstrap core CSS -->
+    <link href="./bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="./login.css" rel="stylesheet">
+  </head>
+
+  <body>
+	<header>
 		   <img id="photo" src="efka.png" alt="efka">
-		</header>
-		
-		<div class="first">
-		  <nav></nav>
-		</div> 
-
-		<div class="second">
-		  <article>
-			  <section class="left">
-					<h1>Login</h1>
-					<form>
-						<div>
-							<label>Username:</label><br>
-							<input type="text" name="username" placeholder="Type your username">
-						</div>
-						<br>
-						<div>
-							<label>Password:</label><br>
-							<input type="password" name="password" placeholder="Type your password">	
-						</div>
-						<br>
-						<b>Login as doctor</b><input type="checkbox" name="doctorlogin"/> <br/>
-						<div>
-							<button id="login" type="button">Login</button>
-						</div>	
-					</form>
-					<br>
-			  </section>
-			  
-			  <section class="right">
-				  <h1>Sign-up</h1>
-				  <form>
-					<button id="register" type="submit" formaction="./register.html">Register</button>
-				  </form>	
-			  </section>
-		  </article>
-		</div>
-		
-		<div class="third">
-			<aside>
-			</aside>
-		</div>
+	</header>
+	<div class="text-center">
+		<br>
+		<form class="form-signin">
+		  <h2 class="form-signin-heading">Please sign in</h2>
+		  <label for="inputUsername" class="sr-only">Username</label>
+		  <input type="text" id="inputUsername" class="form-control" placeholder="Username"  required>
+		  <label for="inputPassword" class="sr-only">Password</label>
+		  <input type="password" id="inputPassword" class="form-control" placeholder="Password" required >
+		  <label>
+			<input id="box" type="checkbox" value="remember-me"> Login as <b>Doctor</b>
+		  </label>
+		  
+		  <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+		  		  
+		</form>
+		<form class="form-signin">
+			<h5 class="form-signin-heading">Don't have an account?</h5>
+			<button class="btn btn-lg btn-success btn-block" type="submit" formaction="./register.html">Sign-Up</button>
+		</form>  
 	</div>
 
-</body>
-</html>
+</body></html>
