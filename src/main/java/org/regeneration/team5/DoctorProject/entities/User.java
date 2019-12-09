@@ -1,6 +1,7 @@
 package org.regeneration.team5.DoctorProject.entities;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -21,11 +22,11 @@ public class User {
     @OneToOne(mappedBy = "user")
     private Citizen citizen;
 
-    private static List<User> userList;
+    private static List<User> userList = new ArrayList<>();
 
 
 
-    public void User(){
+    public User(){
 
     }
 //    public void User(String username,String password){
@@ -93,6 +94,14 @@ public class User {
 
     public void setProperty(Integer property) {
         this.property = property;
+    }
+
+    public boolean getUserType(){
+        if (property==1){
+            return false;
+        }else {
+            return true;
+        }
     }
 
     public static List<User> getUserList() {
