@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="51973f51-77b9-460c-9533-c352aafb99be" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/service/ApiAccessDeniedHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/service/ApiAuthenticationEntryPoint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/service/ApiAuthenticationSuccessHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/pages/guest/register.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/pages/user/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/scripts/config/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/scripts/guest/authentication.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/scripts/security/guest-auth.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/scripts/security/home-auth.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/scripts/user/home.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/styles/guest.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/styles/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctorProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/doctorProject.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/DoctorProjectApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/DoctorProjectApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/entities/Citizen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/entities/Citizen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/repositories/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/regeneration/team5/DoctorProject/DoctorProjectApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/regeneration/team5/DoctorProject/DoctorProjectApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/regeneration/team5/DoctorProject/entities/Citizen.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/regeneration/team5/DoctorProject/entities/Citizen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/regeneration/team5/DoctorProject/entities/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/regeneration/team5/DoctorProject/entities/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/regeneration/team5/DoctorProject/repositories/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/regeneration/team5/DoctorProject/repositories/UserRepository.class" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1UbaTgGSsVF0xPW3m975WHVSJ4H" />
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="org.regeneration.team5.DoctorProject" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.regeneration.team5.DoctorProject" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\panma\Java4Web2019_SKG_Team5\src\main\resources" />
+      <recent name="C:\Users\panma\Java4Web2019_SKG_Team5\src\main\java\org\regeneration\team5\DoctorProject\service" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="DoctorProjectApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="doctorProject" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.regeneration.team5.DoctorProject.DoctorProjectApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="51973f51-77b9-460c-9533-c352aafb99be" name="Default Changelist" comment="" />
+      <created>1575627757533</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1575627757533</updated>
+      <workItem from="1575627760821" duration="7793000" />
+      <workItem from="1575711639818" duration="28166000" />
+    </task>
+    <task id="LOCAL-00001" summary="&quot;Update Citizen Table&quot;">
+      <created>1575720339522</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1575720339522</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="&quot;Update Citizen Table&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;Update Citizen Table&quot;" />
+  </component>
+</project>
