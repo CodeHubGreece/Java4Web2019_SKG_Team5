@@ -8,13 +8,13 @@
     <title>Register</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="./bootstrap.min.css" rel="stylesheet">
+    <link href="../styles/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="./login.css" rel="stylesheet">
+    <link href="../styles/login_register.css" rel="stylesheet">
   </head>
 
-  <body>
+<body>
 	<header>
 		   <img id="photo" src="efka.png" alt="efka">
 	</header>
@@ -25,44 +25,45 @@
 			<table  align="center">
 				<tr>
 					<td>ΑΜΚΑ: </td>
-					<td> <input type="text" name="AMKA" size="20" required /> </td>
+					<td> <input type="text" name="AMKA" maxlength="11" size="25" required /> </td>
 				</tr>
 				
 				<tr>
 					<td>Όνομα: </td>
-					<td> <input type="text" name="FirstName" size="20" required /> </td>
+					<td> <input type="text" name="FirstName" maxlength="45" size="25" required /> </td>
 				</tr>
 				
 				<tr>
 					<td>Επίθετο: </td> 
-					<td> <input type="text" name="LastName" size="20" required /> </td>
+					<td> <input type="text" name="LastName" maxlength="45" size="25" required /> </td>
 				</tr>
 				
 				<tr>
 					<td>Username: </td> 
-					<td> <input type="text" name="Username" size = "20" required /> </td>
+					<td> <input type="text" name="Username" maxlength="45" size = "25" required /> </td>
 				</tr>
 				
 				<tr>
 					<td>Password:</td> 
-					<td> <input type="password" name="Password" size = "20" required /> </td>
+					<td> <input type="password" name="Password" maxlength="45" size = "25" required /> </td>
 				</tr>
 				
 				<tr>
 					<td>E-mail: </td> 
-					<td><input type="email" name="Email" size = "20" required /> </td>
+					<td><input type="email" name="Email" maxlength="15" size = "25" required /> </td>
 				</tr>
 				
 				<tr>
 					<td>Τηλέφωνο: </td>
-					<td> <input type="text" name="Phone" maxlength="10" size="20" required /> </td>
+					<td> <input type="text" name="Phone" maxlength="15" size="25" required /> </td>
 				</tr>						
 			
 			</table>
 		</form>
 		<form class="form-signin">
-			<button class="btn btn-lg btn-success btn-block" type="submit" formaction="./login.html">Register</button>
+			<button class="btn btn-lg btn-success btn-block" type="submit" formaction="./citizen_index.html">Register</button>
 		</form>
 	</div>
 
-</body></html>
+</body>
+</html>
