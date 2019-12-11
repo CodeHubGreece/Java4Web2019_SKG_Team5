@@ -1,4 +1,4 @@
-package org.regeneration.rest.restless.security;
+package org.regeneration.team5.DoctorProject.service;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler;

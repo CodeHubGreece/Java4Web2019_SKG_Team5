@@ -1,4 +1,4 @@
-package org.regeneration.rest.restless.security;
+package org.regeneration.team5.DoctorProject.service;
 
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;

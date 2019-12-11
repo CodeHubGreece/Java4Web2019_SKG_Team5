@@ -1,11 +1,15 @@
 package org.regeneration.team5.DoctorProject.entities;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 public class User {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer userID;
@@ -24,7 +28,7 @@ public class User {
 
     private static List<User> userList = new ArrayList<>();
 
-
+    private static PasswordEncoder passwordEncoder;
 
     public User(){
 
@@ -44,7 +48,7 @@ public class User {
     public User(String firstname, String lastname, String username, String password){
         this.firstname = firstname;
         this.lastname = lastname;
-        this.password = password;
+        this.password = passwordEncoder.encode(password);
         this.username = username;
     }
 

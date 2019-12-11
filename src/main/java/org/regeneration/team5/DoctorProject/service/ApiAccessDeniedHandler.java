@@ -1,4 +1,4 @@
-package org.regeneration.rest.restless.security;
+package org.regeneration.team5.DoctorProject.service;
 
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.web.access.AccessDeniedHandler;

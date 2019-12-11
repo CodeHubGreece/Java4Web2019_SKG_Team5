@@ -1,5 +1,7 @@
 package org.regeneration.team5.DoctorProject.entities;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import javax.persistence.*;
 import java.util.*;
 
@@ -20,7 +22,7 @@ public class Citizen {
 
     }
 
-    public Citizen(String amka, String email, String mobile, User user) {
+    public Citizen(String amka, String email, String mobile,@Autowired User user) {
         this.amka = amka;
         this.email = email;
         this.mobile = mobile;
