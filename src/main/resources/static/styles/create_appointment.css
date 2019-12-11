@@ -1,0 +1,22 @@
+html,
+body {
+  height: 100%;
+  background-color: #ffffb3;
+}
+
+header {
+    padding: 1em;
+    background-color: #005BAA;
+}
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+#textarea1{
+	width: 300px;
+	height: 100px;
+}
