@@ -22,7 +22,7 @@ public class CitizenController {
         this.citizenRepository = citizenRepository;
     }
 
-<<<<<<< Updated upstream
+
     @PostMapping(value = "/register")
     public Citizen registerCitizen(@RequestBody Registration registration){
         //if(userRepository.findByUsername(registration.getUsername())==null && citizenRepository.findCitizenByAmka(registration.getAmka())==null){
@@ -30,7 +30,7 @@ public class CitizenController {
         //}else{
         //    System.out.println("User already exists");
         //}
-=======
+
         Citizen citizenExists = apiCitizenDetailsService.loadCitizenByAmka(citizen.getAmka().toString());
         if(citizenExists==null){
             System.out.println("The user Exists");
@@ -39,6 +39,5 @@ public class CitizenController {
             citizenRepository.save(citizen);
             userRepository.save(user);
         }
->>>>>>> Stashed changes
     }
 }
