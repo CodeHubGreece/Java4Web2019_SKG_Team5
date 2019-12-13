@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Patient's info</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../styles/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../../styles/doctor_style.css" rel="stylesheet">
+	
+	<!-- JavaScript files -->
+	<script src="../../scripts/main.js"></script>
+	<script src="../../scripts/home-auth.js"></script>
+	<script src="../../scripts/logout.js"></script>
+	
+  </head>
+
+<body>
+	<header>
+		   <img id="photo" src="../../efka.png" alt="efka">
+		   <div class="float-right"><form class="form-signin"><button class="btn btn-warning btn-lg text-white" onclick="logout()">Logout</button></form></div>
+	</header>
+	<div class="text-center">
+		<br>
+		<h2>Your patient's information</h2>
+		<br>
+		<form>
+			<table  align="center">
+				<tr>
+					<td>ΑΜΚΑ: </td>
+					<td><input type="text" class="form-control" name="AMKA" maxlength="11" size="20" required ></td>
+				</tr>
+				
+				<tr>
+					<td>Όνομα: </td>
+					<td> <input type="text" class="form-control" name="FirstName" maxlength="45" size="20" required /> </td>
+				</tr>
+				
+				<tr>
+					<td>Επίθετο: </td> 
+					<td> <input type="text" class="form-control" name="LastName" maxlength="45" size="20" required /> </td>
+				</tr>
+				
+					<td>E-mail: </td> 
+					<td><input type="email" class="form-control" name="Email" maxlength="15" size = "20" required /> </td>
+				</tr>
+				
+				<tr>
+					<td>Τηλέφωνο: </td>
+					<td> <input type="text" class="form-control" name="Phone" maxlength="15" size="20" required /> </td>
+				</tr>						
+			
+			</table>
+		</form>
+	</div>
+
+</body>
+</html>

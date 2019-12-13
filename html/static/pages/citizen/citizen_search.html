@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Citizen Search</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../styles/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../../styles/create_appointment.css" rel="stylesheet">
+	
+	<!-- JavaScript files -->
+	<script src="../../scripts/main.js"></script>
+	<script src="../../scripts/home-auth.js"></script>
+	<script src="../../scripts/logout.js"></script>
+	
+	<!-- Table files --
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">  
+	<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script> -->
+
+  </head>
+
+  <body>
+	<header>
+		   <img id="photo" src="../../efka.png" alt="efka">
+		   <div class="float-right"><form class="form-signin"><button class="btn btn-warning btn-lg text-white" onclick="logout()">Logout</button></form></div>
+	</header>
+	<div class="text-center">
+		<br>
+		<h2>Search for an appointment</h2>
+		<br>
+		<form>
+			<table  align="center">
+				<tr>
+					<td>Ειδικότητα: </td>
+					<td> 
+						<select class="custom-select">
+						  <option>Παθολόγος</option>
+						  <option>Καρδιολόγος</option>
+						  <option>Παιδίατρος</option>
+						</select> 
+					</td>
+					<td>Από: </td> 
+					<td> <input type="date" class="form-control" name="Date" required /> </td>
+					<td>Έως: </td> 
+					<td> <input type="date" class="form-control" name="Date" required /> </td>
+				</tr>
+			</table>
+		</form>
+		<form class="form-signin">
+			<button class="btn btn-lg btn-success btn-block" type="submit" formaction="./update_appointment.html">Search</button>
+		</form>
+		
+		<!--
+		<table id="table_id" class="display">
+			<thead>
+				<tr>
+					<th>Column 1</th>
+					<th>Column 2</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Row 1 Data 1</td>
+					<td>Row 1 Data 2</td>
+				</tr>
+				<tr>
+					<td>Row 2 Data 1</td>
+					<td>Row 2 Data 2</td>
+				</tr>
+			</tbody>
+		</table>-->
+	</div>
+
+</body></html>

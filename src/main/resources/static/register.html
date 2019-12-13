@@ -30,44 +30,42 @@
 			<table  align="center">
 				<tr>
 					<td>ΑΜΚΑ: </td>
-					<td> <input type="text" id="inputAmka" name="amka" maxlength="11" size="25" required /> </td>
+					<td> <input type="text" id="inputAmka" name="amka" class="form-control" pattern="[0-9]{10,}$" minlength="11" maxlength="11" size="20" required /> </td>
 				</tr>
 				
 				<tr>
 					<td>Όνομα: </td>
-					<td> <input type="text" id="inputFirstname" name="firstname" maxlength="45" size="25" required /> </td>
+					<td> <input type="text" id="inputFirstname" name="firstname"  class="form-control" pattern="[A-Za-z]{2,}$" maxlength="45" size="20" required /> </td>
 				</tr>
 				
 				<tr>
 					<td>Επίθετο: </td> 
-					<td> <input type="text" id="inputLastname" name="lastname" maxlength="45" size="25" required /> </td>
+					<td> <input type="text" id="inputLastname" name="lastname" class="form-control" pattern="[A-Za-z]{2,}$" maxlength="45" size="20" required /> </td>
 				</tr>
 				
 				<tr>
 					<td>Username: </td> 
-					<td> <input type="text" id="inputUsername" name="username" maxlength="45" size = "25" required /> </td>
+					<td> <input type="text" id="inputUsername" name="username" class="form-control" pattern="[a-z0-9]{5,}$" maxlength="45" size = "20" required /> </td>
 				</tr>
 				
 				<tr>
 					<td>Password:</td> 
-					<td> <input type="password" id="inputPassword" name="password" maxlength="45" size = "25" required /> </td>
+					<td> <input type="password" id="inputPassword" name="password" class="form-control" pattern="[a-z0-9]{5,}$" maxlength="45" size = "20" required /> </td>
 				</tr>
 				
 				<tr>
 					<td>E-mail: </td> 
-					<td><input type="email" id="inputEmail" name="email" maxlength="15" size = "25" required /> </td>
+					<td><input type="email" id="inputEmail" name="email" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" maxlength="45" size = "20" required/> </td>
 				</tr>
 				
 				<tr>
 					<td>Τηλέφωνο: </td>
-					<td> <input type="text" id="inputMobile" name="phone" maxlength="15" size="25" required /> </td>
+					<td> <input type="text" id="inputMobile" name="phone" class="form-control" pattern="[0-9]{10,}$" maxlength="15" size="20" required  /> </td>
 				</tr>						
 			
 			</table>
-			<button class="btn btn-lg btn-success btn-block" type="button" onclick="register(amka,firstname,lastname,username,password,email,phone)">Register</button>
-		</form>
-		<form class="form-signin">
-
+			<br>
+			<button class="form-signin btn btn-lg btn-success btn-block" type="button" onclick="register(amka,firstname,lastname,username,password,email,phone)">Register</button>
 		</form>
 	</div>
 

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Create an appointment</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../styles/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../../styles/create_appointment.css" rel="stylesheet">
+	
+	<!-- JavaScript files -->
+	<script src="jquery-3.4.1.min.js"></script>
+	
+	<script src="../../scripts/main.js"></script>
+	<script src="../../scripts/home-auth.js"></script>
+	<script src="../../scripts/logout.js"></script>
+  </head>
+
+  <body>
+	<header>
+		   <img id="photo" src="../../efka.png" alt="efka">
+		   <div class="float-right"><form class="form-signin"><button class="btn btn-warning btn-lg text-white" onclick="logout()">Logout</button></form></div>
+	</header>
+	<div class="text-center">
+		<br>
+		<h2>Create an appointment</h2>
+		<br>
+		<form>
+			<table  align="center">
+				<tr>
+					<td>Ειδικότητα: </td>
+					<td> 
+						<select class="custom-select">
+						  <option>Παθολόγος</option>
+						  <option>Καρδιολόγος</option>
+						  <option>Παιδίατρος</option>
+						</select> 
+					</td>
+				</tr>
+				
+				<tr>
+					<td>Γιατρός: </td>
+					<td>
+						<select class="custom-select">
+						  <option>Παπακώστας</option>
+						  <option>Παπασούλης</option>
+						</select>
+					</td>
+				</tr>
+				
+				<tr>
+					<td>Ημερομηνία: </td> 
+					<td> <input type="date"  class="form-control" name="Date" required /> </td>
+				</tr>
+				
+				<tr>
+					<td>Ώρα: </td> 
+					<td> <input type="time"  class="form-control" name="usr_time" value="09:00" min="09:00" max="21:00" step="900" required> </td>
+				</tr>
+				
+				<tr>
+					<td><br></td>
+				</tr>
+				
+				<tr>
+					<td>Σύντομη περιγραφή ασθένειας:</td> 
+					<td> <textarea class="form-control" name="description" id="textarea1"></textarea> </td>
+				</tr>
+				
+				<tr>
+					<td>Λοιπές παρατηρήσεις: </td> 
+					<td><textarea class="form-control" name="more_comments" id="textarea1"></textarea> </td>
+				</tr>
+				
+			</table>
+		</form>
+		<form class="form-signin">
+			<button class="btn btn-lg btn-success btn-block" type="submit" formaction="./citizen_index.html">Create</button>
+		</form>
+	</div>
+
+</body></html>
