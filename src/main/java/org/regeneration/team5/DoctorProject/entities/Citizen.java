@@ -3,41 +3,67 @@ package org.regeneration.team5.DoctorProject.entities;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.*;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Citizen {
     @Id
-    private String amka;
+    private Integer amka;
     @Column
     private String email;
     @Column
     private String mobile;
 
+<<<<<<< HEAD
+=======
+    //user
+>>>>>>> 4b2ae37292797f906bfa0e5d91e7297cc0435fa7
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "userID")
+    @JoinColumn(name = "userId")
     private User user;
 
+<<<<<<< HEAD
     @OneToMany(mappedBy = "citizen",cascade = CascadeType.ALL)
     private List<Appointment> appointments;
 
     private static List<Citizen> citizenList = new ArrayList<>();
     public Citizen(){
+=======
+    //appointment mapping
+    @OneToMany (mappedBy = "citizen" ,cascade = CascadeType.ALL)
+    private List<Appointment> appointments = new ArrayList<>();
 
+    private static List<Citizen> citizenListList = new ArrayList<>();
+>>>>>>> 4b2ae37292797f906bfa0e5d91e7297cc0435fa7
+
+    public static List<Citizen> getCitizenListList() {
+        return citizenListList;
     }
 
-    public Citizen(String amka, String email, String mobile,@Autowired User user) {
+    public static void setCitizenListList(List<Citizen> citizenListList) {
+        Citizen.citizenListList = citizenListList;
+    }
+
+    public  Citizen(){
+
+    }
+    public  Citizen(Integer amka, String email, String mobile, @Autowired User user){
         this.amka = amka;
         this.email = email;
         this.mobile = mobile;
         this.user = user;
     }
 
+<<<<<<< HEAD
     public void setUser(User user) {
         this.user = user;
     }
 
     public String getAmka() {
+=======
+    public Integer getAmka() {
+>>>>>>> 4b2ae37292797f906bfa0e5d91e7297cc0435fa7
         return amka;
     }
 
@@ -53,7 +79,7 @@ public class Citizen {
         return mobile;
     }
 
-    public void setAmka(String amka) {
+    public void setAmka(Integer amka) {
         this.amka = amka;
     }
 
@@ -65,11 +91,4 @@ public class Citizen {
         this.mobile = mobile;
     }
 
-    public static List<Citizen> getCitizenList() {
-        return citizenList;
-    }
-
-    public static void setCitizenList(List<Citizen> citizenList) {
-        Citizen.citizenList = citizenList;
-    }
 }

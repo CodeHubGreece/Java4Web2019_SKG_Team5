@@ -8,22 +8,39 @@ public class Appointment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+<<<<<<< HEAD
     @Column(name = "appointmentID")
     private Integer appointmentId;
     @Column(name = "created_at")
+=======
+    private Integer appointmentId;
+    @Column
+>>>>>>> 4b2ae37292797f906bfa0e5d91e7297cc0435fa7
     private Date createdAt;
 
     //citizen
     @ManyToOne(cascade = CascadeType.ALL)
+<<<<<<< HEAD
     @JoinColumn(name = "amka")
+=======
+   // @JoinColumn(name = "amka")
+    @MapsId
+>>>>>>> 4b2ae37292797f906bfa0e5d91e7297cc0435fa7
     private Citizen citizen;
 
     //doctor
     @ManyToOne(cascade = CascadeType.ALL)
+<<<<<<< HEAD
     @JoinColumn(name = "doctorID")
     private Doctor doctor;
 
     @Column(name = "symptoms")
+=======
+    //JoinColumn(name = "doctorId")
+    @MapsId
+    private Doctor doctor;
+
+>>>>>>> 4b2ae37292797f906bfa0e5d91e7297cc0435fa7
     private  String symptoms;
 
     public Integer getAppointmentId() {

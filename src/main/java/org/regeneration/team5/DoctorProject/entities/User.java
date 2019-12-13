@@ -6,7 +6,6 @@ import java.util.List;
 
 @Entity
 public class User {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer userID;
@@ -19,8 +18,18 @@ public class User {
     @Column
     private String password;
     @Column
+<<<<<<< HEAD
     private short property=0;
 
+=======
+    private Integer property = 0;
+
+    //doctor mapping
+    @OneToOne(mappedBy = "user")
+    private Doctor doctor;
+
+    //citizen mapping
+>>>>>>> 4b2ae37292797f906bfa0e5d91e7297cc0435fa7
     @OneToOne(mappedBy = "user")
     private Citizen citizen;
 
@@ -29,22 +38,12 @@ public class User {
 
     private static List<User> userList = new ArrayList<>();
 
-    //private static PasswordEncoder passwordEncoder;
+
 
     public User(){
 
     }
-//    public void User(String username,String password){
-//        this.username = username;
-//        this.password = password;
-//    }
 
-//    public void User(String firstname,String lastname, String username, String password){
-//        this.firstname = firstname;
-//        this.lastname = lastname;
-//        this.password = password;
-//        this.username = username;
-//    }
 
     public User(String firstname, String lastname, String username, String password){
         this.firstname = firstname;
@@ -52,7 +51,6 @@ public class User {
         this.password = password;
         this.username = username;
     }
-
 
     public Integer getUserID() {
         return userID;
@@ -100,14 +98,6 @@ public class User {
 
     public void setProperty(short property) {
         this.property = property;
-    }
-
-    public boolean getUserType(){
-        if (property==1){
-            return false;
-        }else {
-            return true;
-        }
     }
 
     public static List<User> getUserList() {
