@@ -2,21 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="51973f51-77b9-460c-9533-c352aafb99be" name="Default Changelist" comment="Some updates">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/controller/CitizenController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/dto/Registration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/entities/Appointment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/entities/Doctor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/entities/Speciality.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/service/ApiCitizenDetails.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/service/ApiCitizenDetailsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/register.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/scripts/authentication.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_h2database_h2_1_4_200.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doctorProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/doctorProject.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/WebAppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/WebAppConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/controller/CitizenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/controller/CitizenController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/entities/Citizen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/entities/Citizen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/entities/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/repositories/CitizenRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/repositories/CitizenRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/service/ApiCItizenDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/service/ApiCItizenDetails.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/service/ApiCitizenDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/service/ApiCitizenDetailsService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/scripts/authentication.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/scripts/authentication.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/scripts/guest/authentication.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/scripts/guest/authentication.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/regeneration/team5/DoctorProject/WebAppConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/regeneration/team5/DoctorProject/WebAppConfig.class" afterDir="false" />
