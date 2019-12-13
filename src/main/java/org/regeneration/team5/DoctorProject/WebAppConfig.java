@@ -1,5 +1,6 @@
 package org.regeneration.team5.DoctorProject;
 
+import org.regeneration.team5.DoctorProject.dto.Registration;
 import org.regeneration.team5.DoctorProject.service.ApiAccessDeniedHandler;
 import org.regeneration.team5.DoctorProject.service.ApiAuthenticationEntryPoint;
 import org.regeneration.team5.DoctorProject.service.ApiAuthenticationSuccessHandler;
@@ -25,6 +26,7 @@ public class WebAppConfig extends WebSecurityConfigurerAdapter {
     private ApiAuthenticationSuccessHandler apiSuccessHandler;
     private ApiAccessDeniedHandler accessDeniedHandler;
     private UserDetailsService userDetailsService;
+    private Registration registration;
 
     @Autowired
     public void setAuthenticationEntryPoint(ApiAuthenticationEntryPoint authenticationEntryPoint) {
@@ -45,6 +47,7 @@ public class WebAppConfig extends WebSecurityConfigurerAdapter {
     public void setUserDetailsService(@Qualifier("apiUserDetailsService") UserDetailsService userDetailsService) {
         this.userDetailsService = userDetailsService;
     }
+
 
     @Bean
     public DaoAuthenticationProvider authenticationProvider() {

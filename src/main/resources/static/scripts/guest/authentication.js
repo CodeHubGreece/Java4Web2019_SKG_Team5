@@ -1,4 +1,3 @@
-
 function login(usernameElement, passwordElement) {
     let username = usernameElement && usernameElement.value ? usernameElement.value : "";
     let password = passwordElement && passwordElement.value ? passwordElement.value : "";
@@ -55,5 +54,5 @@ function login(usernameElement, passwordElement) {
 }
 
 function register() {
-    // TODO:
+
 }
