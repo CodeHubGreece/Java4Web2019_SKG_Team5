@@ -31,8 +31,6 @@ public class User {
 
     private static List<User> userList = new ArrayList<>();
 
-    private static PasswordEncoder passwordEncoder;
-
     public User(){
 
     }
@@ -51,7 +49,7 @@ public class User {
     public User(String firstname, String lastname, String username, String password){
         this.firstname = firstname;
         this.lastname = lastname;
-        this.password = passwordEncoder.encode(password);
+        this.password = password;
         this.username = username;
     }
 
