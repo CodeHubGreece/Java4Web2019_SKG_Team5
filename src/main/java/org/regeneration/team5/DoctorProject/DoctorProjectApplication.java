@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.security.crypto.password.PasswordEncoder;
+
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -20,5 +22,20 @@ public class DoctorProjectApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(DoctorProjectApplication.class, args);
 	}
+
+	@Autowired
+	public UserRepository userRepository;
+
+	@Autowired
+	public CitizenRepository citizenRepository;
+
+	@Autowired
+	private PasswordEncoder passwordEncoder;
+
+
+
+		//User.setUserList(userList);
+		//userRepository.saveAll(userList);
+
 
 }
