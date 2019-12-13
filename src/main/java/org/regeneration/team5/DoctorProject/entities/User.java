@@ -1,8 +1,5 @@
 package org.regeneration.team5.DoctorProject.entities;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.password.PasswordEncoder;
-
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,9 +19,13 @@ public class User {
     @Column
     private String password;
     @Column
-    private Integer property = 0;
+    private short property=0;
+
     @OneToOne(mappedBy = "user")
     private Citizen citizen;
+
+    @OneToOne(mappedBy = "user")
+    private Doctor doctor;
 
     private static List<User> userList = new ArrayList<>();
 
@@ -73,7 +74,7 @@ public class User {
         return password;
     }
 
-    public Integer getProperty() {
+    public int getProperty() {
         return property;
     }
 
@@ -97,7 +98,7 @@ public class User {
         this.password = password;
     }
 
-    public void setProperty(Integer property) {
+    public void setProperty(short property) {
         this.property = property;
     }
 

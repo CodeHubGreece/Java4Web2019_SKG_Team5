@@ -13,9 +13,13 @@ public class Citizen {
     private String email;
     @Column
     private String mobile;
+
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "userID")
     private User user;
+
+    @OneToMany(mappedBy = "citizen",cascade = CascadeType.ALL)
+    private List<Appointment> appointments;
 
     private static List<Citizen> citizenList = new ArrayList<>();
     public Citizen(){
@@ -29,6 +33,9 @@ public class Citizen {
         this.user = user;
     }
 
+    public void setUser(User user) {
+        this.user = user;
+    }
 
     public String getAmka() {
         return amka;
