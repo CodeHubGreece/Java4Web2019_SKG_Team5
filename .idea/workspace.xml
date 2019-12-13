@@ -1,12 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="51973f51-77b9-460c-9533-c352aafb99be" name="Default Changelist" comment="" />
+    <list default="true" id="51973f51-77b9-460c-9533-c352aafb99be" name="Default Changelist" comment="Some updates">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/controller/CitizenController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/dto/Registration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/entities/Appointment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/entities/Doctor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/entities/Speciality.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/service/ApiCitizenDetails.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/service/ApiCitizenDetailsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/register.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/scripts/authentication.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_h2database_h2_1_4_200.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctorProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/doctorProject.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/WebAppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/WebAppConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/entities/Citizen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/entities/Citizen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/repositories/CitizenRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/repositories/CitizenRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/service/ApiCItizenDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/service/ApiCItizenDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/scripts/guest/authentication.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/scripts/guest/authentication.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/regeneration/team5/DoctorProject/WebAppConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/regeneration/team5/DoctorProject/WebAppConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/regeneration/team5/DoctorProject/entities/Citizen.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/regeneration/team5/DoctorProject/entities/Citizen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/regeneration/team5/DoctorProject/entities/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/regeneration/team5/DoctorProject/entities/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/regeneration/team5/DoctorProject/repositories/CitizenRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/regeneration/team5/DoctorProject/repositories/CitizenRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/scripts/guest/authentication.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/scripts/guest/authentication.js" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="team5@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="team5@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="team5@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="team5: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="team5@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="team5: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="appointment: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="team5@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="team5: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="citizen: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="team5@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="team5: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="doctor: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="team5@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="team5: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="speciality: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="team5@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="team5: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="user: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+    </expand>
+    <select />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -29,25 +121,32 @@
   </component>
   <component name="ProjectId" id="1UbaTgGSsVF0xPW3m975WHVSJ4H" />
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="ExpandSpringBootJavaOptionsPanel" value="true" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/entities" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="org.regeneration.team5.DoctorProject" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\panma\Java4Web2019_SKG_Team5\src\main\java\org\regeneration\team5\DoctorProject\entities" />
+      <recent name="C:\Users\panma\Java4Web2019_SKG_Team5\src\main\resources\static" />
+      <recent name="C:\Users\panma\Java4Web2019_SKG_Team5\src\main\resources" />
+      <recent name="C:\Users\panma\Java4Web2019_SKG_Team5\src\main\java\org\regeneration\team5\DoctorProject\service" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="org.regeneration.team5.DoctorProject" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\panma\Java4Web2019_SKG_Team5\src\main\resources" />
-      <recent name="C:\Users\panma\Java4Web2019_SKG_Team5\src\main\java\org\regeneration\team5\DoctorProject\service" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\panma\Java4Web2019_SKG_Team5\src\main\resources\static" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -66,6 +165,8 @@
     <configuration name="DoctorProjectApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="doctorProject" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="org.regeneration.team5.DoctorProject.DoctorProjectApplication" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="ALTERNATIVE_JRE_PATH" value="11" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -83,6 +184,11 @@
       <updated>1575627757533</updated>
       <workItem from="1575627760821" duration="7793000" />
       <workItem from="1575711639818" duration="28166000" />
+      <workItem from="1576060081658" duration="60000" />
+      <workItem from="1576060189787" duration="4550000" />
+      <workItem from="1576078094473" duration="10601000" />
+      <workItem from="1576162184752" duration="19181000" />
+      <workItem from="1576217617447" duration="4914000" />
     </task>
     <task id="LOCAL-00001" summary="&quot;Update Citizen Table&quot;">
       <created>1575720339522</created>
@@ -102,7 +208,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -110,6 +218,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="&quot;Update Citizen Table&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="&quot;Update Citizen Table&quot;" />
+    <MESSAGE value="Some updates" />
+    <option name="LAST_COMMIT_MESSAGE" value="Some updates" />
   </component>
 </project>
