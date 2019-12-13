@@ -31,13 +31,13 @@ public class CitizenController {
         //    System.out.println("User already exists");
         //}
 
-        Citizen citizenExists = apiCitizenDetailsService.loadCitizenByAmka(citizen.getAmka().toString());
+        /*Citizen citizenExists = apiCitizenDetailsService.loadCitizenByAmka(citizen.getAmka().toString());
         if(citizenExists==null){
             System.out.println("The user Exists");
         }
         else{
             citizenRepository.save(citizen);
             userRepository.save(user);
-        }
+        }*/
     }
 }
