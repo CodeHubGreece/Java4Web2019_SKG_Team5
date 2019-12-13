@@ -10,15 +10,19 @@ public class Appointment {
     @Column(name = "created_at")
     private Date createdAt;
     //citizen
+
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "amka")
     private Citizen citizen;
     //doctor
+
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "doctorID")
     private Doctor doctor;
+
     @Column(name = "symptoms")
     private  String symptoms;
+
     public Integer getAppointmentId() {
         return appointmentId;
     }

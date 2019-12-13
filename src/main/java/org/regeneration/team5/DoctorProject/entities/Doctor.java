@@ -9,13 +9,16 @@ public class Doctor {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "userID")
     private User user;
+
     //specialization
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "specialityID")
     private Speciality speciality;
+
     //appointment mapping
     @OneToMany(mappedBy = "doctor",cascade = CascadeType.ALL )
     private List<Appointment> appointments;
+
     public Integer getDoctorId() {
         return doctorId;
     }
