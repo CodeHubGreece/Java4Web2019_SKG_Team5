@@ -5,11 +5,14 @@ import java.util.*;
 @Entity
 public class Citizen {
     @Id
+    @Column(name = "amka")
     private String amka;
-    @Column
+    @Column(name = "email")
     private String email;
-    @Column
+    @Column(name = "mobile")
     private String mobile;
+    @Column(name = "userID")
+    private String userId;
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "userID")
     private User user;
@@ -53,5 +56,21 @@ public class Citizen {
     }
     public static void setCitizenList(List<Citizen> citizenList) {
         Citizen.citizenList = citizenList;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public List<Appointment> getAppointments() {
+        return appointments;
+    }
+
+    public void setAppointments(List<Appointment> appointments) {
+        this.appointments = appointments;
     }
 }

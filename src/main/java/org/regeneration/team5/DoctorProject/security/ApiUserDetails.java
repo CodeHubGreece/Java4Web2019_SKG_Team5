@@ -1,4 +1,4 @@
-package org.regeneration.team5.DoctorProject.service;
+package org.regeneration.team5.DoctorProject.security;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

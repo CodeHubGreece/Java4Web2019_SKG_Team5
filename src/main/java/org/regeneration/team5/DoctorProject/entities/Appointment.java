@@ -7,9 +7,16 @@ public class Appointment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "appointmentID")
     private Integer appointmentId;
+
     @Column(name = "created_at")
     private Date createdAt;
     //citizen
+
+    @Column(name = "doctorID")
+    private int doctorId;
+
+    @Column(name = "amka")
+    private int amka;
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "amka")
@@ -22,6 +29,9 @@ public class Appointment {
 
     @Column(name = "symptoms")
     private  String symptoms;
+
+    @Column(name = "info")
+    private String info;
 
     public Integer getAppointmentId() {
         return appointmentId;
@@ -59,5 +69,20 @@ public class Appointment {
     public void setInfo(String info) {
         this.info = info;
     }
-    private String info;
+
+    public int getDoctorId() {
+        return doctorId;
+    }
+
+    public void setDoctorId(int doctorId) {
+        this.doctorId = doctorId;
+    }
+
+    public int getAmka() {
+        return amka;
+    }
+
+    public void setAmka(int amka) {
+        this.amka = amka;
+    }
 }

@@ -1,6 +1,6 @@
 package org.regeneration.team5.DoctorProject.service;
 
-import org.regeneration.team5.DoctorProject.dto.Registration;
+import org.regeneration.team5.DoctorProject.dto.RegistrationDTO;
 import org.regeneration.team5.DoctorProject.entities.Citizen;
 import org.regeneration.team5.DoctorProject.entities.User;
 import org.regeneration.team5.DoctorProject.repositories.CitizenRepository;
@@ -10,6 +10,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.InputMismatchException;
+import java.util.List;
 
 @Service
 public class ApiCitizenDetailsService {
@@ -27,32 +28,35 @@ public class ApiCitizenDetailsService {
         this.citizenRepository = citizenRepository;
     }
 
-    public Citizen loadCitizenByAmka(String amka){
-        Citizen citizen = citizenRepository.findCitizenByAmka(amka);
-        if (citizen == null){
-            System.out.println("Not a citizen");
-        }
+    public Citizen findCitizenByEmail(String email){
+        return citizenRepository.findCitizenByEmail(email);
+    }
+
+    public Citizen findCitizenByAmka(String amka){
         return citizenRepository.findCitizenByAmka(amka);
     }
 
-    public Citizen setCitizen(Registration registration) throws InputMismatchException {
+    public List<Citizen> findAll(){
+        return citizenRepository.findAll();
+    }
+
+    public Citizen setCitizen(RegistrationDTO registrationDTO) throws InputMismatchException {
         try {
             User user = new User();
-            user.setFirstname(registration.getFirstname());
-            user.setLastname(registration.getLastname());
-            user.setUsername(registration.getUsername());
-            user.setPassword(passwordEncoder.encode(registration.getPassword()));
+            user.setFirstname(registrationDTO.getFirstname());
+            user.setLastname(registrationDTO.getLastname());
+            user.setUsername(registrationDTO.getUsername());
+            user.setPassword(passwordEncoder.encode(registrationDTO.getPassword()));
             userRepository.save(user);
             Citizen citizen = new Citizen();
-            citizen.setAmka(registration.getAmka());
-            citizen.setEmail(registration.getEmail());
-            citizen.setMobile(registration.getMobile());
+            citizen.setAmka(registrationDTO.getAmka());
+            citizen.setEmail(registrationDTO.getEmail());
+            citizen.setMobile(registrationDTO.getMobile());
             citizen.setUser(user);
             citizenRepository.save(citizen);
             return citizen;
         }catch (InputMismatchException m){
             throw m;
         }
-
     }
 }

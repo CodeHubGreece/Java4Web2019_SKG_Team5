@@ -1,8 +1,10 @@
 package org.regeneration.team5.DoctorProject.dto;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Component;
 
-public class Registration {
+@Component
+public class RegistrationDTO {
     private String amka;
     private String firstname;
     private String lastname;
@@ -11,11 +13,11 @@ public class Registration {
     private String email;
     private String mobile;
 
-    public Registration(){
+    public RegistrationDTO(){
 
     }
 
-    public Registration(String amka, String firstname, String lastname, String username, String password, String email, String mobile) {
+    public RegistrationDTO(String amka, String firstname, String lastname, String username, String password, String email, String mobile) {
         this.amka = amka;
         this.firstname =firstname;
         this.lastname = lastname;

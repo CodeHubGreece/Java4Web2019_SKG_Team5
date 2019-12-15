@@ -1,5 +1,7 @@
 package org.regeneration.team5.DoctorProject.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.sql.Array;
 import java.util.ArrayList;
@@ -20,12 +22,12 @@ public class Speciality {
     private List<Doctor> doctor ;
 
 
-    public Integer getSpecializationId() {
+    public Integer getSpecialityIdId() {
         return specialityId;
     }
 
-    public void setSpecializationId(Integer specializationId) {
-        this.specialityId = specializationId;
+    public void setSpecialityId(Integer specialityId) {
+        this.specialityId = specialityId;
     }
 
     public String getTitle() {

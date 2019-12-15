@@ -14,7 +14,7 @@ function login(usernameElement, passwordElement) {
 	  type: 'POST',
 	  success: function(data){
 		 localStorage.setItem(LOCAL_STORAGE_LOGIN_TOKEN_NAME, username);
-		 window.location.replace(ROOT_PATH + "/citizen_index.html");
+		 window.location.replace(ROOT_PATH + "/pages/citizen/citizen_index.html");
 	  },
 	  statusCode: {
 		401 : function() {
