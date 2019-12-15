@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html lang="en"><script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -13,12 +13,13 @@
     <!-- Custom styles for this template -->
     <link href="../../styles/create_appointment.css" rel="stylesheet">
 	
-	<!-- JavaScript files --
+	<!-- JavaScript files -->
 	<script src="jquery-3.4.1.min.js"></script>
-	
 	<script src="../../scripts/main.js"></script>
 	<script src="../../scripts/home-auth.js"></script>
-	<script src="../../scripts/logout.js"></script>-->
+	<script src="../../scripts/logout.js"></script>
+	<script src="../../scripts/loadOptions.js"></script>
+
   </head>
 
   <body>
@@ -30,12 +31,12 @@
 		<br>
 		<h2>Create an appointment</h2>
 		<br>
-		<form>
+		<form on>
 			<table  align="center">
 				<tr>
 					<td>Ειδικότητα: </td>
 					<td> 
-						<select class="custom-select">
+						<select class="custom-select" id="speciality">
 						  <option>Παθολόγος</option>
 						  <option>Καρδιολόγος</option>
 						  <option>Παιδίατρος</option>
