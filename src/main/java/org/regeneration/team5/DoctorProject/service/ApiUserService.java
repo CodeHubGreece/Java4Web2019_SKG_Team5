@@ -23,8 +23,8 @@ public class ApiUserService {
         return userRepository.findByUserID(id);
     }
 
-    public List<User> findByUserType(String type){
-        return userRepository.findByUserType(type);
+    public List<User> findByProperty(short property){
+        return userRepository.findByProperty(property);
     }
 
     public User findByUsername(String username){

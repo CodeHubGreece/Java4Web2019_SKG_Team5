@@ -12,11 +12,11 @@ public class Appointment {
     private Date createdAt;
     //citizen
 
-    @Column(name = "doctorID")
+    @Column(name = "doctorID",insertable = false, updatable = false)
     private int doctorId;
 
-    @Column(name = "amka")
-    private int amka;
+    @Column(name = "amka" ,insertable = false, updatable = false)
+    private String amka;
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "amka")
@@ -78,11 +78,11 @@ public class Appointment {
         this.doctorId = doctorId;
     }
 
-    public int getAmka() {
+    public String getAmka() {
         return amka;
     }
 
-    public void setAmka(int amka) {
+    public void setAmka(String amka) {
         this.amka = amka;
     }
 }

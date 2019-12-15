@@ -81,14 +81,7 @@ public class User {
     public void setProperty(short property) {
         this.property = property;
     }
-
-    public String getUserType(){
-        if (property==1){
-            return "Doctor";
-        }else {
-            return "Citizen";
-        }
-    }
+    
 
     public static List<User> getUserList() {
         return userList;
