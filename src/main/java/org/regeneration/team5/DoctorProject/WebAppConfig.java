@@ -1,9 +1,9 @@
 package org.regeneration.team5.DoctorProject;
 
-import org.regeneration.team5.DoctorProject.dto.Registration;
-import org.regeneration.team5.DoctorProject.service.ApiAccessDeniedHandler;
-import org.regeneration.team5.DoctorProject.service.ApiAuthenticationEntryPoint;
-import org.regeneration.team5.DoctorProject.service.ApiAuthenticationSuccessHandler;
+import org.regeneration.team5.DoctorProject.dto.RegistrationDTO;
+import org.regeneration.team5.DoctorProject.security.ApiAccessDeniedHandler;
+import org.regeneration.team5.DoctorProject.security.ApiAuthenticationEntryPoint;
+import org.regeneration.team5.DoctorProject.security.ApiAuthenticationSuccessHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
@@ -26,7 +26,7 @@ public class WebAppConfig extends WebSecurityConfigurerAdapter {
     private ApiAuthenticationSuccessHandler apiSuccessHandler;
     private ApiAccessDeniedHandler accessDeniedHandler;
     private UserDetailsService userDetailsService;
-    private Registration registration;
+    private RegistrationDTO registrationDTO;
 
     @Autowired
     public void setAuthenticationEntryPoint(ApiAuthenticationEntryPoint authenticationEntryPoint) {

@@ -1,4 +1,5 @@
 package org.regeneration.team5.DoctorProject.entities;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -13,10 +14,13 @@ public class User {
     @Column
     private String lastname;
     @Column
+    @JsonIgnore
     private String username;
     @Column
+    @JsonIgnore
     private String password;
     @Column
+    @JsonIgnore
     private short property=0;
     @OneToOne(mappedBy = "user")
     private Citizen citizen;
@@ -77,13 +81,15 @@ public class User {
     public void setProperty(short property) {
         this.property = property;
     }
-    public boolean getUserType(){
+
+    public String getUserType(){
         if (property==1){
-            return false;
+            return "Doctor";
         }else {
-            return true;
+            return "Citizen";
         }
     }
+
     public static List<User> getUserList() {
         return userList;
     }

@@ -1,7 +1,8 @@
-package org.regeneration.team5.DoctorProject.service;
+package org.regeneration.team5.DoctorProject.security;
 
 import org.regeneration.team5.DoctorProject.entities.User;
 import org.regeneration.team5.DoctorProject.repositories.UserRepository;
+import org.regeneration.team5.DoctorProject.security.ApiUserDetails;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
