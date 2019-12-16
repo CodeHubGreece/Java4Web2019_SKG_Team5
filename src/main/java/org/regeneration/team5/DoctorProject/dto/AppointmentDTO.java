@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 public class AppointmentDTO {
 
     //private Integer appointmentId;
+    private String specialityTitle;
     private String amka;
     private int doctorId;
     private String date;
@@ -17,7 +18,8 @@ public class AppointmentDTO {
 
     }
 
-    public AppointmentDTO(String amka, int doctorId, String date, String time, String symptoms, String info) {
+    public AppointmentDTO(String specialityTitle, String amka, int doctorId, String date, String time, String symptoms, String info) {
+        this.specialityTitle = specialityTitle;
         //this.appointmentId = appointmentId;
         this.amka = amka;
         this.doctorId = doctorId;
@@ -81,5 +83,13 @@ public class AppointmentDTO {
 
     public void setInfo(String info) {
         this.info = info;
+    }
+
+    public String getSpecialityTitle() {
+        return specialityTitle;
+    }
+
+    public void setSpecialityTitle(String specialityTitle) {
+        this.specialityTitle = specialityTitle;
     }
 }

@@ -3,26 +3,22 @@
   <component name="ChangeListManager">
     <list default="true" id="5c0cf55d-ffd8-4e79-8ddd-3b7224cef136" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/controller/AppointmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/controller/AppointmentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/controller/SpecialityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/controller/SpecialityController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/dto/AppointmentDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/dto/AppointmentDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/entities/Appointment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/entities/Appointment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/entities/Citizen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/entities/Citizen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/entities/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/repositories/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/service/ApiUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/service/ApiUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/regeneration/team5/DoctorProject/WebAppConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/regeneration/team5/DoctorProject/WebAppConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/regeneration/team5/DoctorProject/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/regeneration/team5/DoctorProject/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/regeneration/team5/DoctorProject/dto/Registration.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/regeneration/team5/DoctorProject/entities/Appointment.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/regeneration/team5/DoctorProject/entities/Appointment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/repositories/CitizenRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/repositories/CitizenRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/repositories/SpecialityRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/repositories/SpecialityRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/service/ApiAppointmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/service/ApiAppointmentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/service/ApiCitizenDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/service/ApiCitizenDetailsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/service/ApiDoctorDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/service/ApiDoctorDetailsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/service/ApiSpecialityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/service/ApiSpecialityService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/createappointment.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/createappointment.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/pages/citizen/citizen_index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/pages/citizen/citizen_index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/scripts/loadOptions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/scripts/loadOptions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/regeneration/team5/DoctorProject/entities/Citizen.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/regeneration/team5/DoctorProject/entities/Citizen.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/regeneration/team5/DoctorProject/entities/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/regeneration/team5/DoctorProject/entities/User.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/regeneration/team5/DoctorProject/repositories/CitizenRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/regeneration/team5/DoctorProject/repositories/CitizenRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/regeneration/team5/DoctorProject/repositories/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/regeneration/team5/DoctorProject/repositories/UserRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/regeneration/team5/DoctorProject/service/ApiAccessDeniedHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/regeneration/team5/DoctorProject/service/ApiAuthenticationEntryPoint.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/regeneration/team5/DoctorProject/service/ApiAuthenticationSuccessHandler.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/regeneration/team5/DoctorProject/service/ApiCitizenDetailsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/regeneration/team5/DoctorProject/service/ApiCitizenDetailsService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/regeneration/team5/DoctorProject/service/ApiUserDetails.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/regeneration/team5/DoctorProject/service/ApiUserDetailsService.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +101,11 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="ExpandSpringBootJavaOptionsPanel" value="true" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
@@ -114,6 +114,9 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Global Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -164,7 +167,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

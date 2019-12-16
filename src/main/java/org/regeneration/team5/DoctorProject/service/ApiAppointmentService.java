@@ -4,9 +4,11 @@ import org.regeneration.team5.DoctorProject.dto.AppointmentDTO;
 import org.regeneration.team5.DoctorProject.entities.Appointment;
 import org.regeneration.team5.DoctorProject.entities.Citizen;
 import org.regeneration.team5.DoctorProject.entities.Doctor;
+import org.regeneration.team5.DoctorProject.entities.User;
 import org.regeneration.team5.DoctorProject.repositories.AppointmentRepository;
 import org.regeneration.team5.DoctorProject.repositories.CitizenRepository;
 import org.regeneration.team5.DoctorProject.repositories.DoctorRepository;
+import org.regeneration.team5.DoctorProject.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,11 +21,13 @@ import java.util.List;
 @Service
 public class ApiAppointmentService {
     private final AppointmentRepository appointmentRepository;
-    private Principal logedInUser;
+    private Principal loggedInUser;
     @Autowired
     private CitizenRepository citizenRepository;
     @Autowired
     private DoctorRepository doctorRepository;
+    @Autowired
+    private UserRepository userRepository;
 
     public ApiAppointmentService(@Autowired AppointmentRepository appointmentRepository) {
         this.appointmentRepository = appointmentRepository;
@@ -45,15 +49,16 @@ public class ApiAppointmentService {
         return appointmentRepository.findAllByCreatedAtBetweenAndInfo(from,to,info);
     }
 
-    public Appointment setNewAppointment(AppointmentDTO appointmentDTO) throws ParseException {
+
+    public Appointment setNewAppointment(AppointmentDTO appointmentDTO, User user) throws ParseException {
         SimpleDateFormat formatter6=new SimpleDateFormat("dd-MMM-yyyy HH:mm:ss");
         Appointment newAppointment = new Appointment();
         //newAppointment.setAppointmentId(appointmentDTO.getAppointmentId());
-        newAppointment.setCitizen(citizenRepository.findCitizenByAmka(appointmentDTO.getAmka()));
+        newAppointment.setCitizen(citizenRepository.findCitizenByUser(user));
         newAppointment.setDoctor(doctorRepository.findByDoctorId(appointmentDTO.getDoctorId()));
         newAppointment.setCreatedAt(formatter6.parse(appointmentDTO.getDate().concat(appointmentDTO.getTime())));
-        newAppointment.setInfo(appointmentDTO.getSymptoms());
-        newAppointment.setSymptoms(appointmentDTO.getInfo());
+        newAppointment.setInfo(appointmentDTO.getInfo());
+        newAppointment.setSymptoms(appointmentDTO.getSymptoms());
         appointmentRepository.save(newAppointment);
         return newAppointment;
     }
