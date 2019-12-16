@@ -23,6 +23,12 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
 	<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
 	
+	
+	
+	
+	
+	
+	
   </head>
 
   <body>
@@ -47,130 +53,8 @@
 			</tbody>
 		</table>
 		
-		<table id="example" class="display" style="width:90%">
-			<thead>
-				<tr>
-					<th>Name</th>
-					<th>Position</th>
-					<th>Office</th>
-					<th>Age</th>
-					<th>Date</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>Tiger Nixon</td>
-					<td>System Architect</td>
-					<td>Edinburgh</td>
-					<td>61</td>
-					<td>25/4/2011</td>
-				</tr>
-				<tr>
-					<td>Garrett Winters</td>
-					<td>Accountant</td>
-					<td>Tokyo</td>
-					<td>63</td>
-					<td>25/07/2011</td>
-				</tr>
-				<tr>
-					<td>Ashton Cox</td>
-					<td>Junior Technical Author</td>
-					<td>San Francisco</td>
-					<td>66</td>
-					<td>12/01/2009</td>
-				</tr>
-				<tr>
-					<td>Cedric Kelly</td>
-					<td>Senior Javascript Developer</td>
-					<td>Edinburgh</td>
-					<td>22</td>
-					<td>29/03/2012</td>
-				</tr>
-				<tr>
-					<td>Airi Satou</td>
-					<td>Accountant</td>
-					<td>Tokyo</td>
-					<td>33</td>
-					<td>28/11/2008</td>
-				</tr>
-				<tr>
-					<td>Brielle Williamson</td>
-					<td>Integration Specialist</td>
-					<td>New York</td>
-					<td>61</td>
-					<td>02/12/2012</td>
-				</tr>
-				<tr>
-					<td>Herrod Chandler</td>
-					<td>Sales Assistant</td>
-					<td>San Francisco</td>
-					<td>59</td>
-					<td>06/08/2012</td>
-				</tr>
-				<tr>
-					<td>Rhona Davidson</td>
-					<td>Integration Specialist</td>
-					<td>Tokyo</td>
-					<td>55</td>
-					<td>14/10/2010</td>
-				</tr>
-				<tr>
-					<td>Colleen Hurst</td>
-					<td>Javascript Developer</td>
-					<td>San Francisco</td>
-					<td>39</td>
-					<td>15/09/2009</td>
-				</tr>
-				<tr>
-					<td>Sonya Frost</td>
-					<td>Software Engineer</td>
-					<td>Edinburgh</td>
-					<td>23</td>
-					<td>13/12/2008</td>
-				</tr>
-				<tr>
-					<td>Jena Gaines</td>
-					<td>Office Manager</td>
-					<td>London</td>
-					<td>30</td>
-					<td>19/12/2008</td>
-				</tr>
-				<tr>
-					<td>Quinn Flynn</td>
-					<td>Support Lead</td>
-					<td>Edinburgh</td>
-					<td>22</td>
-					<td>03/03/2013</td>
-				</tr>
-				<tr>
-					<td>Charde Marshall</td>
-					<td>Regional Director</td>
-					<td>San Francisco</td>
-					<td>36</td>
-					<td>16/10/2008</td>
-				</tr>
-				<tr>
-					<td>Haley Kennedy</td>
-					<td>Senior Marketing Designer</td>
-					<td>London</td>
-					<td>43</td>
-					<td>18/12/2012</td>
-				</tr>
-				<tr>
-					<td>Tatyana Fitzpatrick</td>
-					<td>Regional Director</td>
-					<td>London</td>
-					<td>19</td>
-					<td>17/03/2010</td>
-				</tr>
-				<tr>
-					<td>Michael Silva</td>
-					<td>Marketing Designer</td>
-					<td>London</td>
-					<td>66</td>
-					<td>27/11/2012</td>
-				</tr>
-			</tbody>
+		<table id="DataTable" class="display" style="width:90%">
+			
 		</table>
 		
 		<br>
@@ -184,32 +68,75 @@
 	
 
 	<script>
-		/* Custom filtering function which will search data in column four between two values */
-		$.fn.dataTable.ext.search.push(
-			function( settings, data, dataIndex ) {
-				var min = parseInt( $('#min').val(), 10 );
-				var max = parseInt( $('#max').val(), 10 );
-				var age = parseFloat( data[3] ) || 0; // use data for the age column
-		 
-				if ( ( isNaN( min ) && isNaN( max ) ) ||
-					 ( isNaN( min ) && age <= max ) ||
-					 ( min <= age   && isNaN( max ) ) ||
-					 ( min <= age   && age <= max ) )
-				{
-					return true;
-				}
-				return false;
-			}
-		);
-		 
-		$(document).ready(function() {
-			var table = $('#example').DataTable();
-			 
-			// Event listener to the two range filtering inputs to redraw on input
-			$('#min, #max').keyup( function() {
-				table.draw();
-			} );
-		} );
+			
+			function populateDataTable(appointments) {
+    $("#appointments").append("<tbody>");
+    jQuery.each(appointment, function(i,appointment){
+        $("#appointments").append("<tr id='appRow" + appointment.date + "'><td>" + appointment.citizenName + "</td><td>" + appointment.id + "</td></tr>");
+     });
+     $("#appointments").append("</tbody>");
+
+     $("#appointments tr").click(function() {
+        loadAppointment($(this).children("td").html());
+     });
+
+    $('#appointments').DataTable();
+}
+
+function loadAppointment(id) {
+    $.ajax({
+        url: ROOT_PATH + "/appointments/" + id
+    }).then(function(appointments) {
+       $("input[name=date]").val(appointment.date);
+       $("input[name=name]").val(appointment.citizenName);
+       $("input[name=id]").val(appointment.time);
+    });
+};
+
+$(document).ready(function() {
+
+    $.ajax({
+        url: ROOT_PATH + "/appointments"
+    }).then(function(appointments) {
+        populateDataTable(appointments);
+    });
+
+    $("#saveButton").on('click', function(event){
+        event.preventDefault();
+        alert("To be done...");
+    });
+
+
+	/*
+    $("#deleteButton").on('click', function(event){
+        event.preventDefault();
+        let bookId = $("input[name=id]").val();
+        $.ajax({
+            url: ROOT_PATH + "/books/" + bookId,
+            type : "DELETE",
+            dataType : 'json',
+            contentType: 'application/json',
+                success : function(result) {
+                    $("#bookRow" + bookId).remove();
+                    $("input[name=id]").val("");
+                    $("input[name=title]").val("");
+                    $("input[name=isbn]").val("");
+                },
+                error: function(xhr, resp, text) {
+                    console.log(xhr, resp, text);
+                    alert("Could not delete book!");
+                 }
+         })
+
+	}); */
+
+	
+});
+
+
+
+
+
 	</script>
 
 </body>
