@@ -9,4 +9,5 @@ import java.util.List;
 public interface SpecialityRepository extends JpaRepository<Speciality,Integer> {
     List<Speciality> findAll();
     Speciality findBySpecialityId(int id);
+    Speciality findSpecialitiesByTitle(String title);
 }

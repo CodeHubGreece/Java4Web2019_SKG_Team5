@@ -23,4 +23,8 @@ public class ApiSpecialityService {
     public Speciality findById(int id){
         return specialityRepository.findBySpecialityId(id);
     }
+
+    public Speciality findSpecialitiesByTitle(String title){
+        return specialityRepository.findSpecialitiesByTitle(title);
+    }
 }

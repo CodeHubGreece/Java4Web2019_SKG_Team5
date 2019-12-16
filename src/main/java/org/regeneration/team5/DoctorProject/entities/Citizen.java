@@ -16,8 +16,8 @@ public class Citizen {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "userID")
     private User user;
-    @OneToMany(mappedBy = "citizen",cascade = CascadeType.ALL)
-    private List<Appointment> appointments;
+//    @OneToMany(mappedBy = "citizen",cascade = CascadeType.ALL)
+//    private List<Appointment> appointments;
     private static List<Citizen> citizenList = new ArrayList<>();
     public Citizen(){
     }
@@ -66,11 +66,11 @@ public class Citizen {
         this.userId = userId;
     }
 
-    public List<Appointment> getAppointments() {
-        return appointments;
-    }
-
-    public void setAppointments(List<Appointment> appointments) {
-        this.appointments = appointments;
-    }
+//    public List<Appointment> getAppointments() {
+//        return appointments;
+//    }
+//
+//    public void setAppointments(List<Appointment> appointments) {
+//        this.appointments = appointments;
+//    }
 }

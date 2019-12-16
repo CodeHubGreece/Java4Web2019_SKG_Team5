@@ -39,6 +39,9 @@ public class ApiCitizenDetailsService {
     public List<Citizen> findAll(){
         return citizenRepository.findAll();
     }
+    public Citizen findCitizenByUser(User user){
+        return citizenRepository.findCitizenByUser(user);
+    }
 
     public Citizen setCitizen(RegistrationDTO registrationDTO) throws InputMismatchException {
         try {

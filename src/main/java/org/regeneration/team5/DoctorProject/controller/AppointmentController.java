@@ -2,13 +2,16 @@ package org.regeneration.team5.DoctorProject.controller;
 
 import org.regeneration.team5.DoctorProject.dto.AppointmentDTO;
 import org.regeneration.team5.DoctorProject.entities.Appointment;
+import org.regeneration.team5.DoctorProject.entities.User;
 import org.regeneration.team5.DoctorProject.service.ApiAppointmentService;
+import org.regeneration.team5.DoctorProject.service.ApiUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.security.Principal;
 import java.text.ParseException;
 import java.util.List;
 
@@ -16,14 +19,17 @@ import java.util.List;
 public class AppointmentController {
 
     private final ApiAppointmentService appointmentService;
+    private final ApiUserService userService;
 
-    public AppointmentController(@Autowired ApiAppointmentService appointmentService) {
+    public AppointmentController(@Autowired ApiAppointmentService appointmentService,@Autowired ApiUserService userService) {
         this.appointmentService = appointmentService;
+        this.userService = userService;
     }
 
     @PostMapping("/appointment/new")
-    public Appointment newAppointment(@RequestBody AppointmentDTO appointmentDTO) throws ParseException {
-        return appointmentService.setNewAppointment(appointmentDTO);
+    public Appointment newAppointment(@RequestBody AppointmentDTO appointmentDTO, Principal principal) throws ParseException {
+        User user = userService.findByUsername(principal.getName());
+        return appointmentService.setNewAppointment(appointmentDTO,user);
     }
 
     @GetMapping("/appointments")
