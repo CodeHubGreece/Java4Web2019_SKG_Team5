@@ -22,7 +22,7 @@
   <body>
 	<header>
 		   <img id="photo" src="../../efka.png" alt="efka">
-		   <div class="float-right"><form class="form-signin"><button class="btn btn-warning btn-lg text-white" onclick="logout()">Logout</button></form></div>
+		   <div class="float-right"><form class="form-signin"><button class="btn btn-warning btn-lg text-white" onclick="logOut()">Logout</button></form></div>
 	</header>
 	<div class="text-center">
 		<br>
@@ -31,7 +31,7 @@
 			<form>
 			<table  align="center">
 				<tr>
-					<td>Ειδικότητα: </td>
+					<td><label>Ειδικότητα: </label></td>
 					<td> 
 						<select class="custom-select">
 						  <option>Παθολόγος</option>
@@ -42,7 +42,7 @@
 				</tr>
 				
 				<tr>
-					<td>Γιατρός: </td>
+					<td><label>Γιατρός: </label></td>
 					<td>
 						<select class="custom-select">
 						  <option>Παπακώστας</option>
@@ -52,12 +52,12 @@
 				</tr>
 				
 				<tr>
-					<td>Ημερομηνία: </td> 
+					<td><label>Ημερομηνία: </label></td>
 					<td> <input type="date"  class="form-control" name="Date" required /> </td>
 				</tr>
 				
 				<tr>
-					<td>Ώρα: </td> 
+					<td><label>Ώρα: </label></td>
 					<td> <input type="time"  class="form-control" name="usr_time" value="09:00" min="09:00" max="21:00" step="900" required> </td>
 				</tr>
 				
@@ -66,13 +66,13 @@
 				</tr>
 				
 				<tr>
-					<td>Σύντομη περιγραφή ασθένειας:</td> 
+					<td><label>Σύντομη περιγραφή ασθένειας:</label></td>
 					<td> <textarea class="form-control" name="description" id="textarea1"></textarea> </td>
 				</tr>
 				
 				<tr>
-					<td>Λοιπές παρατηρήσεις: </td> 
-					<td><textarea class="form-control" name="more_comments" id="textarea1"></textarea> </td>
+					<td><label>Λοιπές παρατηρήσεις: </label></td>
+					<td><textarea class="form-control" name="more_comments" id="textarea2"></textarea> </td>
 				</tr>
 				
 			</table>

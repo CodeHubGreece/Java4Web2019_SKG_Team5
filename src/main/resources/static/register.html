@@ -12,11 +12,16 @@
 
     <!-- Custom styles for this template -->
     <link href="styles/login_register.css" rel="stylesheet">
+	<link href="styles/main.css" rel="stylesheet">
 
 	<!-- Javascript files -->
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	
 	<script src="scripts/main.js"></script>
+	<script src="scripts/validations.js"></script>
 	<script src="scripts/authentication.js"></script>
-	<script src="https://code.jquery.com/jquery-3.4.1.min.js"   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="   crossorigin="anonymous"></script>
   </head>
 
 <body>
@@ -25,49 +30,54 @@
 	</header>
 	<div class="text-center">
 		<br>
-		<h2 class="form-signin">Registration</h2>
-		<form>
-			<table  align="center">
-				<tr>
-					<td>ΑΜΚΑ: </td>
-					<td> <input type="text" id="inputAmka" name="amka" class="form-control" pattern="[0-9]{10,}$" minlength="11" maxlength="11" size="20" required /> </td>
-				</tr>
-				
-				<tr>
-					<td>Όνομα: </td>
-					<td> <input type="text" id="inputFirstname" name="firstname"  class="form-control" pattern="[A-Za-z]{2,}$" maxlength="45" size="20" required /> </td>
-				</tr>
-				
-				<tr>
-					<td>Επίθετο: </td> 
-					<td> <input type="text" id="inputLastname" name="lastname" class="form-control" pattern="[A-Za-z]{2,}$" maxlength="45" size="20" required /> </td>
-				</tr>
-				
-				<tr>
-					<td>Username: </td> 
-					<td> <input type="text" id="inputUsername" name="username" class="form-control" pattern="[a-z0-9]{5,}$" maxlength="45" size = "20" required /> </td>
-				</tr>
-				
-				<tr>
-					<td>Password:</td> 
-					<td> <input type="password" id="inputPassword" name="password" class="form-control" pattern="[a-z0-9]{5,}$" maxlength="45" size = "20" required /> </td>
-				</tr>
-				
-				<tr>
-					<td>E-mail: </td> 
-					<td><input type="email" id="inputEmail" name="email" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" maxlength="45" size = "20" required/> </td>
-				</tr>
-				
-				<tr>
-					<td>Τηλέφωνο: </td>
-					<td> <input type="text" id="inputMobile" name="phone" class="form-control" pattern="[0-9]{10,}$" maxlength="15" size="20" required  /> </td>
-				</tr>						
-			
-			</table>
+		<section id="sec">
+			<h2>Registration</h2>
 			<br>
-			<button class="form-signin btn btn-lg btn-success btn-block" type="button" onclick="register(amka,firstname,lastname,username,password,email,phone)">Register</button>
-		</form>
+			<form>
+			<section>
+				<div class="field mt-2">
+					<label for="amka">ΑΜΚΑ:</label>
+					<input type="text" id="inputAmka" name="amka" class="form-control" pattern="[0-9]{10,}$" minlength="11" maxlength="11" required autofocus/> 
+					<div class="error-label">Το ΑΜΚΑ σας πρέπει να αποτελείται από 11 αριθμούς.</div>
+				</div>
+				<div class="field mt-2">
+					<label for="amka">Όνομα:</label>
+					<input type="text" id="inputFirstname" name="firstname" class="form-control" pattern="[A-Za-z]{2,}$" minLength="2" maxlength="45" required /> 
+					<div class="error-label">Το όνομα σας πρέπει να αποτελείται από τουλάχιστον 2 χαρακτήρες.</div>
+				</div>
+				<div class="field mt-2">
+					<label for="lastname">Επίθετο:</label>
+					<input type="text" id="inputLastname" name="lastname" class="form-control" pattern="[A-Za-z]{2,}$" maxlength="45" required /> 
+					<div class="error-label">Το επώνυμο σας πρέπει να αποτελείται από τουλάχιστον 2 χαρακτήρες.</div>
+				</div>
+				<div class="field mt-2">
+					<label for="username">Username:</label>
+					<input type="text" id="inputUsername" name="username" class="form-control" pattern="[a-z0-9]{5,}$" maxlength="45" required /> 
+					<div class="error-label">Το όνομα χρήστη σας πρέπει να αποτελείται από τουλάχιστον 5 χαρακτήρες.</div>
+				</div>
+				<div class="field mt-2">
+					<label for="password">Password:</label>
+					<input type="password" id="inputPassword" name="password" class="form-control" pattern="[a-z0-9]{8,}$" maxlength="45" required /> 
+					<div class="error-label">Ο κωδικός σας πρέπει να αποτελείται από τουλάχιστον 8 χαρακτήρες.</div>
+				</div>
+				<div class="field mt-2">
+					<label for="email">E-mail:</label>
+					<input type="email" id="inputEmail" name="email" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" maxlength="45" required /> 
+					<div class="error-label">Το email σας δεν είναι σωστό</div>
+				</div>
+				<div class="field mt-2">
+					<label for="phone">Τηλέφωνο:</label>
+					<input type="text" id="inputMobile" name="phone" class="form-control" pattern="[0-9]{10,}$" maxlength="45" required /> 
+					<div class="error-label">Ο αριθμός τηλεφώνου σας δεν είναι σωστός.</div>
+				</div>
+				<div class="mt-5">
+					<button class="form-signin btn btn-lg btn-success btn-block" type="button" onclick="register(amka,firstname,lastname,username,password,email,phone)" disabled="true">Register</button>
+				</div>
+			</section>	
+			</form>
+		</section>
+		<br>
 	</div>
-
+	
 </body>
 </html>

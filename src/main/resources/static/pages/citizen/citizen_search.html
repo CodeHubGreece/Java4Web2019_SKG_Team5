@@ -27,7 +27,7 @@
   <body>
 	<header>
 		   <img id="photo" src="../../efka.png" alt="efka">
-		   <div class="float-right"><form class="form-signin"><button class="btn btn-warning btn-lg text-white" onclick="logout()">Logout</button></form></div>
+		   <div class="float-right"><form class="form-signin"><button class="btn btn-warning btn-lg text-white" onclick="logOut()">Logout</button></form></div>
 	</header>
 	<div class="text-center">
 		<br>
@@ -36,7 +36,7 @@
 		<form>
 			<table  align="center">
 				<tr>
-					<td>Ειδικότητα: </td>
+					<td><label>Ειδικότητα: </label></td>
 					<td> 
 						<select class="custom-select">
 						  <option>Παθολόγος</option>
@@ -44,9 +44,9 @@
 						  <option>Παιδίατρος</option>
 						</select> 
 					</td>
-					<td>Από: </td> 
+					<td><label>Από: </label></td>
 					<td> <input type="date" class="form-control" name="Date" required /> </td>
-					<td>Έως: </td> 
+					<td><label>Έως: </label></td>
 					<td> <input type="date" class="form-control" name="Date" required /> </td>
 				</tr>
 			</table>

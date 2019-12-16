@@ -1,12 +1,18 @@
 html,
 body {
+  background-image: url("../hos.jpg");
   height: 100%;
-  background-color: #ffffb3;
+  background-size: cover;
+  overflow-y: auto;  
 }
 
 header {
     padding: 1em;
     background-color: #005BAA;
+}
+
+img {
+  border-radius: 3%;
 }
 
 .form-signin {
@@ -19,4 +25,8 @@ header {
 #textarea1{
 	width: 250px;
 	height: 50px;
+}
+
+label {
+  font-weight: bold;
 }
