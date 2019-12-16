@@ -21,7 +21,6 @@ import java.util.List;
 @Service
 public class ApiAppointmentService {
     private final AppointmentRepository appointmentRepository;
-    private Principal loggedInUser;
     @Autowired
     private CitizenRepository citizenRepository;
     @Autowired

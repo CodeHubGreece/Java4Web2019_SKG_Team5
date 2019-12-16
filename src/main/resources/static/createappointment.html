@@ -27,121 +27,120 @@
 	<script src="../../scripts/logout.js"></script> -->
 
 	<!-- script for a new appointment  -->
-	<script src="/scripts/loadOptions.js">
+	<script src="/scripts/loadOptions.js"></script>
 
-// $(document).ready(function () {
-// 	//load doctors according to the selectes option
-// 	function loadDoctors(selectedSpecialtyIndex) {
-// 		if (selectedSpecialtyIndex >= 0 && data[selectedSpecialtyIndex] && data[selectedSpecialtyIndex].doctor) {
-// 			const doctors = data[selectedSpecialtyIndex].doctor;
-// 			$("#doctors").html('');
-// 			for (let doctor of doctors) {
-// 				let doctorName = "";
-// 				if (doctor.user) {
-// 					if (doctor.user.firstname) {
-// 						doctorName += doctor.user.firstname + " ";
-// 					}
-// 					if (doctor.user.lastname) {
-// 						doctorName += doctor.user.lastname;
-// 					}
-// 				}
-// 				if (doctorName) {
-// 					$("#doctors").append("<option value='" + doctor.doctorId + "'>" + doctorName + "</option>")
-// 				}
-// 			}
-// 		}
-// 	}
-//
-// // load specialities
-// 	$.ajax({
-// 		url: ROOT_PATH + "/getspecialities",
-// 		type: "GET",
-// 		dataType: 'json',
-// 		contentType: 'application/json',
-// 		success: function (data) {
-// 			for (let specialtyIndex in data) {
-// 				$("#specialties").append("<option value='" + specialtyIndex + "'>" + data[specialtyIndex].title + "</option>")
-// 			}
-// 			if (data && data.length > 0) {
-// 				loadDoctors(0);
-// 			}
-// 			$("#specialties").change(function () {
-// 				const selectedSpecialtyIndex = this.value;
-// 				loadDoctors(selectedSpecialtyIndex);
-// 			})
-// 		},
-// 		error: function (xhr, resp, text) {
-// 			alert("Error: " + text);
-// 		}
-// 	})
-//
-//
-// 	function create_appointment(specialityElem, doctornameElem, dateElem, timeElem, descriptionElem, moreinfoElem) {
-//
-// 		let speciality = specialityElem && $("#specialities :selected").val() ? $("#specialities :selected").val() : "";
-// 		let doctorname = doctornameElem && $("#doctors :selected").val() ? $("#specialities :selected").val() : "";
-// 		let date = dateElem && $("#date").val() ? $("#date").val() : "";
-// 		let time = timeElem && $("#time").val() ? $("#time").val() : "";
-// 		let description = descriptionElem && $("#description").val() ? $("#description").val() : "";
-// 		let moreinfo = moreinfoElem && $("moreinfo").val() ? $("moreinfo").val() : "";
-//
-//
-// 		$("button").click(function (data) { //keep this element id  [..]
-// 			$.ajax({
-// 				url: "https://jsonplaceholder.typicode.com/createappointment",
-// 				type: "POST",
-// 				dataType: 'json',
-// 				data: JSON.stringify({
-// 					'speciality': speciality,
-// 					'doctorname': doctorname,
-// 					'date': date,
-// 					'time': time,
-// 					'description': description,
-// 					'moreinfo': moreinfo
-// 				}),
-// 				contentType: 'application/json',
-// 				success: function (result) {
-// 					alert("Data Saved: " + JSON.stringify(result));
-// 				},
-// 				error: function (xhr, resp, text) {
-// 					alert("NOT Saved: " + text);
-// 				}
-// 			})
-//
-// 		});
-// 	}
-// });
+<!--// $(document).ready(function () {-->
+<!--// 	//load doctors according to the selectes option-->
+<!--// 	function loadDoctors(selectedSpecialtyIndex) {-->
+<!--// 		if (selectedSpecialtyIndex >= 0 && data[selectedSpecialtyIndex] && data[selectedSpecialtyIndex].doctor) {-->
+<!--// 			const doctors = data[selectedSpecialtyIndex].doctor;-->
+<!--// 			$("#doctors").html('');-->
+<!--// 			for (let doctor of doctors) {-->
+<!--// 				let doctorName = "";-->
+<!--// 				if (doctor.user) {-->
+<!--// 					if (doctor.user.firstname) {-->
+<!--// 						doctorName += doctor.user.firstname + " ";-->
+<!--// 					}-->
+<!--// 					if (doctor.user.lastname) {-->
+<!--// 						doctorName += doctor.user.lastname;-->
+<!--// 					}-->
+<!--// 				}-->
+<!--// 				if (doctorName) {-->
+<!--// 					$("#doctors").append("<option value='" + doctor.doctorId + "'>" + doctorName + "</option>")-->
+<!--// 				}-->
+<!--// 			}-->
+<!--// 		}-->
+<!--// 	}-->
+<!--//-->
+<!--// // load specialities-->
+<!--// 	$.ajax({-->
+<!--// 		url: ROOT_PATH + "/getspecialities",-->
+<!--// 		type: "GET",-->
+<!--// 		dataType: 'json',-->
+<!--// 		contentType: 'application/json',-->
+<!--// 		success: function (data) {-->
+<!--// 			for (let specialtyIndex in data) {-->
+<!--// 				$("#specialties").append("<option value='" + specialtyIndex + "'>" + data[specialtyIndex].title + "</option>")-->
+<!--// 			}-->
+<!--// 			if (data && data.length > 0) {-->
+<!--// 				loadDoctors(0);-->
+<!--// 			}-->
+<!--// 			$("#specialties").change(function () {-->
+<!--// 				const selectedSpecialtyIndex = this.value;-->
+<!--// 				loadDoctors(selectedSpecialtyIndex);-->
+<!--// 			})-->
+<!--// 		},-->
+<!--// 		error: function (xhr, resp, text) {-->
+<!--// 			alert("Error: " + text);-->
+<!--// 		}-->
+<!--// 	})-->
+<!--//-->
+<!--//-->
+<!--// 	function create_appointment(specialityElem, doctornameElem, dateElem, timeElem, descriptionElem, moreinfoElem) {-->
+<!--//-->
+<!--// 		let speciality = specialityElem && $("#specialities :selected").val() ? $("#specialities :selected").val() : "";-->
+<!--// 		let doctorname = doctornameElem && $("#doctors :selected").val() ? $("#specialities :selected").val() : "";-->
+<!--// 		let date = dateElem && $("#date").val() ? $("#date").val() : "";-->
+<!--// 		let time = timeElem && $("#time").val() ? $("#time").val() : "";-->
+<!--// 		let description = descriptionElem && $("#description").val() ? $("#description").val() : "";-->
+<!--// 		let moreinfo = moreinfoElem && $("moreinfo").val() ? $("moreinfo").val() : "";-->
+<!--//-->
+<!--//-->
+<!--// 		$("button").click(function (data) { //keep this element id  [..]-->
+<!--// 			$.ajax({-->
+<!--// 				url: "https://jsonplaceholder.typicode.com/createappointment",-->
+<!--// 				type: "POST",-->
+<!--// 				dataType: 'json',-->
+<!--// 				data: JSON.stringify({-->
+<!--// 					'speciality': speciality,-->
+<!--// 					'doctorname': doctorname,-->
+<!--// 					'date': date,-->
+<!--// 					'time': time,-->
+<!--// 					'description': description,-->
+<!--// 					'moreinfo': moreinfo-->
+<!--// 				}),-->
+<!--// 				contentType: 'application/json',-->
+<!--// 				success: function (result) {-->
+<!--// 					alert("Data Saved: " + JSON.stringify(result));-->
+<!--// 				},-->
+<!--// 				error: function (xhr, resp, text) {-->
+<!--// 					alert("NOT Saved: " + text);-->
+<!--// 				}-->
+<!--// 			})-->
+<!--//-->
+<!--// 		});-->
+<!--// 	}-->
+<!--// });-->
 
-	</script>
+
 	<script>
 		$(document).ready(function () {
-
-
 		$.ajax({
 			url: ROOT_PATH + "/getspecialities",
 			type: "GET",
 			dataType : "json",
 			contentType:"aplication/json",
 			success: function (data) {
+				console.log(data);
 				for (let specialtyIndex in data) {
 					$("#specialties").append("<option value='" + specialtyIndex + "'>" + data[specialtyIndex].title + "</option>")
 				}
 				if (data && data.length > 0) {
-					loadDoctors(0);
+					loadDoctors(0,data);
 				}
 				$("#specialties").change(function () {
 					const selectedSpecialtyIndex = this.value;
-					loadDoctors(selectedSpecialtyIndex,resultObj);
+					loadDoctors(selectedSpecialtyIndex,data);
 				})
 			},
 			error: function (xhr, resp, text) {
 				alert("Error: " + text);
 			}
 		});
-		function loadDoctors(selectedSpecialtyIndex,resultObj) {
-			console.log(resultObj);
-			if (selectedSpecialtyIndex >= 0 && resultObj[selectedSpecialtyIndex] && resultObj[selectedSpecialtyIndex].doctor) {
-				const doctors = resultObj[selectedSpecialtyIndex].doctor;
+		function loadDoctors(selectedSpecialtyIndex,data) {
+
+			if (selectedSpecialtyIndex >= 0 && data[selectedSpecialtyIndex] && data[selectedSpecialtyIndex].doctor) {
+				const doctors = data[selectedSpecialtyIndex].doctor;
 				$("#doctors").html('');
 				for (let doctor of doctors) {
 					let doctorName = "";
