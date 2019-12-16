@@ -12,11 +12,11 @@ public class Appointment {
     private Date createdAt;
     //citizen
 
-    @Column(name = "doctorID",insertable = false, updatable = false)
-    private int doctorId;
-
-    @Column(name = "amka" ,insertable = false, updatable = false)
-    private String amka;
+//    @Column(name = "doctorID",insertable = false, updatable = false)
+//    private int doctorId;
+//
+//    @Column(name = "amka" ,insertable = false, updatable = false)
+//    private String amka;
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "amka")
@@ -70,19 +70,19 @@ public class Appointment {
         this.info = info;
     }
 
-    public int getDoctorId() {
-        return doctorId;
-    }
-
-    public void setDoctorId(int doctorId) {
-        this.doctorId = doctorId;
-    }
-
-    public String getAmka() {
-        return amka;
-    }
-
-    public void setAmka(String amka) {
-        this.amka = amka;
-    }
+//    public int getDoctorId() {
+//        return doctorId;
+//    }
+//
+//    public void setDoctorId(int doctorId) {
+//        this.doctorId = doctorId;
+//    }
+//
+//    public String getAmka() {
+//        return amka;
+//    }
+//
+//    public void setAmka(String amka) {
+//        this.amka = amka;
+//    }
 }
