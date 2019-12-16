@@ -1,9 +1,7 @@
-
-			
-	function populateDataTable(appointments) {
+function populateDataTable(appointments) {
     $("#appointments").append("<tbody>");
     jQuery.each(appointment, function(i,appointment){
-        $("#appointments").append("<tr id='appRow" + appointment.date + "'><td>" + appointment.citizenName + "</td><td>" + appointment.id + "</td></tr>");
+        $("#appointments").append("<tr id='appRow" + appointment.id + "'><td>" + appointment.date + "</td> + <td>" + appointment.time + "</td> + <td>" + appointment.citizenName + "</td></tr>");
      });
      $("#appointments").append("</tbody>");
 
@@ -20,7 +18,7 @@ function loadAppointment(id) {
     }).then(function(appointments) {
        $("input[name=date]").val(appointment.date);
        $("input[name=name]").val(appointment.citizenName);
-       $("input[name=id]").val(appointment.time);
+       $("input[name=id]").val(appointment.id);
     });
 };
 
