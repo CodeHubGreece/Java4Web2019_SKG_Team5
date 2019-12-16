@@ -22,183 +22,8 @@
 	<script src="/scripts/main.js"></script>
 	<script src="/scripts/home-auth.js"></script>
 	<script src="/scripts/logout.js"></script>
-	<!--<script src="../../scripts/main.js"></script>
-	<script src="../../scripts/home-auth.js"></script>
-	<script src="../../scripts/logout.js"></script> -->
-
 	<!-- script for a new appointment  -->
 	<script src="/scripts/loadOptions.js"></script>
-
-<!--// $(document).ready(function () {-->
-<!--// 	//load doctors according to the selectes option-->
-<!--// 	function loadDoctors(selectedSpecialtyIndex) {-->
-<!--// 		if (selectedSpecialtyIndex >= 0 && data[selectedSpecialtyIndex] && data[selectedSpecialtyIndex].doctor) {-->
-<!--// 			const doctors = data[selectedSpecialtyIndex].doctor;-->
-<!--// 			$("#doctors").html('');-->
-<!--// 			for (let doctor of doctors) {-->
-<!--// 				let doctorName = "";-->
-<!--// 				if (doctor.user) {-->
-<!--// 					if (doctor.user.firstname) {-->
-<!--// 						doctorName += doctor.user.firstname + " ";-->
-<!--// 					}-->
-<!--// 					if (doctor.user.lastname) {-->
-<!--// 						doctorName += doctor.user.lastname;-->
-<!--// 					}-->
-<!--// 				}-->
-<!--// 				if (doctorName) {-->
-<!--// 					$("#doctors").append("<option value='" + doctor.doctorId + "'>" + doctorName + "</option>")-->
-<!--// 				}-->
-<!--// 			}-->
-<!--// 		}-->
-<!--// 	}-->
-<!--//-->
-<!--// // load specialities-->
-<!--// 	$.ajax({-->
-<!--// 		url: ROOT_PATH + "/getspecialities",-->
-<!--// 		type: "GET",-->
-<!--// 		dataType: 'json',-->
-<!--// 		contentType: 'application/json',-->
-<!--// 		success: function (data) {-->
-<!--// 			for (let specialtyIndex in data) {-->
-<!--// 				$("#specialties").append("<option value='" + specialtyIndex + "'>" + data[specialtyIndex].title + "</option>")-->
-<!--// 			}-->
-<!--// 			if (data && data.length > 0) {-->
-<!--// 				loadDoctors(0);-->
-<!--// 			}-->
-<!--// 			$("#specialties").change(function () {-->
-<!--// 				const selectedSpecialtyIndex = this.value;-->
-<!--// 				loadDoctors(selectedSpecialtyIndex);-->
-<!--// 			})-->
-<!--// 		},-->
-<!--// 		error: function (xhr, resp, text) {-->
-<!--// 			alert("Error: " + text);-->
-<!--// 		}-->
-<!--// 	})-->
-<!--//-->
-<!--//-->
-<!--// 	function create_appointment(specialityElem, doctornameElem, dateElem, timeElem, descriptionElem, moreinfoElem) {-->
-<!--//-->
-<!--// 		let speciality = specialityElem && $("#specialities :selected").val() ? $("#specialities :selected").val() : "";-->
-<!--// 		let doctorname = doctornameElem && $("#doctors :selected").val() ? $("#specialities :selected").val() : "";-->
-<!--// 		let date = dateElem && $("#date").val() ? $("#date").val() : "";-->
-<!--// 		let time = timeElem && $("#time").val() ? $("#time").val() : "";-->
-<!--// 		let description = descriptionElem && $("#description").val() ? $("#description").val() : "";-->
-<!--// 		let moreinfo = moreinfoElem && $("moreinfo").val() ? $("moreinfo").val() : "";-->
-<!--//-->
-<!--//-->
-<!--// 		$("button").click(function (data) { //keep this element id  [..]-->
-<!--// 			$.ajax({-->
-<!--// 				url: "https://jsonplaceholder.typicode.com/createappointment",-->
-<!--// 				type: "POST",-->
-<!--// 				dataType: 'json',-->
-<!--// 				data: JSON.stringify({-->
-<!--// 					'speciality': speciality,-->
-<!--// 					'doctorname': doctorname,-->
-<!--// 					'date': date,-->
-<!--// 					'time': time,-->
-<!--// 					'description': description,-->
-<!--// 					'moreinfo': moreinfo-->
-<!--// 				}),-->
-<!--// 				contentType: 'application/json',-->
-<!--// 				success: function (result) {-->
-<!--// 					alert("Data Saved: " + JSON.stringify(result));-->
-<!--// 				},-->
-<!--// 				error: function (xhr, resp, text) {-->
-<!--// 					alert("NOT Saved: " + text);-->
-<!--// 				}-->
-<!--// 			})-->
-<!--//-->
-<!--// 		});-->
-<!--// 	}-->
-<!--// });-->
-
-
-	<script>
-		$(document).ready(function () {
-		$.ajax({
-			url: ROOT_PATH + "/getspecialities",
-			type: "GET",
-			dataType : "json",
-			contentType:"aplication/json",
-			success: function (data) {
-				console.log(data);
-				for (let specialtyIndex in data) {
-					$("#specialties").append("<option value='" + specialtyIndex + "'>" + data[specialtyIndex].title + "</option>")
-				}
-				if (data && data.length > 0) {
-					loadDoctors(0,data);
-				}
-				$("#specialties").change(function () {
-					const selectedSpecialtyIndex = this.value;
-					loadDoctors(selectedSpecialtyIndex,data);
-				})
-			},
-			error: function (xhr, resp, text) {
-				alert("Error: " + text);
-			}
-		});
-		function loadDoctors(selectedSpecialtyIndex,data) {
-
-			if (selectedSpecialtyIndex >= 0 && data[selectedSpecialtyIndex] && data[selectedSpecialtyIndex].doctor) {
-				const doctors = data[selectedSpecialtyIndex].doctor;
-				$("#doctors").html('');
-				for (let doctor of doctors) {
-					let doctorName = "";
-					if (doctor.user) {
-						if (doctor.user.firstname) {
-							doctorName += doctor.user.firstname + " ";
-						}
-						if (doctor.user.lastname) {
-							doctorName += doctor.user.lastname;
-						}
-					}
-					if (doctorName) {
-						$("#doctors").append("<option value='" + doctor.doctorId + "'>" + doctorName + "</option>")
-					}
-				}
-			}
-		}
-
-		// load specialities
-
-
-
-		function create_appointment(specialityElem, doctornameElem, dateElem, timeElem, descriptionElem, moreinfoElem) {
-
-			let speciality = specialityElem && $("#specialities :selected").val() ? $("#specialities :selected").val() : "";
-			let doctorname = doctornameElem && $("#doctors :selected").val() ? $("#specialities :selected").val() : "";
-			let date = dateElem && $("#date").val() ? $("#date").val() : "";
-			let time = timeElem && $("#time").val() ? $("#time").val() : "";
-			let description = descriptionElem && $("#description").val() ? $("#description").val() : "";
-			let moreinfo = moreinfoElem && $("moreinfo").val() ? $("moreinfo").val() : "";
-
-
-			$("button").click(function (data) { //keep this element id  [..]
-				$.ajax({
-					url: "https://jsonplaceholder.typicode.com/createappointment",
-					type: "POST",
-					dataType: 'json',
-					data: JSON.stringify({
-						'speciality': speciality,
-						'doctorname': doctorname,
-						'date': date,
-						'time': time,
-						'description': description,
-						'moreinfo': moreinfo
-					}),
-					contentType: 'application/json',
-					success: function (result) {
-						alert("Data Saved: " + JSON.stringify(result));
-					},
-					error: function (xhr, resp, text) {
-						alert("NOT Saved: " + text);
-					}
-				})
-
-			});
-		}
-		});
-	</script>
 </head>
 
 <body>
@@ -218,53 +43,45 @@
 				<tr>
 					<td>Ειδικότητα: </td>
 					<td>
-						<select id="specialties" name = "specialitylist" class="custom-select" >
+						<select id="specialties" name="special" class="custom-select" >
 						</select>
 					</td>
 				</tr>
-
 				<tr>
 					<td>Γιατρός: </td>
 					<td>
-						<select class="custom-select" id="doctors">
+						<select class="custom-select" id="doctors" name="doctor_names">
 						</select>
 					</td>
 				</tr>
-
 				<tr>
 					<td>Ημερομηνία: </td>
-					<td> <input id="date" type="date" class="form-control" name="Date" required /> </td>
+					<td> <input id="date" type="date" class="form-control" name="dateApp" required /> </td>
 				</tr>
-
 				<tr>
 					<td>Ώρα: </td>
 					<td> <input id="time" type="time" class="form-control" name="usr_time" value="09:00" min="09:00"
-							max="21:00" step="900" required> </td>
+							max="21:00" step="1800" required> </td>
 				</tr>
-
 				<tr>
 					<td><br></td>
 				</tr>
-
 				<tr>
 					<td>Σύντομη περιγραφή ασθένειας:</td>
-					<td> <textarea id="description" class="form-control" name="description" id="textarea1"></textarea>
+					<td> <textarea id="description" class="form-control" name="description"></textarea>
 					</td>
 				</tr>
-
 				<tr>
 					<td>Λοιπές παρατηρήσεις: </td>
-					<td><textarea id="moreinfo" class="form-control" name="more_comments" id="textarea2"></textarea>
+					<td><textarea id="more_comments" class="form-control" name="more_comments"></textarea>
 					</td>
 				</tr>
-
 			</table>
+			<br>
+			<button class="btn btn-lg btn-success" type="button" onclick="create_appointment(special, doctor_names, dateApp, usr_time, description, more_comments)">Create</button>
 		</form>
-		<form class="form-signin">
 
-<button class="btn btn-lg btn-success btn-block" type="button" formaction="./citizen_index.html"
-	onclick="create_appointment(speciality, doctorname, date, time, description, moreinfo)">Create</button>
-</form>
+
 </div>
 
 </body>

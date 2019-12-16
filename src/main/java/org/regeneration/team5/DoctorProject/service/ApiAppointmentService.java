@@ -16,6 +16,7 @@ import java.security.Principal;
 import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.Instant;
 import java.util.List;
 
 @Service
@@ -27,6 +28,7 @@ public class ApiAppointmentService {
     private DoctorRepository doctorRepository;
     @Autowired
     private UserRepository userRepository;
+    private Instant instant;
 
     public ApiAppointmentService(@Autowired AppointmentRepository appointmentRepository) {
         this.appointmentRepository = appointmentRepository;
@@ -50,12 +52,13 @@ public class ApiAppointmentService {
 
 
     public Appointment setNewAppointment(AppointmentDTO appointmentDTO, User user) throws ParseException {
-        SimpleDateFormat formatter6=new SimpleDateFormat("dd-MMM-yyyy HH:mm:ss");
+        SimpleDateFormat formatter6=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         Appointment newAppointment = new Appointment();
         //newAppointment.setAppointmentId(appointmentDTO.getAppointmentId());
         newAppointment.setCitizen(citizenRepository.findCitizenByUser(user));
         newAppointment.setDoctor(doctorRepository.findByDoctorId(appointmentDTO.getDoctorId()));
-        newAppointment.setCreatedAt(formatter6.parse(appointmentDTO.getDate().concat(appointmentDTO.getTime())));
+        //newAppointment.setCreatedAt(Instant.parse(appointmentDTO.getDate().concat(" ").concat(appointmentDTO.getTime())));
+        newAppointment.setCreatedAt(formatter6.parse(appointmentDTO.getDate().concat(" ").concat(appointmentDTO.getTime()).concat(":00")));
         newAppointment.setInfo(appointmentDTO.getInfo());
         newAppointment.setSymptoms(appointmentDTO.getSymptoms());
         appointmentRepository.save(newAppointment);

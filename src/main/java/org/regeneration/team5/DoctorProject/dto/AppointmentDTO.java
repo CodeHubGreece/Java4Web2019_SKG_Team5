@@ -7,8 +7,7 @@ public class AppointmentDTO {
 
     //private Integer appointmentId;
     private String specialityTitle;
-    private String amka;
-    private int doctorId;
+    private int doctorName;
     private String date;
     private String time;
     private String symptoms;
@@ -18,39 +17,22 @@ public class AppointmentDTO {
 
     }
 
-    public AppointmentDTO(String specialityTitle, String amka, int doctorId, String date, String time, String symptoms, String info) {
+    public AppointmentDTO(String specialityTitle, int doctorName, String date, String time, String symptoms, String info) {
         this.specialityTitle = specialityTitle;
         //this.appointmentId = appointmentId;
-        this.amka = amka;
-        this.doctorId = doctorId;
+        this.doctorName = doctorName;
         this.date = date;
         this.time = time;
         this.symptoms = symptoms;
         this.info = info;
     }
 
-//    public Integer getAppointmentId() {
-//        return appointmentId;
-//    }
-//
-//    public void setAppointmentId(Integer appointmentId) {
-//        this.appointmentId = appointmentId;
-//    }
-
-    public String getAmka() {
-        return amka;
-    }
-
-    public void setAmka(String amka) {
-        this.amka = amka;
-    }
-
     public int getDoctorId() {
-        return doctorId;
+        return doctorName;
     }
 
-    public void setDoctorId(int doctorId) {
-        this.doctorId = doctorId;
+    public void setDoctorId(int doctorName) {
+        this.doctorName = doctorName;
     }
 
     public String getDate() {
