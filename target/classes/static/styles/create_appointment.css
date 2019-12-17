@@ -22,9 +22,9 @@ img {
   margin: 0 auto;
 }
 
-#textarea1, #textarea2{
-	width: 300px;
-	height: 100px;
+#textarea1, #textarea2, #more_comments, #description{
+	width: 275px;
+	height: 85px;
 }
 label {
   font-weight: bold;
