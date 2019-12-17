@@ -1,6 +1,7 @@
 package org.regeneration.team5.DoctorProject.service;
 
 import org.regeneration.team5.DoctorProject.dto.AppointmentDTO;
+import org.regeneration.team5.DoctorProject.dto.SearchAppointmentDTO;
 import org.regeneration.team5.DoctorProject.entities.Appointment;
 import org.regeneration.team5.DoctorProject.entities.Citizen;
 import org.regeneration.team5.DoctorProject.entities.Doctor;
@@ -28,7 +29,8 @@ public class ApiAppointmentService {
     private DoctorRepository doctorRepository;
     @Autowired
     private UserRepository userRepository;
-    private Instant instant;
+    private User user;
+    private Principal principal;
 
     public ApiAppointmentService(@Autowired AppointmentRepository appointmentRepository) {
         this.appointmentRepository = appointmentRepository;
@@ -42,8 +44,8 @@ public class ApiAppointmentService {
         return appointmentRepository.findByAppointmentId(id);
     }
 
-    public List<Appointment> findByDateAndDoctor(Timestamp from,Timestamp to, Doctor doctor){
-        return appointmentRepository.findAllByCreatedAtBetweenAndDoctor(from,to,doctor);
+    public List<Appointment> findByDateAndDoctor(SearchAppointmentDTO searchAppointmentDTO,Doctor doctor, Citizen citizen){
+        return appointmentRepository.findAllByCreatedAtBetweenAndDoctorAndCitizen(searchAppointmentDTO.getFrom(),searchAppointmentDTO.getTo(),doctorRepository.findByDoctorId(searchAppointmentDTO.getDoctorId()),citizenRepository.findCitizenByUser(userRepository.findByUsername(principal.getName())));
     }
 
     public List<Appointment> findByDateAndInfo(Timestamp from, Timestamp to, String info){

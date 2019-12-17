@@ -37,15 +37,6 @@ function register(amkaElement,firstnameElement,lastnameElement,usernameElement,p
 	let email = emailElement && emailElement.value ? emailElement.value : "";
 	let mobile = mobileElement && mobileElement.value ? mobileElement.value : "";
 
-	// let fd = new J();
-	// fd.append('amka',amka);
-	// fd.append('firstname',firstname);
-	// fd.append('lastname',lastname);
-	// fd.append( 'username', username);
-	// fd.append( 'password', password);
-	// fd.append('email',email);
-	// fd.append('mobile',mobile);
-
 	$.ajax({
 		url: ROOT_PATH + '/register',
 		dataType:'json',
