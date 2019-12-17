@@ -1,4 +1,4 @@
-function populateDataTable(appointments, id) {
+function populateDataTable(appointments) {
     $("#appointments").append("<tbody>");
     jQuery.each(appointment, function(i,appointment){
         $("#appointments").append("<tr id='appRow" + appointment.id + "'><td>" + appointment.date + "</td> + <td>" + appointment.time + "</td> + <td>" + appointment.citizenName + "</td></tr>");
@@ -25,9 +25,14 @@ function loadAppointment(id) {
 
 
     $.ajax({
-        url: ROOT_PATH + "/appointments/" + id 
-    }).then(function(appointments) {
-        populateDataTable(appointments, id);
+        url: ROOT_PATH + "/doctor/appointments" ,
+        type: "GET",
+        dataType: "json",
+        contentType :"application/json",
+        success: function(data){
+            populateDataTable(data);
+        }
+
     });
 
     $("#saveButton").on('click', function(event){
