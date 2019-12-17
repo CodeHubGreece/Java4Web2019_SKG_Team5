@@ -47,6 +47,10 @@ public class AppointmentController {
         //searchAppointmentDTO.setDoctorId(id);
         return appointmentService.findByDateAndDoctor(searchAppointmentDTO,doctorRepository.findByDoctorId(id),citizenRepository.findCitizenByUser(user));
     }
+    @DeleteMapping("appointment/delete/{appointmentId}")
+    public Appointment delete(@PathVariable Integer id) {
+        return  appointmentService.deleteByAppointmentId(id);
 
+    }
 
 }

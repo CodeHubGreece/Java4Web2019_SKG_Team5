@@ -3,10 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="5c0cf55d-ffd8-4e79-8ddd-3b7224cef136" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/controller/AppointmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/controller/AppointmentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/dto/SearchAppointment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/dto/SearchAppointmentDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/repositories/AppointmentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/repositories/AppointmentRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/service/ApiAppointmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/service/ApiAppointmentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/createappointment.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/createappointment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/pages/citizen/citizen_search.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/pages/citizen/citizen_search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/scripts/authentication.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/scripts/authentication.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/scripts/authentication.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/scripts/authentication.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/styles/login_register.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/styles/login_register.css" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -101,6 +107,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -133,7 +140,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="211a51fa-02e6-4305-b270-ca82c3689132" name="Default Changelist" comment="" />
+      <changelist id="5c0cf55d-ffd8-4e79-8ddd-3b7224cef136" name="Default Changelist" comment="" />
       <created>1576239435991</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -143,6 +150,8 @@
       <workItem from="1576243922048" duration="1383000" />
       <workItem from="1576256159032" duration="159000" />
       <workItem from="1576260627572" duration="254000" />
+      <workItem from="1576538000869" duration="5638000" />
+      <workItem from="1576571362315" duration="2163000" />
     </task>
     <servers />
   </component>
@@ -203,5 +212,21 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="390" y="190" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1576256159752" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/controller/AppointmentController.java</url>
+          <line>47</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/regeneration/team5/DoctorProject/controller/AppointmentController.java</url>
+          <line>45</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
