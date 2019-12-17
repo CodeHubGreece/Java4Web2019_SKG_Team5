@@ -1,4 +1,4 @@
-function populateDataTable(appointments) {
+function populateDataTable(appointments, id) {
     $("#appointments").append("<tbody>");
     jQuery.each(appointment, function(i,appointment){
         $("#appointments").append("<tr id='appRow" + appointment.id + "'><td>" + appointment.date + "</td> + <td>" + appointment.time + "</td> + <td>" + appointment.citizenName + "</td></tr>");
@@ -22,18 +22,19 @@ function loadAppointment(id) {
     });
 };
 
-$(document).ready(function() {
+
 
     $.ajax({
-        url: ROOT_PATH + "/appointments"
+        url: ROOT_PATH + "/appointments/" + id 
     }).then(function(appointments) {
-        populateDataTable(appointments);
+        populateDataTable(appointments, id);
     });
 
     $("#saveButton").on('click', function(event){
         event.preventDefault();
         alert("To be done...");
     });
+
 
 
 	/*
@@ -59,6 +60,31 @@ $(document).ready(function() {
 
 	}); */
 
-	
-});
+    
+    
+    // ----------------modal script-------------------------------------------------
+
+
+    $('#detailsBtn').click(function(){  //the current appointment button
+   
+        var userid = $(this).data('id');
+     
+        // AJAX request
+        $.ajax({
+         url: ROOT_PATH + "/appointmentdetails/" + id,
+         type: 'GET',
+         dataType : "json",
+         contentType:"application/json",
+         success: function(response){ 
+           // Add response in Modal body
+           $('.modal-body').html(response);
+     
+           // Display Modal
+           $('#myModal').modal('show'); 
+         }
+       });
+      });
+
+
+
 

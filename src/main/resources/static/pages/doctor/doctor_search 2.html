@@ -17,20 +17,25 @@
 	<script src="../../scripts/main.js"></script>
 	<script src="../../scripts/home-auth.js"></script>
 	<script src="../../scripts/logout.js"></script> -->
+
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+	<!-- jQuery Modal -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+
 	
 	<script src= "../../scripts/doctor-search2.js"></script> 
-	
 	
 	
 	<!-- Table files -->
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
 	<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
-	
-	
-	
-	
-	
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 	
 	
   </head>
@@ -59,6 +64,7 @@
 		
 		<table id="appointments" class="display" style="width:90%">
 			
+
 		</table>
 		
 		<br>
@@ -66,39 +72,35 @@
 		<form class="form-signin">
 			<button class="btn btn-lg btn-info btn-block" type="submit" formaction="./view_appointment.html">View appointment</button>
 		</form>	
+
+
+		<!-- -----------------modal implementation---------------------------------------->
 		
+		<!-- Trigger the modal with a button -->
+		<button type="button" id="detailsBtn" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
 
-		<!-- Link trigger modal -->
-	<a href="doctor_search.html" data-toggle="modal" data-target="#myModal" data-remote="false" class="btn btn-default">
-		Launch Modal
-	</a>
+		<!-- Modal -->
+		<div id="myModal" class="modal fade " role="dialog">
+		<div  class="">
 
-	<!-- Default bootstrap modal example -->
-	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-	<div class="modal-dialog">
-		<div class="modal-content">
-		<div class="modal-header">
-			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-			<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-body">
+					<p>Appointment details</p>
+				</div>
+				<div class="modal-body">
+					
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+
 		</div>
-		<div class="modal-body">
-			...
-		</div>
-		<div class="modal-footer">
-			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-			<button type="button" class="btn btn-primary">Save changes</button>
-		</div>
-		</div>
-	</div>
-	</div>
 		</div>
 
-		<script>
-			$("#myModal").on("show.bs.modal", function(e) {
-			var link = $(e.relatedTarget);
-			$(this).find(".modal-body").load(link.attr("href"));
-		});
-		</script>
+
 </body>
 </html>
 
