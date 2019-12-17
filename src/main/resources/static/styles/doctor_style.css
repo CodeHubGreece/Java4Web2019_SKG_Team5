@@ -30,3 +30,29 @@ img {
 label {
   font-weight: bold;
 }
+
+#myModal{
+	width: 500px;
+	height: 300;
+
+  background: rgba(80, 170, 170, 0.479);
+  
+  align-items: top;
+  align-content: top;
+  padding-top: 10%;
+  position: fixed; /* Stay in place */
+  
+  
+}
+
+.modal-content{
+  position: relative;
+  height: 300;
+
+
+}
+.modal-dialog{
+
+ 
+
+}

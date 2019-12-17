@@ -22,18 +22,24 @@ function loadAppointment(id) {
     });
 };
 
-$(document).ready(function() {
+
 
     $.ajax({
-        url: ROOT_PATH + "/appointments"
-    }).then(function(appointments) {
-        populateDataTable(appointments);
+        url: ROOT_PATH + "/doctor/appointments" ,
+        type: "GET",
+        dataType: "json",
+        contentType :"application/json",
+        success: function(data){
+            populateDataTable(data);
+        }
+
     });
 
     $("#saveButton").on('click', function(event){
         event.preventDefault();
         alert("To be done...");
     });
+
 
 
 	/*
@@ -59,6 +65,31 @@ $(document).ready(function() {
 
 	}); */
 
-	
-});
+    
+    
+    // ----------------modal script-------------------------------------------------
+
+
+    $('#detailsBtn').click(function(){  //the current appointment button
+   
+        var userid = $(this).data('id');
+     
+        // AJAX request
+        $.ajax({
+         url: ROOT_PATH + "/appointmentdetails/" + id,
+         type: 'GET',
+         dataType : "json",
+         contentType:"application/json",
+         success: function(response){ 
+           // Add response in Modal body
+           $('.modal-body').html(response);
+     
+           // Display Modal
+           $('#myModal').modal('show'); 
+         }
+       });
+      });
+
+
+
 
