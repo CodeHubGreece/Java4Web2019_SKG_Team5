@@ -45,3 +45,9 @@ img {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+
+#form1 {
+  background: rgba(242, 242, 242, 0.6);
+  border-radius: 3%;
+  padding: 1em;
+}
