@@ -6,10 +6,7 @@ import org.regeneration.team5.DoctorProject.entities.User;
 import org.regeneration.team5.DoctorProject.service.ApiAppointmentService;
 import org.regeneration.team5.DoctorProject.service.ApiUserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
 import java.text.ParseException;
@@ -37,6 +34,10 @@ public class AppointmentController {
        return appointmentService.findAll();
     }
 
+    @DeleteMapping("appointment/delete/{appointmentId}")
+    public Appointment delete(@PathVariable Integer id) {
+        return  appointmentService.deleteByAppointmentId(id);
 
+    }
 
 }

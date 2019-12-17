@@ -18,4 +18,6 @@ public interface AppointmentRepository extends JpaRepository<Appointment,Integer
     List<Appointment> findAllByCreatedAtBetweenAndInfo(Date createdAt, Date createdAt2, String info);
 
     Appointment findByAppointmentId(int id);
+    Appointment deleteByAppointmentId(int id);
+
 }

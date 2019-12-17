@@ -33,7 +33,9 @@ public class ApiAppointmentService {
     public ApiAppointmentService(@Autowired AppointmentRepository appointmentRepository) {
         this.appointmentRepository = appointmentRepository;
     }
-
+    public Appointment deleteByAppointmentId(int id){
+        return appointmentRepository.deleteByAppointmentId(id);
+    }
     public List<Appointment> findAll(){
         return appointmentRepository.findAll();
     }
