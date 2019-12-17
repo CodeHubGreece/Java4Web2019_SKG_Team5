@@ -18,7 +18,7 @@ public class Speciality {
     private String title;
 
     //doctor mapping
-    @OneToMany (mappedBy = "speciality",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "speciality", cascade=CascadeType.ALL)
     private List<Doctor> doctor ;
 
 

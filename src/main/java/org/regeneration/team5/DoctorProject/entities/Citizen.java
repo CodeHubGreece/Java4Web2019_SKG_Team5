@@ -18,6 +18,7 @@ public class Citizen {
     private User user;
 //    @OneToMany(mappedBy = "citizen",cascade = CascadeType.ALL)
 //    private List<Appointment> appointments;
+
     private static List<Citizen> citizenList = new ArrayList<>();
     public Citizen(){
     }

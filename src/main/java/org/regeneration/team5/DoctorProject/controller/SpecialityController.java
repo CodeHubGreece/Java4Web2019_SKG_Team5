@@ -19,7 +19,6 @@ public class SpecialityController {
 
     @GetMapping("/getspecialities")
     public List<Speciality> findAll(){
-
         return specialityRepository.findAll();
     }
 

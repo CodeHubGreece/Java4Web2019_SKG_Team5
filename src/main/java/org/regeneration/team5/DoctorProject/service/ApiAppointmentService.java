@@ -12,6 +12,7 @@ import org.regeneration.team5.DoctorProject.repositories.DoctorRepository;
 import org.regeneration.team5.DoctorProject.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.security.Principal;
 import java.sql.Timestamp;
@@ -35,8 +36,10 @@ public class ApiAppointmentService {
     public ApiAppointmentService(@Autowired AppointmentRepository appointmentRepository) {
         this.appointmentRepository = appointmentRepository;
     }
-    public Appointment deleteByAppointmentId(int id){
-        return appointmentRepository.deleteByAppointmentId(id);
+    public Appointment deleteAppointment(Integer id){
+        Appointment deletedAppointment = appointmentRepository.findByAppointmentId(id);
+        appointmentRepository.delete(deletedAppointment);
+        return deletedAppointment;
     }
     public List<Appointment> findAll(){
         return appointmentRepository.findAll();
@@ -46,14 +49,19 @@ public class ApiAppointmentService {
         return appointmentRepository.findByAppointmentId(id);
     }
 
-    public List<Appointment> findByDateAndDoctor(SearchAppointmentDTO searchAppointmentDTO,Doctor doctor, Citizen citizen){
-        return appointmentRepository.findAllByCreatedAtBetweenAndDoctorAndCitizen(searchAppointmentDTO.getFrom(),searchAppointmentDTO.getTo(),doctorRepository.findByDoctorId(searchAppointmentDTO.getDoctorId()),citizenRepository.findCitizenByUser(userRepository.findByUsername(principal.getName())));
-    }
+//    public List<Appointment> findByDateAndDoctor(SearchAppointmentDTO searchAppointmentDTO,Doctor doctor){
+//        return appointmentRepository.findAllByCreatedAtBetweenAndDoctorAndCitizen(searchAppointmentDTO.getFrom(),searchAppointmentDTO.getTo(),doctorRepository.findByDoctorId(searchAppointmentDTO.getDoctorId()));
+//    }
 
-    public List<Appointment> findByDateAndInfo(Timestamp from, Timestamp to, String info){
-        return appointmentRepository.findAllByCreatedAtBetweenAndInfo(from,to,info);
+//    public List<Appointment> findByDateAndInfo(Timestamp from, Timestamp to, String info){
+//        return appointmentRepository.findAllByCreatedAtBetweenAndInfo(from,to,info);
+//    }
+    public List<Appointment> findByCitizen(Citizen citizen){
+        return appointmentRepository.findByCitizen(citizen);
     }
-
+    public List<Appointment> findByDoctor(Doctor doctor){
+        return appointmentRepository.findByDoctor(doctor);
+    }
 
     public Appointment setNewAppointment(AppointmentDTO appointmentDTO, User user) throws ParseException {
         SimpleDateFormat formatter6=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");

@@ -1,4 +1,7 @@
 package org.regeneration.team5.DoctorProject.entities;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 import javax.persistence.*;
 import java.util.Date;
 @Entity
@@ -18,12 +21,12 @@ public class Appointment {
 //    @Column(name = "amka" ,insertable = false, updatable = false)
 //    private String amka;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "amka")
     private Citizen citizen;
     //doctor
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "doctorID")
     private Doctor doctor;
 

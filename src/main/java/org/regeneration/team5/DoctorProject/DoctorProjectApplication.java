@@ -29,8 +29,6 @@ public class DoctorProjectApplication {
 	@Autowired
 	public CitizenRepository citizenRepository;
 
-	@Autowired
-	private PasswordEncoder passwordEncoder;
 
 
 
