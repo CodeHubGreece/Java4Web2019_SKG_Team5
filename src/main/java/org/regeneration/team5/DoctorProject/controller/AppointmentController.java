@@ -19,7 +19,9 @@ import org.springframework.web.bind.annotation.*;
 import java.nio.file.Path;
 import java.security.Principal;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -74,13 +76,17 @@ public class AppointmentController {
     }
 
     @GetMapping("/citizen/appointments")
-    public List<Appointment> findCitizenAppointments(@RequestParam("specialityTitle")String specialityTitle,@RequestParam("from")String from,@RequestParam("to")String to,Principal principal){
+    public List<Appointment> findCitizenAppointments(@RequestParam("specialityTitle")String specialityTitle,@RequestParam("from")String from,@RequestParam("to")String to,Principal principal) throws ParseException {
         List<Appointment> appointmentList = new ArrayList<>();
+        SimpleDateFormat formatter6=new SimpleDateFormat("yyyy-MM-dd");
+        Date fromForm = formatter6.parse(from);
+        Date toForm = formatter6.parse(to);
         User user = userService.findByUsername(principal.getName());
         List<Appointment> allUserAppointments = appointmentService.findByCitizen(citizenRepository.findCitizenByUser(user));
         for(Appointment aua : allUserAppointments){
             for(Doctor doc : doctorDetailsService.findDoctorsBySpeciality(apiSpecialityService.findSpecialitiesByTitle(specialityTitle)))
-            if (doc ==aua.getDoctor()){
+
+            if (doc ==aua.getDoctor() && aua.getCreatedAt().compareTo(fromForm)>0 && aua.getCreatedAt().compareTo(toForm)<0){
                 appointmentList.add(aua);
             }
         }
