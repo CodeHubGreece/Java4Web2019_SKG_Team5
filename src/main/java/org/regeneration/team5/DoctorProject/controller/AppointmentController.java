@@ -61,11 +61,19 @@ public class AppointmentController {
         return appointmentService.findByDoctor(doctorRepository.findByUser(user));
     }
 
+    @PutMapping("/appointment/update/{id}")
+    public Appointment updateAppointment(@RequestBody AppointmentDTO upAppointmentDTO, Principal principal,@PathVariable Integer id) throws ParseException {
+        User user = userService.findByUsername(principal.getName());
+        return appointmentService.updateAppointment(upAppointmentDTO,user,id);
+    }
+
     @GetMapping("/citizen/appointments")
     public List<Appointment> findCitizenAppointments(Principal principal){
         User user = userService.findByUsername(principal.getName());
         return appointmentService.findByCitizen(citizenRepository.findCitizenByUser(user));
     }
+
+
 
 
 
