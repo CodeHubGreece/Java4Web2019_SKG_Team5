@@ -33,7 +33,7 @@ public class ApiAppointmentService {
     private DoctorRepository doctorRepository;
     @Autowired
     private UserRepository userRepository;
-    private User user;
+    //private User user;
     private Principal principal;
     private  ApiAppointmentService apiAppointmentService;
 
@@ -75,7 +75,7 @@ public class ApiAppointmentService {
     }
 
     public Appointment updateAppointment(AppointmentDTO upAppointmentDTO, User user, Integer id ) throws ParseException {
-        Appointment oldAppointment = apiAppointmentService.findById(id);
+        Appointment oldAppointment = appointmentRepository.findByAppointmentId(id);
         SimpleDateFormat formatter7 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         // String DateAppointment = format(formatter7);
         LocalDateTime now = LocalDateTime.now();
