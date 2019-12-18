@@ -30,7 +30,7 @@ public class ApiAppointmentService {
     private DoctorRepository doctorRepository;
     @Autowired
     private UserRepository userRepository;
-    private User user;
+    //private User user;
     private Principal principal;
 
     public ApiAppointmentService(@Autowired AppointmentRepository appointmentRepository) {
