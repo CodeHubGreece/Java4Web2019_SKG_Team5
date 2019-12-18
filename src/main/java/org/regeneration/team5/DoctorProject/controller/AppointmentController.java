@@ -3,29 +3,43 @@ package org.regeneration.team5.DoctorProject.controller;
 import org.regeneration.team5.DoctorProject.dto.AppointmentDTO;
 import org.regeneration.team5.DoctorProject.dto.SearchAppointmentDTO;
 import org.regeneration.team5.DoctorProject.entities.Appointment;
+import org.regeneration.team5.DoctorProject.entities.Doctor;
 import org.regeneration.team5.DoctorProject.entities.User;
 import org.regeneration.team5.DoctorProject.repositories.CitizenRepository;
 import org.regeneration.team5.DoctorProject.repositories.DoctorRepository;
+import org.regeneration.team5.DoctorProject.repositories.SpecialityRepository;
 import org.regeneration.team5.DoctorProject.repositories.UserRepository;
 import org.regeneration.team5.DoctorProject.service.ApiAppointmentService;
+import org.regeneration.team5.DoctorProject.service.ApiDoctorDetailsService;
+import org.regeneration.team5.DoctorProject.service.ApiSpecialityService;
 import org.regeneration.team5.DoctorProject.service.ApiUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.nio.file.Path;
 import java.security.Principal;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @RestController
 public class AppointmentController {
     private final ApiAppointmentService appointmentService;
     private final ApiUserService userService;
+    private Principal principal;
     @Autowired
     private CitizenRepository citizenRepository;
     @Autowired
     private DoctorRepository doctorRepository;
     @Autowired
     private UserRepository userRepository;
+    @Autowired
+    private ApiDoctorDetailsService doctorDetailsService;
+    @Autowired
+    private ApiSpecialityService apiSpecialityService;
+    private SearchAppointmentDTO searchAppointmentDTO;
 
 
     public AppointmentController(@Autowired ApiAppointmentService appointmentService,@Autowired ApiUserService userService) {
@@ -68,9 +82,21 @@ public class AppointmentController {
     }
 
     @GetMapping("/citizen/appointments")
-    public List<Appointment> findCitizenAppointments(Principal principal){
+    public List<Appointment> findCitizenAppointments(@RequestParam("specialityTitle")String specialityTitle,@RequestParam("from")String from,@RequestParam("to")String to,Principal principal) throws ParseException {
+        List<Appointment> appointmentList = new ArrayList<>();
+        SimpleDateFormat formatter6=new SimpleDateFormat("yyyy-MM-dd");
+        Date fromForm = formatter6.parse(from);
+        Date toForm = formatter6.parse(to);
         User user = userService.findByUsername(principal.getName());
-        return appointmentService.findByCitizen(citizenRepository.findCitizenByUser(user));
+        List<Appointment> allUserAppointments = appointmentService.findByCitizen(citizenRepository.findCitizenByUser(user));
+        for(Appointment aua : allUserAppointments){
+            for(Doctor doc : doctorDetailsService.findDoctorsBySpeciality(apiSpecialityService.findSpecialitiesByTitle(specialityTitle)))
+
+            if (doc ==aua.getDoctor() && aua.getCreatedAt().compareTo(fromForm)>0 && aua.getCreatedAt().compareTo(toForm)<0){
+                appointmentList.add(aua);
+            }
+        }
+        return appointmentList;
     }
 
 

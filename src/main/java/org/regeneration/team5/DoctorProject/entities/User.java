@@ -22,10 +22,10 @@ public class User {
     @Column
     @JsonIgnore
     private short property=0;
-    @OneToOne(mappedBy = "user")
-    private Citizen citizen;
-    @OneToOne(mappedBy = "user")
-    private Doctor doctor;
+//    @OneToOne(mappedBy = "user")
+//    private Citizen citizen;
+//    @OneToOne(mappedBy = "user")
+//    private Doctor doctor;
     private static List<User> userList = new ArrayList<>();
     public User(){
     }
@@ -81,7 +81,22 @@ public class User {
     public void setProperty(short property) {
         this.property = property;
     }
-    
+
+//    public Citizen getCitizen() {
+//        return citizen;
+//    }
+//
+//    public void setCitizen(Citizen citizen) {
+//        this.citizen = citizen;
+//    }
+
+//    public Doctor getDoctor() {
+//        return doctor;
+//    }
+//
+//    public void setDoctor(Doctor doctor) {
+//        this.doctor = doctor;
+//    }
 
     public static List<User> getUserList() {
         return userList;

@@ -21,10 +21,11 @@
 	<script src="../../scripts/logout.js"></script>
 	<script src="../../scripts/loadOptions.js"></script>
 	<script src="../../scripts/loadAppointments.js"></script>
-	
-	<!-- Table files --
-	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">  
-	<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script> -->
+
+    <!-- Table files -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
 
   </head>
 
@@ -46,20 +47,28 @@
 						</select> 
 					</td>
 					<td><label>Από: </label></td>
-					<td> <input type="date" class="form-control" name="Date" required /> </td>
+					<td> <input type="date" class="form-control" name="date1" required /> </td>
 					<td><label>Έως: </label></td>
-					<td> <input type="date" class="form-control" name="Date" required /> </td>
+					<td> <input type="date" class="form-control" name="date2" required /> </td>
 				</tr>
 			</table>
 			<br>
-			<button class="btn btn-lg btn-success" type="button" onclick="loadAppointments()">Search Appointment</button>
+			<button class="btn btn-lg btn-success" type="button" onclick="loadAppointments(special,date1,date2)">Search Appointment</button>
 
 		</form>
-		
 
-		<table id="appointmentsTable" class="display">
+        <br>
+
+		<table id="appointmentsTable" class="display" style="width:70%">
 
 		</table>
 	</div>
 
-</body></html>
+
+  <script>
+      $(document).ready( function () {
+          $('#appointmentsTable').DataTable();
+      } );
+  </script>
+</body>
+</html>
