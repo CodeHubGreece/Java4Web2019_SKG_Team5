@@ -33,8 +33,8 @@ function loadAppointInfo(id) {
     $.ajax({
         url: ROOT_PATH + "/citizen/appointments/" + id
     }).then(function(data) {
-        $("option[name=specialty]").val(book.id);
-        $("option[name=doctor]").val(book.id);
+        $("option[name=specialty]").val(data.id);
+        $("option[name=doctor]").val(data.doctor);
 
         $("input[name=Date]").val(data.date);
         $("input[name=usr_time]").val(data.time);
