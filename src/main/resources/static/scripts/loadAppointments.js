@@ -23,7 +23,7 @@ function loadAppointments(specialElem,fromElem,toElem){
 		$("#appointmentsTable").append("<tbody>");
 		
 		$("#appointmentsTable tr").click(function() {
-            loadAppointInfo($(this).children("td").html());
+           loadAppointInfo($(this).children("td").html());
 		});
 		
     },
