@@ -75,6 +75,19 @@ public class AppointmentController {
         return appointmentService.findByDoctor(doctorRepository.findByUser(user));
     }
 
+//    @PostMapping("/appointment/new")
+//    public Appointment newAppointment(@RequestBody AppointmentDTO appointmentDTO, Principal principal) throws ParseException {
+//        User user = userService.findByUsername(principal.getName());
+//        return appointmentService.setNewAppointment(appointmentDTO,user);
+//    }
+
+
+    @PutMapping("/appointment/update/{id}")
+    public Appointment updateAppointment(@RequestBody AppointmentDTO upAppointmentDTO, Principal principal,@PathVariable Integer id) throws ParseException {
+        User user = userService.findByUsername(principal.getName());
+        return appointmentService.updateAppointment(upAppointmentDTO,user,id);
+    }
+
     @GetMapping("/citizen/appointments")
     public List<Appointment> findCitizenAppointments(@RequestParam("specialityTitle")String specialityTitle,@RequestParam("from")String from,@RequestParam("to")String to,Principal principal) throws ParseException {
         List<Appointment> appointmentList = new ArrayList<>();
@@ -92,6 +105,8 @@ public class AppointmentController {
         }
         return appointmentList;
     }
+
+
 
 
 

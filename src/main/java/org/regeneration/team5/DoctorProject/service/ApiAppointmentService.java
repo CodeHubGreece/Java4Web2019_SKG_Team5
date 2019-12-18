@@ -14,11 +14,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.persistence.criteria.CriteriaBuilder;
 import java.security.Principal;
 import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 @Service
@@ -30,8 +33,9 @@ public class ApiAppointmentService {
     private DoctorRepository doctorRepository;
     @Autowired
     private UserRepository userRepository;
-    private User user;
+    //private User user;
     private Principal principal;
+    private  ApiAppointmentService apiAppointmentService;
 
     public ApiAppointmentService(@Autowired AppointmentRepository appointmentRepository) {
         this.appointmentRepository = appointmentRepository;
@@ -49,13 +53,6 @@ public class ApiAppointmentService {
         return appointmentRepository.findByAppointmentId(id);
     }
 
-//    public List<Appointment> findByDateAndDoctor(SearchAppointmentDTO searchAppointmentDTO,Doctor doctor){
-//        return appointmentRepository.findAllByCreatedAtBetweenAndDoctorAndCitizen(searchAppointmentDTO.getFrom(),searchAppointmentDTO.getTo(),doctorRepository.findByDoctorId(searchAppointmentDTO.getDoctorId()));
-//    }
-
-//    public List<Appointment> findByDateAndInfo(Timestamp from, Timestamp to, String info){
-//        return appointmentRepository.findAllByCreatedAtBetweenAndInfo(from,to,info);
-//    }
     public List<Appointment> findByCitizen(Citizen citizen){
         return appointmentRepository.findByCitizen(citizen);
     }
@@ -76,4 +73,26 @@ public class ApiAppointmentService {
         appointmentRepository.save(newAppointment);
         return newAppointment;
     }
+
+    public Appointment updateAppointment(AppointmentDTO upAppointmentDTO, User user, Integer id ) throws ParseException {
+        Appointment oldAppointment = appointmentRepository.findByAppointmentId(id);
+        SimpleDateFormat formatter7 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        // String DateAppointment = format(formatter7);
+        LocalDateTime now = LocalDateTime.now();
+        DateTimeFormatter currentDate = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        // String DateNow = now.format(currentDate);
+        //if ((DateAppointment).compareTo(DateNow) < 0) {
+        oldAppointment.setCitizen(citizenRepository.findCitizenByUser(user));
+        oldAppointment.setDoctor(doctorRepository.findByDoctorId(upAppointmentDTO.getDoctorId()));
+        oldAppointment.setCreatedAt(formatter7.parse(upAppointmentDTO.getDate().concat(" ").concat(upAppointmentDTO.getTime()).concat(":00")));
+        oldAppointment.setInfo(upAppointmentDTO.getInfo());
+        oldAppointment.setSymptoms(upAppointmentDTO.getSymptoms());
+        appointmentRepository.save(oldAppointment);
+        //   }else {
+        //apointment had completed
+        //  }
+        return oldAppointment;
+    }
+
+
 }
