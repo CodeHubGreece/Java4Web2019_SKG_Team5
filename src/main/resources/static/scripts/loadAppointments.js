@@ -8,7 +8,6 @@ function loadAppointments(specialElem,fromElem,toElem){
     data: {specialityTitle:specialityTitle,
         from:from,
         to:to},
-
     type: "GET",
     success: function (data) {
         // let apind = $("#specialties").val();
@@ -20,6 +19,11 @@ function loadAppointments(specialElem,fromElem,toElem){
         // }
         // for(i=11;i<16;i++){
         //     timeArr[i-11] = fullDateArr[i];
+        // for(var i=0;i<9;i++){
+        //     dateArr[i] = fullDateArr[i];
+        // }
+        // for(var j=11;j<16;j++){
+        //     timeArr[j-11] = fullDateArr[j];
         // }
         // let d = dateArr.join();
         // let t = timeArr.join();
