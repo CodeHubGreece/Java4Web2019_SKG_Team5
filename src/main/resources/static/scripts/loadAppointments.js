@@ -12,14 +12,18 @@ function loadAppointments(specialElem,fromElem,toElem){
     type: "GET",
     success: function (data) {
         console.log(data);
+
+        const myNode = document.getElementById("appointmentsTable");
+        myNode.innerHTML = '';
 		$("#appointmentsTable").append("<tbody>");
+
         for (let appointmentIndex in data) {
             $("#appointmentsTable").append("<tr id=" + appointmentIndex + "'><td>" + data[appointmentIndex].createdAt + "</td><td>" + data[appointmentIndex].doctor.user["lastname"] + "</td></tr>");
         }
 		$("#appointmentsTable").append("<tbody>");
 		
 		$("#appointmentsTable tr").click(function() {
-        //loadAppointInfo($(this).children("td").html());
+            loadAppointInfo($(this).children("td").html());
 		});
 		
     },
