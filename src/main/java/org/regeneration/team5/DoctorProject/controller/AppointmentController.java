@@ -26,6 +26,7 @@ import java.util.List;
 public class AppointmentController {
     private final ApiAppointmentService appointmentService;
     private final ApiUserService userService;
+    private Principal principal;
     @Autowired
     private CitizenRepository citizenRepository;
     @Autowired
@@ -36,6 +37,7 @@ public class AppointmentController {
     private ApiDoctorDetailsService doctorDetailsService;
     @Autowired
     private ApiSpecialityService apiSpecialityService;
+    private SearchAppointmentDTO searchAppointmentDTO;
 
 
     public AppointmentController(@Autowired ApiAppointmentService appointmentService,@Autowired ApiUserService userService) {
@@ -72,12 +74,12 @@ public class AppointmentController {
     }
 
     @GetMapping("/citizen/appointments")
-    public List<Appointment> findCitizenAppointments(@RequestBody SearchAppointmentDTO searchAppointmentDTO,Principal principal){
+    public List<Appointment> findCitizenAppointments(@RequestParam("specialityTitle")String specialityTitle,@RequestParam("from")String from,@RequestParam("to")String to,Principal principal){
         List<Appointment> appointmentList = new ArrayList<>();
         User user = userService.findByUsername(principal.getName());
         List<Appointment> allUserAppointments = appointmentService.findByCitizen(citizenRepository.findCitizenByUser(user));
         for(Appointment aua : allUserAppointments){
-            for(Doctor doc : doctorDetailsService.findDoctorsBySpeciality(apiSpecialityService.findSpecialitiesByTitle(searchAppointmentDTO.getSpecialityTitle())))
+            for(Doctor doc : doctorDetailsService.findDoctorsBySpeciality(apiSpecialityService.findSpecialitiesByTitle(specialityTitle)))
             if (doc ==aua.getDoctor()){
                 appointmentList.add(aua);
             }

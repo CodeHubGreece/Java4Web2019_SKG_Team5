@@ -11,8 +11,6 @@ public class Citizen {
     private String email;
     @Column(name = "mobile")
     private String mobile;
-    @Column(name = "userID", nullable = false, insertable = false, updatable = false)
-    private int userId;
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "userID")
     private User user;
@@ -59,13 +57,13 @@ public class Citizen {
         Citizen.citizenList = citizenList;
     }
 
-    public int getUserId() {
-        return userId;
-    }
-
-    public void setUserId(int userId) {
-        this.userId = userId;
-    }
+//    public int getUserId() {
+//        return userId;
+//    }
+//
+//    public void setUserId(int userId) {
+//        this.userId = userId;
+//    }
 
 //    public List<Appointment> getAppointments() {
 //        return appointments;
