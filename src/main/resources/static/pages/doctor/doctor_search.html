@@ -17,10 +17,13 @@
 	<script src="../../scripts/main.js"></script>
 	<script src="../../scripts/home-auth.js"></script>
 	<script src="../../scripts/logout.js"></script>
-	
-	<!-- Table files --
-	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">  
-	<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script> -->
+
+	<!-- Table files -->
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
+
+	<script src="../../scripts/doctor_search.js"></script>
 
   </head>
 
@@ -37,43 +40,32 @@
 			<table  align="center">
 				<tr>
 					<td><label>Από: </label></td> 
-					<td> <input type="date" class="form-control" name="Date" required /> </td>
+					<td> <input type="date" class="form-control" name="date1" required /> </td>
 					<td><label>Έως: </label></td> 
-					<td> <input type="date" class="form-control" name="Date" required /> </td>
+					<td> <input type="date" class="form-control" name="date2" required /> </td>
 					<td><label>Ελεύθερη αναζήτηση ασθένειας:</label></td> 
 					<td> <textarea class="form-control" name="description" id="textarea1"></textarea> </td>
 				</tr>
 			</table>
-		</form>
-		<form class="form-signin">
 			<button class="btn btn-lg btn-success btn-block" type="submit" formaction="">Search</button>
 		</form>
-		
-		<br></br><br></br><br></br><br>
+		<br>
+
+		<table id="appointmentsTable" class="display" style="width:70%">
+
+		</table>
+		<br>
 		
 		<form class="form-signin">
-			<button class="btn btn-lg btn-info btn-block" type="submit" formaction="./view_appointment.html">View appointment</button>
+			<button class="btn btn-lg btn-info btn-block" type="button" onclick="loadAppointments(date1,date2,description)">View appointment</button>
 		</form>
-		
-		<!--
-		<table id="table_id" class="display">
-			<thead>
-				<tr>
-					<th>Column 1</th>
-					<th>Column 2</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>Row 1 Data 1</td>
-					<td>Row 1 Data 2</td>
-				</tr>
-				<tr>
-					<td>Row 2 Data 1</td>
-					<td>Row 2 Data 2</td>
-				</tr>
-			</tbody>
-		</table>-->
+
 	</div>
 
-</body></html>
+	<script>
+		$(document).ready( function () {
+			$('#appointmentsTable').DataTable();
+		} );
+	</script>
+</body>
+</html>
