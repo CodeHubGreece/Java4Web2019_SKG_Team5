@@ -13,15 +13,29 @@ function loadAppointments(){
 		$("#appointmentsTable").append("<tbody>");
 		
 		$("#appointmentsTable tr").click(function() {
-        //loadBook($(this).children("td").html());
+        //loadAppointInfo($(this).children("td").html());
 		});
 		
-		//$('#appointmentsTable').DataTable();
     },
     error: function (xhr, resp, text) {
         alert("Error: " + text);
     }
 	});
 }
+
+function loadAppointInfo(id) {
+    $.ajax({
+        url: ROOT_PATH + "/citizen/appointments/" + id
+    }).then(function(data) {
+        $("option[name=specialty]").val(book.id);
+        $("option[name=doctor]").val(book.id);
+
+        $("input[name=Date]").val(data.date);
+        $("input[name=usr_time]").val(data.time);
+
+        $("textarea[name=description]").val(data.description);
+        $("textarea[name=more_comments]").val(data.more_comments);
+    });
+};
 
 

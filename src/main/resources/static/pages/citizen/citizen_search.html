@@ -21,10 +21,11 @@
 	<script src="../../scripts/logout.js"></script>
 	<script src="../../scripts/loadOptions.js"></script>
 	<script src="../../scripts/loadAppointments.js"></script>
-	
-	<!-- Table files --
-	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">  
-	<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script> -->
+
+    <!-- Table files -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
 
   </head>
 
@@ -55,11 +56,19 @@
 			<button class="btn btn-lg btn-success" type="button" onclick="loadAppointments()">Search Appointment</button>
 
 		</form>
-		
 
-		<table id="appointmentsTable" class="display">
+        <br>
+
+		<table id="appointmentsTable" class="display" style="width:70%">
 
 		</table>
 	</div>
 
-</body></html>
+
+  <script>
+      $(document).ready( function () {
+          $('#appointmentsTable').DataTable();
+      } );
+  </script>
+</body>
+</html>
