@@ -1,6 +1,7 @@
 package org.regeneration.team5.DoctorProject.service;
 
 import org.regeneration.team5.DoctorProject.entities.Doctor;
+import org.regeneration.team5.DoctorProject.entities.Speciality;
 import org.regeneration.team5.DoctorProject.repositories.DoctorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,7 +13,7 @@ public class ApiDoctorDetailsService {
     @Autowired
     private DoctorRepository doctorRepository;
 
-    public List<Doctor> findDoctorsBySpeciality(int speciality){
+    public List<Doctor> findDoctorsBySpeciality(Speciality speciality){
         return doctorRepository.findDoctorBySpeciality(speciality);
     }
 

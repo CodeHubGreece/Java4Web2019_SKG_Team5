@@ -3,17 +3,23 @@ package org.regeneration.team5.DoctorProject.controller;
 import org.regeneration.team5.DoctorProject.dto.AppointmentDTO;
 import org.regeneration.team5.DoctorProject.dto.SearchAppointmentDTO;
 import org.regeneration.team5.DoctorProject.entities.Appointment;
+import org.regeneration.team5.DoctorProject.entities.Doctor;
 import org.regeneration.team5.DoctorProject.entities.User;
 import org.regeneration.team5.DoctorProject.repositories.CitizenRepository;
 import org.regeneration.team5.DoctorProject.repositories.DoctorRepository;
+import org.regeneration.team5.DoctorProject.repositories.SpecialityRepository;
 import org.regeneration.team5.DoctorProject.repositories.UserRepository;
 import org.regeneration.team5.DoctorProject.service.ApiAppointmentService;
+import org.regeneration.team5.DoctorProject.service.ApiDoctorDetailsService;
+import org.regeneration.team5.DoctorProject.service.ApiSpecialityService;
 import org.regeneration.team5.DoctorProject.service.ApiUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.nio.file.Path;
 import java.security.Principal;
 import java.text.ParseException;
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -26,6 +32,10 @@ public class AppointmentController {
     private DoctorRepository doctorRepository;
     @Autowired
     private UserRepository userRepository;
+    @Autowired
+    private ApiDoctorDetailsService doctorDetailsService;
+    @Autowired
+    private ApiSpecialityService apiSpecialityService;
 
 
     public AppointmentController(@Autowired ApiAppointmentService appointmentService,@Autowired ApiUserService userService) {
@@ -62,9 +72,17 @@ public class AppointmentController {
     }
 
     @GetMapping("/citizen/appointments")
-    public List<Appointment> findCitizenAppointments(Principal principal){
+    public List<Appointment> findCitizenAppointments(@RequestBody SearchAppointmentDTO searchAppointmentDTO,Principal principal){
+        List<Appointment> appointmentList = new ArrayList<>();
         User user = userService.findByUsername(principal.getName());
-        return appointmentService.findByCitizen(citizenRepository.findCitizenByUser(user));
+        List<Appointment> allUserAppointments = appointmentService.findByCitizen(citizenRepository.findCitizenByUser(user));
+        for(Appointment aua : allUserAppointments){
+            for(Doctor doc : doctorDetailsService.findDoctorsBySpeciality(apiSpecialityService.findSpecialitiesByTitle(searchAppointmentDTO.getSpecialityTitle())))
+            if (doc ==aua.getDoctor()){
+                appointmentList.add(aua);
+            }
+        }
+        return appointmentList;
     }
 
 

@@ -9,7 +9,7 @@ import javax.print.Doc;
 import java.util.List;
 
 public interface DoctorRepository extends JpaRepository<Doctor,Integer> {
-    List<Doctor> findDoctorBySpeciality(int specialityId);
+    List<Doctor> findDoctorBySpeciality(Speciality speciality);
     Doctor findByDoctorId(int id);
     Doctor findByUser(User user);
 }

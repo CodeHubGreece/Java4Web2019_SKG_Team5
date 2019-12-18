@@ -4,18 +4,14 @@ import java.security.Principal;
 import java.sql.Date;
 
 public class SearchAppointmentDTO {
+    private String specialityTitle;
     private String from;
     private String to;
-    private String specialityTitle;
-    private String info;
-    private int doctorId;
 
-    public SearchAppointmentDTO(String from, String to, String specialityTitle, String info, int doctorId) {
+    public SearchAppointmentDTO(String from, String to, String specialityTitle) {
         this.from = from;
         this.to = to;
         this.specialityTitle = specialityTitle;
-        this.info = info;
-        this.doctorId = doctorId;
     }
 
     public String getFrom() {
@@ -42,19 +38,4 @@ public class SearchAppointmentDTO {
         this.specialityTitle = specialityTitle;
     }
 
-    public String getInfo() {
-        return info;
-    }
-
-    public void setInfo(String info) {
-        this.info = info;
-    }
-
-    public int getDoctorId() {
-        return doctorId;
-    }
-
-    public void setDoctorId(int doctorId) {
-        this.doctorId = doctorId;
-    }
 }
