@@ -24,4 +24,5 @@ public interface AppointmentRepository extends JpaRepository<Appointment,Integer
     Appointment findByAppointmentId(int id);
     List<Appointment> findByCitizen(Citizen citizen);
     //List<Appointment> findAllByCreatedAtBetweenAndDoctorAndCitizen(String from, String to, Doctor byDoctorId);
+
 }

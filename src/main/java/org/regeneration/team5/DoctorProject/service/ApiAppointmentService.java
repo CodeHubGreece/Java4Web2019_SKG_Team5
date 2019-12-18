@@ -22,6 +22,7 @@ import java.text.SimpleDateFormat;
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -79,7 +80,8 @@ public class ApiAppointmentService {
         SimpleDateFormat formatter7 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         // String DateAppointment = format(formatter7);
         LocalDateTime now = LocalDateTime.now();
-        DateTimeFormatter currentDate = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        Date stNow = formatter7.parse(now.toString());
+        //DateTimeFormatter currentDate = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         // String DateNow = now.format(currentDate);
         //if ((DateAppointment).compareTo(DateNow) < 0) {
         oldAppointment.setCitizen(citizenRepository.findCitizenByUser(user));

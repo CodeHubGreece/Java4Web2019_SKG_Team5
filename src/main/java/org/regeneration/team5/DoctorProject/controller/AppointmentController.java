@@ -5,10 +5,7 @@ import org.regeneration.team5.DoctorProject.dto.SearchAppointmentDTO;
 import org.regeneration.team5.DoctorProject.entities.Appointment;
 import org.regeneration.team5.DoctorProject.entities.Doctor;
 import org.regeneration.team5.DoctorProject.entities.User;
-import org.regeneration.team5.DoctorProject.repositories.CitizenRepository;
-import org.regeneration.team5.DoctorProject.repositories.DoctorRepository;
-import org.regeneration.team5.DoctorProject.repositories.SpecialityRepository;
-import org.regeneration.team5.DoctorProject.repositories.UserRepository;
+import org.regeneration.team5.DoctorProject.repositories.*;
 import org.regeneration.team5.DoctorProject.service.ApiAppointmentService;
 import org.regeneration.team5.DoctorProject.service.ApiDoctorDetailsService;
 import org.regeneration.team5.DoctorProject.service.ApiSpecialityService;
@@ -22,6 +19,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 
 @RestController
@@ -29,6 +27,8 @@ public class AppointmentController {
     private final ApiAppointmentService appointmentService;
     private final ApiUserService userService;
     private Principal principal;
+    @Autowired
+    private AppointmentRepository appointmentRepository;
     @Autowired
     private CitizenRepository citizenRepository;
     @Autowired
@@ -105,6 +105,22 @@ public class AppointmentController {
         }
         return appointmentList;
     }
+
+    @GetMapping("/citizen/appointment/{id}")
+    public Appointment findAppointmentById(@PathVariable Integer id,Principal principal){
+        User user = userService.findByUsername(principal.getName());
+        List<Appointment> allUserAppointments = appointmentService.findByCitizen(citizenRepository.findCitizenByUser(user));
+        for (Appointment appointment : allUserAppointments) {
+            if (appointment.getAppointmentId().equals(id)) {
+                return appointment;
+            } else {
+                return null;
+            }
+        }
+        return null;
+    }
+
+
 
 
 
