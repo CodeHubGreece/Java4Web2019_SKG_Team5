@@ -11,6 +11,19 @@ function loadAppointments(specialElem,fromElem,toElem){
 
     type: "GET",
     success: function (data) {
+        let apind = $("#specialties").val();
+        let fullDateArr = Array.from(data[apind].createdAt);
+        let dateArr = [];
+        let timeArr = [];
+        for(i=0;i<9;i++){
+            dateArr[i] = fullDateArr[i];
+        }
+        for(i=11;i<16;i++){
+            timeArr[i-11] = fullDateArr[i];
+        }
+        let d = dateArr.join();
+        let t = timeArr.join();
+        console.log(d,t);
         console.log(data);
 
         const myNode = document.getElementById("appointmentsTable");
@@ -18,12 +31,12 @@ function loadAppointments(specialElem,fromElem,toElem){
 		$("#appointmentsTable").append("<tbody>");
 
         for (let appointmentIndex in data) {
-            $("#appointmentsTable").append("<tr id=" + appointmentIndex + "'><td>" + data[appointmentIndex].createdAt + "</td><td>" + data[appointmentIndex].doctor.user["lastname"] + "</td></tr>");
+            $("#appointmentsTable").append("<tr id=" + appointmentIndex + "'><td>" + d + "</td><td>"+ t +"</td><td>"+data[appointmentIndex].doctor.user["firstname"]+"</td><td>" + data[appointmentIndex].doctor.user["lastname"] + "</td></tr>");
         }
 		$("#appointmentsTable").append("<tbody>");
 		
 		$("#appointmentsTable tr").click(function() {
-            loadAppointInfo($(this).children("td").html());
+           loadAppointInfo($(this).children("td").html());
 		});
 		
     },
