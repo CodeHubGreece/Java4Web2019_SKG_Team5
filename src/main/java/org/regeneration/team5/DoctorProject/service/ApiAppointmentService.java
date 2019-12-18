@@ -1,5 +1,6 @@
 package org.regeneration.team5.DoctorProject.service;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import org.regeneration.team5.DoctorProject.dto.AppointmentDTO;
 import org.regeneration.team5.DoctorProject.dto.SearchAppointmentDTO;
 import org.regeneration.team5.DoctorProject.entities.Appointment;
@@ -16,14 +17,18 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import java.security.Principal;
+import java.sql.Date;
 import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.Instant;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.List;
+
+
 
 @Service
 public class ApiAppointmentService {
@@ -64,19 +69,29 @@ public class ApiAppointmentService {
     public Appointment setNewAppointment(AppointmentDTO appointmentDTO, User user) throws ParseException {
         SimpleDateFormat formatter6=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         Appointment newAppointment = new Appointment();
-        //newAppointment.setAppointmentId(appointmentDTO.getAppointmentId());
-        newAppointment.setCitizen(citizenRepository.findCitizenByUser(user));
-        newAppointment.setDoctor(doctorRepository.findByDoctorId(appointmentDTO.getDoctorId()));
-        //newAppointment.setCreatedAt(Instant.parse(appointmentDTO.getDate().concat(" ").concat(appointmentDTO.getTime())));
-        newAppointment.setCreatedAt(formatter6.parse(appointmentDTO.getDate().concat(" ").concat(appointmentDTO.getTime()).concat(":00")));
-        newAppointment.setInfo(appointmentDTO.getInfo());
-        newAppointment.setSymptoms(appointmentDTO.getSymptoms());
-        appointmentRepository.save(newAppointment);
+        LocalDate localDate = LocalDate.now();
+        String dateApp=appointmentDTO.getDate();
+        if(dateApp.compareTo(String.valueOf(localDate))>0) {
+            //newAppointment.setAppointmentId(appointmentDTO.getAppointmentId());
+            newAppointment.setCitizen(citizenRepository.findCitizenByUser(user));
+            newAppointment.setDoctor(doctorRepository.findByDoctorId(appointmentDTO.getDoctorId()));
+            //newAppointment.setCreatedAt(Instant.parse(appointmentDTO.getDate().concat(" ").concat(appointmentDTO.getTime())));
+            newAppointment.setCreatedAt(formatter6.parse(appointmentDTO.getDate().concat(" ").concat(appointmentDTO.getTime()).concat(":00")));
+            newAppointment.setInfo(appointmentDTO.getInfo());
+            newAppointment.setSymptoms(appointmentDTO.getSymptoms());
+            appointmentRepository.save(newAppointment);
+        }else
+        {
+            System.out.println("Not ");
+        }
         return newAppointment;
     }
 
+
+  //  @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyy-MM-dd")
     public Appointment updateAppointment(AppointmentDTO upAppointmentDTO, User user, Integer id ) throws ParseException {
         Appointment oldAppointment = appointmentRepository.findByAppointmentId(id);
+<<<<<<< HEAD
         SimpleDateFormat formatter7 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         // String DateAppointment = format(formatter7);
         LocalDateTime now = LocalDateTime.now();
@@ -84,17 +99,27 @@ public class ApiAppointmentService {
         //DateTimeFormatter currentDate = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         // String DateNow = now.format(currentDate);
         //if ((DateAppointment).compareTo(DateNow) < 0) {
+=======
+        LocalDate localDate = LocalDate.now();
+        SimpleDateFormat oldDate = new SimpleDateFormat("yyyy-MM-dd");
+        String dateApp= upAppointmentDTO.getDate();
+        if(dateApp.compareTo(String.valueOf(localDate))>0){
+>>>>>>> 2c761d7df220cd2834cf6d313c5d5d6f11e697de
         oldAppointment.setCitizen(citizenRepository.findCitizenByUser(user));
-        oldAppointment.setDoctor(doctorRepository.findByDoctorId(upAppointmentDTO.getDoctorId()));
-        oldAppointment.setCreatedAt(formatter7.parse(upAppointmentDTO.getDate().concat(" ").concat(upAppointmentDTO.getTime()).concat(":00")));
-        oldAppointment.setInfo(upAppointmentDTO.getInfo());
-        oldAppointment.setSymptoms(upAppointmentDTO.getSymptoms());
-        appointmentRepository.save(oldAppointment);
-        //   }else {
-        //apointment had completed
-        //  }
-        return oldAppointment;
+            oldAppointment.setDoctor(doctorRepository.findByDoctorId(upAppointmentDTO.getDoctorId()));
+            oldAppointment.setCreatedAt(oldDate.parse(upAppointmentDTO.getDate().concat(" ").concat(upAppointmentDTO.getTime()).concat(":00")));
+            oldAppointment.setInfo(upAppointmentDTO.getInfo());
+            oldAppointment.setSymptoms(upAppointmentDTO.getSymptoms());
+            appointmentRepository.save(oldAppointment);
+        }else {
+            System.out.println("Not");
+       }
+        return oldAppointment;}
+
     }
 
 
-}
+
+
+
+
