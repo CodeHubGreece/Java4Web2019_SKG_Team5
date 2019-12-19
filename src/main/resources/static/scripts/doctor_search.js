@@ -16,7 +16,7 @@ function loadAppointments(fromElem,toElem,description){
             $("#appointmentsTable").append("<tbody>");
 
             for (let appointmentIndex in data) {
-                $("#appointmentsTable").append("<tr id=" + appointmentIndex + "'><td>"+ data[appointmentIndex].appointmentId +"</td><td>"+ data[appointmentIndex].createdAt +"</td><td>"+data[appointmentIndex].doctor.user["firstname"]+"</td><td>" + data[appointmentIndex].doctor.user["lastname"] + "</td></tr>");
+                $("#appointmentsTable").append("<tr id=" + appointmentIndex + "'><td>"+ data[appointmentIndex].appointmentId +"</td><td>"+ data[appointmentIndex].createdAt +"</td><td>"+data[appointmentIndex].citizen.user["firstname"]+"</td><td>" + data[appointmentIndex].citizen.user["lastname"] + "</td></tr>");
             }
             $("#appointmentsTable").append("<tbody>");
 
