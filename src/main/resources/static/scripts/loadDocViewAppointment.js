@@ -51,13 +51,26 @@ $(document).ready(function () {
     // });
 
     $.ajax({
-        url: ROOT_PATH + "/doctor/appointments/" + id
+        url: ROOT_PATH + "/doctor/appointment/" + id
     }).then(function(data) {
-        $("input[name=Date]").val(data.date);
-        $("input[name=usr_time]").val(data.time);
+        let datetime = data.createdAt;
+        let dateFor = [];
+        let timeFor = [];
+        for(var i=0;i<10; i++){
+            dateFor[i] = datetime[i];
+        }
+        for(var j=11;j<16;j++){
+            timeFor[j-11] = datetime[j];
+        }
+        //dateFor[4].replace('-','/');
+        //dateFor[]
+        let d = dateFor.join('');
+        let t = timeFor.join('');
+        $("input[name=Date]").val(d);
+        $("input[name=usr_time]").val(t);
 
-        $("textarea[name=description]").val(data.description);
-        $("textarea[name=more_comments]").val(data.more_comments);
+        $("textarea[name=description]").val(data.symptoms);
+        $("textarea[name=more_comments]").val(data.info);
     });
 
 });
