@@ -47,18 +47,16 @@ function loadAppointments(fromElem,toElem,description){
 }
 
 function loadAppointInfo(id) {
-    $.ajax({
-        url: ROOT_PATH + "/citizen/appointments/" + id
-    }).then(function(data) {
-        $("option[name=specialty]").val(data.id);
-        $("option[name=doctor]").val(data.doctor);
-
-        $("input[name=Date]").val(data.date);
-        $("input[name=usr_time]").val(data.time);
-
-        $("textarea[name=description]").val(data.description);
-        $("textarea[name=more_comments]").val(data.more_comments);
-    });
+    location.replace(ROOT_PATH + "/pages/doctor/view_appointment.html?appointmentid="+id);
+    // $.ajax({
+    //     url: ROOT_PATH + "/doctor/appointments/" + id
+    // }).then(function(data) {
+    //     $("input[name=Date]").val(data.date);
+    //     $("input[name=usr_time]").val(data.time);
+    //
+    //     $("textarea[name=description]").val(data.description);
+    //     $("textarea[name=more_comments]").val(data.more_comments);
+    // });
 };
 
 
