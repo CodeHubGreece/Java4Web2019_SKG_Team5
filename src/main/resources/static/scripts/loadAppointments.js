@@ -32,6 +32,7 @@ function loadAppointments(specialElem,fromElem,toElem){
 
         const myNode = document.getElementById("appointmentsTable");
         myNode.innerHTML = '';
+        $("#appointmentsTable").append("<thead><tr><th>Id</th><th>Date & Time</th><th>Firstname</th><th>Lastname</th></tr></thead>");
 		$("#appointmentsTable").append("<tbody>");
 
         for (let appointmentIndex in data) {

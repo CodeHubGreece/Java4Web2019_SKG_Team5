@@ -5,19 +5,21 @@ $( document ).ready(function() {
     let specialityTitle = url.searchParams.get("specialityTitle");
 
     console.log(specialityTitle);
-    $.ajax({
-        url: ROOT_PATH + "/getspeciality",
-        type: "GET",
-        data:{
-            specialityTitle:specialityTitle
-        },
-        dataType : "json",
-        contentType:"application/json",
-        success: function (data) {
-            console.log(data);
-            $("#specialty").append("<option value='" + data.specialityIdId + "'>" + data.title + "</option>")
-        }
-    });
+    // $.ajax({
+    //     url: ROOT_PATH + "/getspeciality",
+    //     type: "GET",
+    //     data:{
+    //         specialityTitle:specialityTitle
+    //     },
+    //     dataType : "json",
+    //     contentType:"application/json",
+    //     success: function (data) {
+    //         console.log(data);
+    //         // const myNode = document.getElementById("specialty");
+    //             // myNode.innerHTML = '';
+    //         $("#specialty").append("<option value='" + data.specialityIdId + "'>" + data.title + "</option>")
+    //     }
+    // });
     $.ajax({
         url: ROOT_PATH + "/citizen/appointment/" + id
     }).then(function(data) {
@@ -34,6 +36,8 @@ $( document ).ready(function() {
         let d = dateFor.join('');
         let t = timeFor.join('');
         console.log(d,t,data.doctor.user["lastname"],data.specialityTitle);
+        // const myNode = document.getElementById("specialty");
+        // myNode.innerHTML = '';
         $("#specialty").append("<option value='" + id + "'>" + specialityTitle + "</option>")
         //$("select[name=specialty]").val(data.specialityTitle);
         $("#doctor").append("<option value='" + data.doctor.doctorId + "'>" + data.doctor.user["lastname"] + "</option>")
