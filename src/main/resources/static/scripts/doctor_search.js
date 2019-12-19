@@ -8,7 +8,6 @@ function loadAppointments(fromElem,toElem,description){
         data: {desc:descript,
             from:from,
             to:to},
-
         type: "GET",
         success: function (data) {
             const myNode = document.getElementById("appointmentsTable");

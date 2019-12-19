@@ -75,6 +75,7 @@ public class AppointmentController {
         return appointmentService.findByDoctor(doctorRepository.findByUser(user));
     }
 
+
 //    @PostMapping("/appointment/new")
 //    public Appointment newAppointment(@RequestBody AppointmentDTO appointmentDTO, Principal principal) throws ParseException {
 //        User user = userService.findByUsername(principal.getName());
