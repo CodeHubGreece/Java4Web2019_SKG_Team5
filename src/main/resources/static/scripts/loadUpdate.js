@@ -43,7 +43,7 @@ $(document).ready(function () {
         $("#doctor").append("<option value='" + data.doctor.doctorId + "'>" + data.doctor.user["lastname"] + "</option>")
         //$("select[name=doctor]").val(data.doctor.user["lastname"]);
 
-        $("input[name=Date]").val(d);
+        $("input[name=da]").val(d);
         $("input[name=usr_time]").val(t);
 
         $("textarea[name=description]").val(data.symptoms);
