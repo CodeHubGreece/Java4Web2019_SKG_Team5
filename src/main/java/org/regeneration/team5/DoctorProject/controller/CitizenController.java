@@ -1,5 +1,6 @@
 package org.regeneration.team5.DoctorProject.controller;
 
+import org.apache.tomcat.util.buf.UDecoder;
 import org.regeneration.team5.DoctorProject.dto.RegistrationDTO;
 import org.regeneration.team5.DoctorProject.entities.Citizen;
 import org.regeneration.team5.DoctorProject.repositories.CitizenRepository;
@@ -10,6 +11,7 @@ import org.regeneration.team5.DoctorProject.service.ApiCitizenDetailsService;
 import org.regeneration.team5.DoctorProject.service.ApiSpecialityService;
 import org.springframework.web.bind.annotation.*;
 
+import java.nio.file.Path;
 import java.util.List;
 
 @RestController
@@ -41,6 +43,11 @@ public class CitizenController {
     @GetMapping("/citizens")
     public List<Citizen> findAll() {
         return apiCitizenDetailsService.findAll();
+    }
+
+    @GetMapping("/citizen/{id}")
+    public Citizen findCitizenById(@PathVariable String id){
+        return apiCitizenDetailsService.findCitizenByAmka(UDecoder.URLDecode(id));
     }
 
 }

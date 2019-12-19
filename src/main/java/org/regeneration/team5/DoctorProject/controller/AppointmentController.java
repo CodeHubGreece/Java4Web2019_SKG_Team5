@@ -1,5 +1,6 @@
 package org.regeneration.team5.DoctorProject.controller;
 
+import org.apache.tomcat.util.buf.UDecoder;
 import org.regeneration.team5.DoctorProject.dto.AppointmentDTO;
 import org.regeneration.team5.DoctorProject.dto.SearchAppointmentDTO;
 import org.regeneration.team5.DoctorProject.entities.Appointment;
@@ -85,6 +86,16 @@ public class AppointmentController {
             }
         }
         return null;
+    }
+
+    @GetMapping("/doctor/appointment/{from}/{to}/{symptoms}")
+    public List<Appointment> findAppointmentsByInfo(@PathVariable String from, @PathVariable String to, @PathVariable String symptoms,Principal principal) throws ParseException {
+        SimpleDateFormat formatter6=new SimpleDateFormat("yyyy-MM-dd");
+        Date fromDate = formatter6.parse(from);
+        Date toDate = formatter6.parse(to);
+        User user = userRepository.findByUsername(principal.getName());
+        Doctor doctor = doctorRepository.findByUser(user);
+        return appointmentRepository.findAllByCreatedAtBetweenAndDoctorAndSymptomsContains(fromDate,toDate,doctor, UDecoder.URLDecode(symptoms));
     }
 
 
