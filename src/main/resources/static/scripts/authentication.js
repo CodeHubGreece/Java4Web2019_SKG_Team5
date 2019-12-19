@@ -13,8 +13,20 @@ function login(usernameElement, passwordElement) {
 	  contentType: false,
 	  type: 'POST',
 	  success: function(data){
-		 localStorage.setItem(LOCAL_STORAGE_LOGIN_TOKEN_NAME, username);
-		 window.location.replace(ROOT_PATH + "/pages/citizen/citizen_index.html");
+	  	$.ajax({
+			url:ROOT_PATH + "/user",
+			success:function(data){
+				if(data.property===1){
+					localStorage.setItem(LOCAL_STORAGE_LOGIN_TOKEN_NAME, username);
+					window.location.replace(ROOT_PATH +"/pages/doctor/doctor_search.html");
+				}else{
+					localStorage.setItem(LOCAL_STORAGE_LOGIN_TOKEN_NAME, username);
+					window.location.replace(ROOT_PATH+"/pages/citizen/citizen_index.html");
+				}
+			}
+		});
+		 // localStorage.setItem(LOCAL_STORAGE_LOGIN_TOKEN_NAME, username);
+		 // window.location.replace(ROOT_PATH + "/pages/citizen/citizen_index.html");
 	  },
 	  statusCode: {
 		401 : function() {

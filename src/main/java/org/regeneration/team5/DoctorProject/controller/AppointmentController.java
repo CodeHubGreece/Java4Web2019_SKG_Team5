@@ -114,8 +114,6 @@ public class AppointmentController {
         for (Appointment appointment : allUserAppointments) {
             if (appointment.getAppointmentId().equals(id)) {
                 return appointment;
-            } else {
-                return null;
             }
         }
         return null;
