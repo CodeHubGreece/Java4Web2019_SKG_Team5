@@ -75,6 +75,18 @@ public class AppointmentController {
         return appointmentService.findByDoctor(doctorRepository.findByUser(user));
     }
 
+    @GetMapping("/doctor/appointment/{id}")
+    public Appointment findAppointmentById(@PathVariable int id,Principal principal){
+        User user = userService.findByUsername(principal.getName());
+        List<Appointment> allUserAppointments = appointmentService.findByDoctor(doctorRepository.findByUser(user));
+        for (Appointment appointment : allUserAppointments) {
+            if (appointment.getAppointmentId().equals(id)) {
+                return appointment;
+            }
+        }
+        return null;
+    }
+
 
 //    @PostMapping("/appointment/new")
 //    public Appointment newAppointment(@RequestBody AppointmentDTO appointmentDTO, Principal principal) throws ParseException {
@@ -110,7 +122,6 @@ public class AppointmentController {
     @GetMapping("/citizen/appointment/{id}")
     public Appointment findAppointmentById(@PathVariable Integer id,Principal principal){
         User user = userService.findByUsername(principal.getName());
-        AppointmentDTO appointmentDTO = new AppointmentDTO();
         List<Appointment> allUserAppointments = appointmentService.findByCitizen(citizenRepository.findCitizenByUser(user));
         for (Appointment appointment : allUserAppointments) {
             if (appointment.getAppointmentId().equals(id)) {

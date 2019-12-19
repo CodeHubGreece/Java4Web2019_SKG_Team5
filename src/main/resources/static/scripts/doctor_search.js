@@ -16,7 +16,20 @@ function loadAppointments(fromElem,toElem,description){
             $("#appointmentsTable").append("<tbody>");
 
             for (let appointmentIndex in data) {
-                $("#appointmentsTable").append("<tr id=" + appointmentIndex + "'><td>"+ data[appointmentIndex].appointmentId +"</td><td>"+ data[appointmentIndex].createdAt +"</td><td>"+data[appointmentIndex].citizen.user["firstname"]+"</td><td>" + data[appointmentIndex].citizen.user["lastname"] + "</td></tr>");
+                let datetime = data[appointmentIndex].createdAt;
+                let dateFor = [];
+                let timeFor = [];
+                for(var i=0;i<10; i++){
+                    dateFor[i] = datetime[i];
+                }
+                for(var j=11;j<16;j++){
+                    timeFor[j-11] = datetime[j];
+                }
+                //dateFor[4].replace('-','/');
+                //dateFor[]
+                let d = dateFor.join('');
+                let t = timeFor.join('');
+                $("#appointmentsTable").append("<tr id=" + appointmentIndex + "'><td>"+ data[appointmentIndex].appointmentId +"</td><td>"+ d + " " + t +"</td><td>"+data[appointmentIndex].citizen.user["firstname"]+"</td><td>" + data[appointmentIndex].citizen.user["lastname"] + "</td></tr>");
             }
             $("#appointmentsTable").append("<tbody>");
 
