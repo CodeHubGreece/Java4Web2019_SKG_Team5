@@ -3,9 +3,7 @@ package org.regeneration.team5.DoctorProject.controller;
 import org.regeneration.team5.DoctorProject.entities.Speciality;
 import org.regeneration.team5.DoctorProject.repositories.SpecialityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,6 +18,11 @@ public class SpecialityController {
     @GetMapping("/getspecialities")
     public List<Speciality> findAll(){
         return specialityRepository.findAll();
+    }
+
+    @GetMapping("/getspeciality/{id}")
+    public Speciality findSpecialityById(@PathVariable int id){
+        return specialityRepository.findBySpecialityId(id);
     }
 
 

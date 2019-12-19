@@ -1,8 +1,5 @@
 package org.regeneration.team5.DoctorProject.service;
-
-import com.fasterxml.jackson.annotation.JsonFormat;
 import org.regeneration.team5.DoctorProject.dto.AppointmentDTO;
-import org.regeneration.team5.DoctorProject.dto.SearchAppointmentDTO;
 import org.regeneration.team5.DoctorProject.entities.Appointment;
 import org.regeneration.team5.DoctorProject.entities.Citizen;
 import org.regeneration.team5.DoctorProject.entities.Doctor;
@@ -13,21 +10,11 @@ import org.regeneration.team5.DoctorProject.repositories.DoctorRepository;
 import org.regeneration.team5.DoctorProject.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
-import javax.persistence.criteria.CriteriaBuilder;
 import java.security.Principal;
-import java.sql.Date;
-import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.Instant;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.Date;
 import java.util.List;
-
 
 
 @Service
@@ -91,20 +78,10 @@ public class ApiAppointmentService {
   //  @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyy-MM-dd")
     public Appointment updateAppointment(AppointmentDTO upAppointmentDTO, User user, Integer id ) throws ParseException {
         Appointment oldAppointment = appointmentRepository.findByAppointmentId(id);
-<<<<<<< HEAD
-        SimpleDateFormat formatter7 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        // String DateAppointment = format(formatter7);
-        LocalDateTime now = LocalDateTime.now();
-        Date stNow = formatter7.parse(now.toString());
-        //DateTimeFormatter currentDate = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-        // String DateNow = now.format(currentDate);
-        //if ((DateAppointment).compareTo(DateNow) < 0) {
-=======
         LocalDate localDate = LocalDate.now();
         SimpleDateFormat oldDate = new SimpleDateFormat("yyyy-MM-dd");
         String dateApp= upAppointmentDTO.getDate();
-        if(dateApp.compareTo(String.valueOf(localDate))>0){
->>>>>>> 2c761d7df220cd2834cf6d313c5d5d6f11e697de
+        if(dateApp.compareTo(String.valueOf(localDate))>=0){
         oldAppointment.setCitizen(citizenRepository.findCitizenByUser(user));
             oldAppointment.setDoctor(doctorRepository.findByDoctorId(upAppointmentDTO.getDoctorId()));
             oldAppointment.setCreatedAt(oldDate.parse(upAppointmentDTO.getDate().concat(" ").concat(upAppointmentDTO.getTime()).concat(":00")));
@@ -114,9 +91,10 @@ public class ApiAppointmentService {
         }else {
             System.out.println("Not");
        }
-        return oldAppointment;}
-
+        return oldAppointment;
     }
+
+}
 
 
 

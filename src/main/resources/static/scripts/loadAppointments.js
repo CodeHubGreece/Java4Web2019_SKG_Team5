@@ -40,7 +40,7 @@ function loadAppointments(specialElem,fromElem,toElem){
 		$("#appointmentsTable").append("<tbody>");
 		
 		$("#appointmentsTable tr").click(function() {
-           loadAppointInfo($(this).children("td").html());
+           loadAppointInfo($(this).children("td").html(),specialityTitle);
 		});
 		
     },
@@ -50,8 +50,8 @@ function loadAppointments(specialElem,fromElem,toElem){
 	});
 }
 
-function loadAppointInfo(id) {
-    location.replace(ROOT_PATH + "/pages/citizen/update_appointment.html?appointmentid="+ id);
+function loadAppointInfo(id,specialityTitle) {
+    location.replace(ROOT_PATH + "/pages/citizen/update_appointment.html?appointmentid="+id+"&specialityTitle="+specialityTitle);
     // $.ajax({
     //     url: ROOT_PATH + "/citizen/appointments/" + id
     // }).then(function(data) {
@@ -64,6 +64,6 @@ function loadAppointInfo(id) {
     //     $("textarea[name=description]").val(data.description);
     //     $("textarea[name=more_comments]").val(data.more_comments);
     // });
-};
+}
 
 

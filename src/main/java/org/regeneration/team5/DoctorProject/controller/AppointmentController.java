@@ -64,7 +64,7 @@ public class AppointmentController {
 //        //searchAppointmentDTO.setDoctorId(id);
 //        return appointmentService.findByDateAndDoctor(searchAppointmentDTO,doctorRepository.findByDoctorId(user.getUserID()));
 //    }
-    @DeleteMapping("appointment/delete/{id}")
+    @GetMapping("appointment/delete/{id}")
     public Appointment delete(@PathVariable Integer id) {
         return  appointmentService.deleteAppointment(id);
     }
@@ -109,6 +109,7 @@ public class AppointmentController {
     @GetMapping("/citizen/appointment/{id}")
     public Appointment findAppointmentById(@PathVariable Integer id,Principal principal){
         User user = userService.findByUsername(principal.getName());
+        AppointmentDTO appointmentDTO = new AppointmentDTO();
         List<Appointment> allUserAppointments = appointmentService.findByCitizen(citizenRepository.findCitizenByUser(user));
         for (Appointment appointment : allUserAppointments) {
             if (appointment.getAppointmentId().equals(id)) {

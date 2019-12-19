@@ -37,29 +37,27 @@
 				<tr>
 					<td><label>Ειδικότητα: </label></td>
 					<td> 
-						<select class="custom-select">
-						  <option name="specialty"></option>
-						</select> 
+						<select class="custom-select" id="specialty" name="special">
+						</select>
 					</td>
 				</tr>
 				
 				<tr>
 					<td><label>Γιατρός: </label></td>
 					<td>
-						<select class="custom-select">
-						  <option name="doctor"></option>
+						<select class="custom-select" id="doctor" name="doc">
 						</select>
 					</td>
 				</tr>
 				
 				<tr>
 					<td><label>Ημερομηνία: </label></td>
-					<td> <input type="date"  class="form-control" name="Date" required /> </td>
+					<td> <input type="date"  class="form-control" name="da" id="dat" required /> </td>
 				</tr>
 				
 				<tr>
 					<td><label>Ώρα: </label></td>
-					<td> <input type="time"  class="form-control" name="usr_time" value="09:00" min="09:00" max="21:00" step="900" required> </td>
+					<td> <input type="time"  class="form-control" name="usr_time" id="ti" value="09:00" min="09:00" max="21:00" step="1800" required> </td>
 				</tr>
 				
 				<tr>
@@ -77,11 +75,10 @@
 				</tr>
 				
 			</table>
+				<button class="btn btn-lg btn-success btn-block" type="button" id="up" onclick="update(special,doc,da,usr_time,description,more_comments)">Update</button>
+				<button class="btn btn-lg btn-danger btn-block" type="button" id="del"onclick="deleteApp()">Delete</button>
 		</form>
-		<form class="form-signin">
-			<button class="btn btn-lg btn-success btn-block" type="submit" formaction="./citizen_index.html">Update</button>
-			<button class="btn btn-lg btn-danger btn-block" type="submit" formaction="./citizen_index.html">Delete</button>
-		</form>
+
 	</div>
 
 </body></html>
