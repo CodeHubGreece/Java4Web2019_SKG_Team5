@@ -1,29 +1,29 @@
-$( document ).ready(function() {
+$(document).ready(function () {
     let url_string = window.location.href;
-    let url = new URL(url_string);
-    let id = url.searchParams.get("appointmentid");
-    let specialityTitle = url.searchParams.get("specialityTitle");
-
-    console.log(specialityTitle);
+    let url1 = new URL(url_string);
+    let id = url1.searchParams.get("appointmentid");
+    let specialityTitle = url1.searchParams.get("specialityTitle");
+    console.log(specialityTitle,id);
     // $.ajax({
     //     url: ROOT_PATH + "/getspeciality",
     //     type: "GET",
     //     data:{
-    //         specialityTitle:specialityTitle
+    //         title:specialityTitle
     //     },
     //     dataType : "json",
     //     contentType:"application/json",
     //     success: function (data) {
     //         console.log(data);
-    //         // const myNode = document.getElementById("specialty");
-    //             // myNode.innerHTML = '';
-    //         $("#specialty").append("<option value='" + data.specialityIdId + "'>" + data.title + "</option>")
+    //         $("#specialty").append("<option value='" + data.specialityId + "'>" + data.title + "</option>")
     //     }
     // });
     $.ajax({
-        url: ROOT_PATH + "/citizen/appointment/" + id
+        url: ROOT_PATH + "/citizen/appointment/"+id,
+        type: "GET",
+        dataType : "json",
+        contentType:"application/json",
     }).then(function(data) {
-        console.log(data)
+        console.log(data);
         let datetime = data.createdAt;
         let dateFor = [];
         let timeFor = [];
@@ -52,6 +52,8 @@ $( document ).ready(function() {
 
 });
 
+
+
 function update(specialityElem, doctornameElem, dateElem, timeElem, descriptionElem, moreinfoElem){
     let speciality = $("#specialty").val() ? $("#specialty").val() : "";
     let doctorId = doctornameElem && $("#doctor").val() ? $("#doctor").val() : "";
@@ -76,11 +78,12 @@ function update(specialityElem, doctornameElem, dateElem, timeElem, descriptionE
         }),
         dataType : "json",
         contentType:"application/json",
-        success:function(data){
-            console.log("Updated "+data)
-        }.then(
-            window.location.replace(ROOT_PATH+"/pages/citizen/citizen_search.html")
-        ),
+        success:function(data) {
+            console.log("Updated " + data)
+            // }.then(
+            //     window.location.replace(ROOT_PATH+"/pages/citizen/citizen_search.html")
+            // ),
+        },
         error: function () {
             alert("Could not execute update");
         }

@@ -12,15 +12,21 @@ public class ApiUserDetails implements UserDetails {
 
     private final String username;
     private final String password;
+    private final int property;
 
-    public ApiUserDetails(String username,String password){
+    public ApiUserDetails(String username, String password, int property){
         this.username=username;
         this.password=password;
+        this.property=property;
     }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return Collections.emptyList();
+    }
+
+    public int getProperty() {
+        return property;
     }
 
     @Override

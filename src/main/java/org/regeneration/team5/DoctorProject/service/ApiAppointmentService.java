@@ -79,7 +79,7 @@ public class ApiAppointmentService {
     public Appointment updateAppointment(AppointmentDTO upAppointmentDTO, User user, Integer id ) throws ParseException {
         Appointment oldAppointment = appointmentRepository.findByAppointmentId(id);
         LocalDate localDate = LocalDate.now();
-        SimpleDateFormat oldDate = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat oldDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String dateApp= upAppointmentDTO.getDate();
         if(dateApp.compareTo(String.valueOf(localDate))>=0){
         oldAppointment.setCitizen(citizenRepository.findCitizenByUser(user));

@@ -20,7 +20,6 @@ public class User {
     @JsonIgnore
     private String password;
     @Column
-    @JsonIgnore
     private short property=0;
 //    @OneToOne(mappedBy = "user")
 //    private Citizen citizen;
