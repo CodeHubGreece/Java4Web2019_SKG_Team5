@@ -51,7 +51,7 @@ $(document).ready(function () {
     // });
 
     $.ajax({
-        url: ROOT_PATH + "/doctor/appointments/" + id
+        url: ROOT_PATH + "/citizen/appointment/" + id
     }).then(function(data) {
         $("input[name=Date]").val(data.date);
         $("input[name=usr_time]").val(data.time);

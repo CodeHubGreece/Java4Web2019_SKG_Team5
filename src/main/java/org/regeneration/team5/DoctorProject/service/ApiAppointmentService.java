@@ -42,6 +42,8 @@ public class ApiAppointmentService {
         return appointmentRepository.findAll();
     }
 
+
+
     public Appointment findById(int id){
         return appointmentRepository.findByAppointmentId(id);
     }

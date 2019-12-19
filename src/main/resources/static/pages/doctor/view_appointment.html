@@ -33,7 +33,7 @@
 			<table  align="center">
 				<tr>
 					<td><label>Ημερομηνία: </label></td> 
-					<td> <input type="date" class="form-control" name="Date" required /> </td>
+					<td> <input type="date" class="form-control" name="Date" readonly /> </td>
 				</tr>
 				
 				<tr>
@@ -44,7 +44,7 @@
 				
 				<tr>
 					<td><label>Ώρα: </label></td> 
-					<td> <input type="time" class="form-control" name="usr_time" value="09:00" min="09:00" max="21:00" step="900" required> </td>
+					<td> <input type="time" class="form-control" name="usr_time" readonly> </td>
 				</tr>
 				
 				<tr>
@@ -53,16 +53,17 @@
 				
 				<tr>
 					<td><label>Σύντομη περιγραφή ασθένειας:</label></td> 
-					<td> <textarea class="form-control" name="description" id="textarea1"></textarea> </td>
+					<td> <textarea class="form-control" name="description" id="textarea1" readonly></textarea> </td>
 				</tr>
 				
 				<tr>
 					<td><label>Λοιπές παρατηρήσεις: </label></td> 
-					<td><textarea class="form-control" name="more_comments" id="textarea2"></textarea> </td>
+					<td><textarea class="form-control" name="more_comments" id="textarea2" readonly></textarea> </td>
 				</tr>
 				
 			</table>
-			<button class="btn btn-lg btn-info btn-block" type="button" onclick="viewpatientinfo()">Patient's info</button>
+			<br>
+			<button class="btn btn-lg btn-info" type="button" onclick="viewpatientinfo()">Patient's info</button>
 		</form>
 
 	</div>

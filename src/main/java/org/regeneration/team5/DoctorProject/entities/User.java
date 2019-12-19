@@ -21,23 +21,11 @@ public class User {
     private String password;
     @Column
     private short property=0;
-//    @OneToOne(mappedBy = "user")
-//    private Citizen citizen;
-//    @OneToOne(mappedBy = "user")
-//    private Doctor doctor;
+
     private static List<User> userList = new ArrayList<>();
     public User(){
     }
-//    public void User(String username,String password){
-//        this.username = username;
-//        this.password = password;
-//    }
-//    public void User(String firstname,String lastname, String username, String password){
-//        this.firstname = firstname;
-//        this.lastname = lastname;
-//        this.password = password;
-//        this.username = username;
-//    }
+
     public User(String firstname, String lastname, String username, String password){
         this.firstname = firstname;
         this.lastname = lastname;
@@ -81,21 +69,7 @@ public class User {
         this.property = property;
     }
 
-//    public Citizen getCitizen() {
-//        return citizen;
-//    }
-//
-//    public void setCitizen(Citizen citizen) {
-//        this.citizen = citizen;
-//    }
 
-//    public Doctor getDoctor() {
-//        return doctor;
-//    }
-//
-//    public void setDoctor(Doctor doctor) {
-//        this.doctor = doctor;
-//    }
 
     public static List<User> getUserList() {
         return userList;
