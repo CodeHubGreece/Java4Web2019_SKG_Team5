@@ -10,25 +10,6 @@ function loadAppointments(specialElem,fromElem,toElem){
         to:to},
     type: "GET",
     success: function (data) {
-        // let apind = $("#specialties").val();
-        // let fullDateArr = Array.from(data[apind].createdAt);
-        // let dateArr = [];
-        // let timeArr = [];
-        // for(i=0;i<9;i++){
-        //     dateArr[i] = fullDateArr[i];
-        // }
-        // for(i=11;i<16;i++){
-        //     timeArr[i-11] = fullDateArr[i];
-        // for(var i=0;i<9;i++){
-        //     dateArr[i] = fullDateArr[i];
-        // }
-        // for(var j=11;j<16;j++){
-        //     timeArr[j-11] = fullDateArr[j];
-        // }
-        // let d = dateArr.join();
-        // let t = timeArr.join();
-        // console.log(d,t);
-        // console.log(data);
 
         const myNode = document.getElementById("appointmentsTable");
         myNode.innerHTML = '';
@@ -36,7 +17,20 @@ function loadAppointments(specialElem,fromElem,toElem){
 		$("#appointmentsTable").append("<tbody>");
 
         for (let appointmentIndex in data) {
-            $("#appointmentsTable").append("<tr id=" + data[appointmentIndex].appointmentId + "'><td>"+data[appointmentIndex].appointmentId+"</td><td>"+ data[appointmentIndex].createdAt +"</td><td>"+data[appointmentIndex].doctor.user["firstname"]+"</td><td>" + data[appointmentIndex].doctor.user["lastname"] + "</td></tr>");
+            let datetime = data[appointmentIndex].createdAt;
+            let dateFor = [];
+            let timeFor = [];
+            for(var i=0;i<10; i++){
+                dateFor[i] = datetime[i];
+            }
+            for(var j=11;j<16;j++){
+                timeFor[j-11] = datetime[j];
+            }
+            //dateFor[4].replace('-','/');
+            //dateFor[]
+            let d = dateFor.join('');
+            let t = timeFor.join('');
+            $("#appointmentsTable").append("<tr id=" + data[appointmentIndex].appointmentId + "'><td>"+data[appointmentIndex].appointmentId+"</td><td>"+ d +" "+ t +"</td><td>"+data[appointmentIndex].doctor.user["firstname"]+"</td><td>" + data[appointmentIndex].doctor.user["lastname"] + "</td></tr>");
         }
 		$("#appointmentsTable").append("<tbody>");
 		
@@ -53,18 +47,6 @@ function loadAppointments(specialElem,fromElem,toElem){
 
 function loadAppointInfo(id,specialityTitle) {
     location.replace(ROOT_PATH + "/pages/citizen/update_appointment.html?appointmentid="+id+"&specialityTitle="+specialityTitle);
-    // $.ajax({
-    //     url: ROOT_PATH + "/citizen/appointments/" + id
-    // }).then(function(data) {
-    //     $("option[name=specialty]").val(data.id);
-    //     $("option[name=doctor]").val(data.doctor);
-    //
-    //     $("input[name=Date]").val(data.date);
-    //     $("input[name=usr_time]").val(data.time);
-    //
-    //     $("textarea[name=description]").val(data.description);
-    //     $("textarea[name=more_comments]").val(data.more_comments);
-    // });
 }
 
 

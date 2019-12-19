@@ -4,19 +4,6 @@ $(document).ready(function () {
     let id = url1.searchParams.get("appointmentid");
     let specialityTitle = url1.searchParams.get("specialityTitle");
     console.log(specialityTitle,id);
-    // $.ajax({
-    //     url: ROOT_PATH + "/getspeciality",
-    //     type: "GET",
-    //     data:{
-    //         title:specialityTitle
-    //     },
-    //     dataType : "json",
-    //     contentType:"application/json",
-    //     success: function (data) {
-    //         console.log(data);
-    //         $("#specialty").append("<option value='" + data.specialityId + "'>" + data.title + "</option>")
-    //     }
-    // });
     $.ajax({
         url: ROOT_PATH + "/citizen/appointment/"+id,
         type: "GET",
@@ -33,6 +20,8 @@ $(document).ready(function () {
         for(var j=11;j<16;j++){
             timeFor[j-11] = datetime[j];
         }
+        //dateFor[4].replace('-','/');
+        //dateFor[]
         let d = dateFor.join('');
         let t = timeFor.join('');
         console.log(d,t,data.doctor.user["lastname"],data.specialityTitle);
@@ -87,9 +76,7 @@ function update(specialityElem, doctornameElem, dateElem, timeElem, descriptionE
         error: function () {
             alert("Could not execute update");
         }
-
     })
-
 };
 
 function deleteApp() {
