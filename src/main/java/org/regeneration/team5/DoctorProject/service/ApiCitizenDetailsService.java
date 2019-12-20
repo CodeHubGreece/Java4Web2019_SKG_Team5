@@ -50,6 +50,7 @@ public class ApiCitizenDetailsService {
             user.setLastname(registrationDTO.getLastname());
             user.setUsername(registrationDTO.getUsername());
             user.setPassword(passwordEncoder.encode(registrationDTO.getPassword()));
+            user.setRole("CITIZEN");
             userRepository.save(user);
             Citizen citizen = new Citizen();
             citizen.setAmka(registrationDTO.getAmka());

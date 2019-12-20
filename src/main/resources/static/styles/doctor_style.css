@@ -11,6 +11,19 @@ header {
     background-color: #005BAA;
 }
 
+
+#appointmentsTable tbody tr{
+  background-color: #c8fffa;
+  border-radius: 15%;
+  opacity: 0.7;
+}
+
+#appointmentsTable tbody tr:hover{
+  background-color: #83fff5;
+  border-radius: 15%;
+  opacity: 1;
+}
+
 img {
   border-radius: 3%;
 }

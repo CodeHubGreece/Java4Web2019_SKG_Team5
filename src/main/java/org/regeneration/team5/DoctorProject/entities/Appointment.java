@@ -1,6 +1,4 @@
 package org.regeneration.team5.DoctorProject.entities;
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -14,12 +12,6 @@ public class Appointment {
     @Column(name = "created_at")
     private Date createdAt;
     //citizen
-
-//    @Column(name = "doctorID",insertable = false, updatable = false)
-//    private int doctorId;
-//
-//    @Column(name = "amka" ,insertable = false, updatable = false)
-//    private String amka;
 
     @ManyToOne
     @JoinColumn(name = "amka")
@@ -73,19 +65,4 @@ public class Appointment {
         this.info = info;
     }
 
-//    public int getDoctorId() {
-//        return doctorId;
-//    }
-//
-//    public void setDoctorId(int doctorId) {
-//        this.doctorId = doctorId;
-//    }
-//
-//    public String getAmka() {
-//        return amka;
-//    }
-//
-//    public void setAmka(String amka) {
-//        this.amka = amka;
-//    }
 }

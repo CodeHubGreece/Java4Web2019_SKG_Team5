@@ -36,3 +36,13 @@ label {
   font-weight: bold;
 }
 
+#appointmentsTable { width: 50% }
+tbody tr:hover.selected td,
+tbody tr:hover td {
+    background-color: #88ffec;
+    cursor: pointer;
+}
+tbody tr.selected td {
+    background-color: #4096ff;
+}
+

@@ -1,6 +1,7 @@
 package org.regeneration.team5.DoctorProject.security;
 
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
@@ -12,21 +13,17 @@ public class ApiUserDetails implements UserDetails {
 
     private final String username;
     private final String password;
-    private final int property;
+    private final String role;
 
-    public ApiUserDetails(String username, String password, int property){
+    public ApiUserDetails(String username, String password, String role){
         this.username=username;
         this.password=password;
-        this.property=property;
+        this.role=role;
     }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return Collections.emptyList();
-    }
-
-    public int getProperty() {
-        return property;
+        return Collections.singletonList(new SimpleGrantedAuthority("ROLE_" + role));
     }
 
     @Override

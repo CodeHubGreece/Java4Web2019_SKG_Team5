@@ -20,17 +20,18 @@ public class User {
     @JsonIgnore
     private String password;
     @Column
-    private short property=0;
+    private String role;
 
     private static List<User> userList = new ArrayList<>();
     public User(){
     }
 
-    public User(String firstname, String lastname, String username, String password){
+    public User(String firstname, String lastname, String username, String password,String role){
         this.firstname = firstname;
         this.lastname = lastname;
         this.password = password;
         this.username = username;
+        this.role = role;
     }
     public Integer getUserID() {
         return userID;
@@ -47,8 +48,8 @@ public class User {
     public String getPassword() {
         return password;
     }
-    public int getProperty() {
-        return property;
+    public String getRole() {
+        return role;
     }
     public void setUserID(Integer userID) {
         this.userID = userID;
@@ -65,8 +66,8 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
-    public void setProperty(short property) {
-        this.property = property;
+    public void setRole(String role) {
+        this.role = role;
     }
 
 

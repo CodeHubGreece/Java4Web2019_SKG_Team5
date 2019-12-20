@@ -1,13 +1,15 @@
 function loadAppointments(fromElem,toElem,description){
-    let descript = $("#textarea1").text() ? $("#textarea1").text() : "";
+    let descript = $.trim($("#textarea1").val());
     let from = fromElem && fromElem.value ? fromElem.value: "";
     let to = toElem && toElem.value ? toElem.value: "";
 
     $.ajax({
         url: ROOT_PATH + "/doctor/appointments",
-        data: {desc:descript,
-            from:from,
-            to:to},
+        data: {
+            from: from,
+            to: to,
+            symptoms: descript,
+        },
         type: "GET",
         success: function (data) {
             const myNode = document.getElementById("appointmentsTable");
@@ -25,8 +27,6 @@ function loadAppointments(fromElem,toElem,description){
                 for(var j=11;j<16;j++){
                     timeFor[j-11] = datetime[j];
                 }
-                //dateFor[4].replace('-','/');
-                //dateFor[]
                 let d = dateFor.join('');
                 let t = timeFor.join('');
                 $("#appointmentsTable").append("<tr id=" + appointmentIndex + "'><td>"+ data[appointmentIndex].appointmentId +"</td><td>"+ d + " " + t +"</td><td>"+data[appointmentIndex].citizen.user["firstname"]+"</td><td>" + data[appointmentIndex].citizen.user["lastname"] + "</td></tr>");

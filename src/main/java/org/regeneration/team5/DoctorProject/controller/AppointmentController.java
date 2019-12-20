@@ -14,6 +14,7 @@ import org.regeneration.team5.DoctorProject.service.ApiUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
 import java.security.Principal;
 import java.text.ParseException;
@@ -59,22 +60,16 @@ public class AppointmentController {
        return appointmentService.findAll();
     }
 
-//    @GetMapping("/appointment/searchByDoctor/{id}")
-//    public List<Appointment> findAppointmentByDoctor(@RequestBody SearchAppointmentDTO searchAppointmentDTO, Principal principal, @PathVariable int id){
-//        User user = userService.findByUsername(principal.getName());
-//        //searchAppointmentDTO.setDoctorId(id);
-//        return appointmentService.findByDateAndDoctor(searchAppointmentDTO,doctorRepository.findByDoctorId(user.getUserID()));
-//    }
     @GetMapping("appointment/delete/{id}")
     public Appointment delete(@PathVariable Integer id) {
         return  appointmentService.deleteAppointment(id);
     }
 
-    @GetMapping("/doctor/appointments")
-    public List<Appointment> findDoctorAppointments(Principal principal){
-        User user = userService.findByUsername(principal.getName());
-        return appointmentService.findByDoctor(doctorRepository.findByUser(user));
-    }
+//    @GetMapping("/doctor/appointments")
+//    public List<Appointment> findDoctorAppointments(Principal principal){
+//        User user = userService.findByUsername(principal.getName());
+//        return appointmentService.findByDoctor(doctorRepository.findByUser(user));
+//    }
 
     @GetMapping("/doctor/appointment/{id}")
     public Appointment findAppointmentById(@PathVariable int id,Principal principal){
@@ -88,14 +83,14 @@ public class AppointmentController {
         return null;
     }
 
-    @GetMapping("/doctor/appointment/{from}/{to}/{symptoms}")
-    public List<Appointment> findAppointmentsByInfo(@PathVariable String from, @PathVariable String to, @PathVariable String symptoms,Principal principal) throws ParseException {
+    @GetMapping("/doctor/appointments")
+    public List<Appointment> findAppointmentsByInfo(@RequestParam("from") String from, @RequestParam("to") String to, @RequestParam("symptoms") String symptoms,Principal principal) throws ParseException {
         SimpleDateFormat formatter6=new SimpleDateFormat("yyyy-MM-dd");
         Date fromDate = formatter6.parse(from);
         Date toDate = formatter6.parse(to);
         User user = userRepository.findByUsername(principal.getName());
         Doctor doctor = doctorRepository.findByUser(user);
-        return appointmentRepository.findAllByCreatedAtBetweenAndDoctorAndSymptomsContains(fromDate,toDate,doctor, UDecoder.URLDecode(symptoms));
+        return appointmentRepository.findByCreatedAtBetweenAndDoctorAndSymptomsContains(fromDate,toDate,doctor, UDecoder.URLDecode(symptoms, StandardCharsets.UTF_8));
     }
 
 

@@ -21,7 +21,6 @@ public class DoctorProjectApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(DoctorProjectApplication.class, args);
-		System.setProperty("tomcat.util.http.parser.HttpParser.requestTargetAllow", "{}");
 	}
 
 	@Autowired

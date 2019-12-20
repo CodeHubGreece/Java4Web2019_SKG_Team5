@@ -16,11 +16,15 @@ function login(usernameElement, passwordElement) {
 	  	$.ajax({
 			url:ROOT_PATH + "/user",
 			success:function(data){
-				if(data.property===1){
+				if(data.role.localeCompare("DOCTOR")===0){
 					localStorage.setItem(LOCAL_STORAGE_LOGIN_TOKEN_NAME, username);
+					localStorage.setItem(LOCAL_STORAGE_LOGIN_TOKEN_ID,data);
+					localStorage.setItem(LOCAL_STORAGE_LOGIN_TOKEN_ROLE,data.role);
 					window.location.replace(ROOT_PATH +"/pages/doctor/doctor_search.html");
 				}else{
 					localStorage.setItem(LOCAL_STORAGE_LOGIN_TOKEN_NAME, username);
+					localStorage.setItem(LOCAL_STORAGE_LOGIN_TOKEN_ID,data);
+					localStorage.setItem(LOCAL_STORAGE_LOGIN_TOKEN_ROLE,data.role);
 					window.location.replace(ROOT_PATH+"/pages/citizen/citizen_index.html");
 				}
 			}
