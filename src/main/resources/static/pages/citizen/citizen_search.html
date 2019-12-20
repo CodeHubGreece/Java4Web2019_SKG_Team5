@@ -16,15 +16,14 @@
 	<!-- JavaScript files -->
 	<script src="jquery-3.4.1.min.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="../../scripts/logout.js"></script>
 	<script src="../../scripts/main.js"></script>
 	<script src="../../scripts/home-auth.js"></script>
-	<script src="../../scripts/logout.js"></script>
 	<script src="../../scripts/loadOptions.js"></script>
 	<script src="../../scripts/loadAppointments.js"></script>
 
     <!-- Table files -->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
 
   </head>
@@ -32,7 +31,7 @@
   <body>
 	<header>
 		<a href="citizen_index.html"><img id="photo" src="../../efka.png" alt="efka"></a>
-		   <div class="float-right"><form class="form-signin"><button class="btn btn-warning btn-lg text-white" onclick="logOut()">Logout</button></form></div>
+		   <div class="float-right"><form class="form-signin"><button class="btn btn-warning btn-lg text-white" type="button" onclick="logout()">Logout</button></form></div>
 	</header>
 	<div class="text-center">
 		<br>

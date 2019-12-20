@@ -20,8 +20,6 @@ $(document).ready(function () {
         for(var j=11;j<16;j++){
             timeFor[j-11] = datetime[j];
         }
-        //dateFor[4].replace('-','/');
-        //dateFor[]
         let d = dateFor.join('');
         let t = timeFor.join('');
         console.log(d,t,data.doctor.user["lastname"],data.specialityTitle);
@@ -55,7 +53,7 @@ function update(specialityElem, doctornameElem, dateElem, timeElem, descriptionE
     let url = new URL(url_string);
     let newid = url.searchParams.get("appointmentid");
     $.ajax({
-        url: ROOT_PATH + "/appointment/update/"+newid,
+        url: ROOT_PATH + "/citizen/appointment/update/"+newid,
         type:"PUT",
         data: JSON.stringify({
             'specialityTitle': speciality,
@@ -68,10 +66,8 @@ function update(specialityElem, doctornameElem, dateElem, timeElem, descriptionE
         dataType : "json",
         contentType:"application/json",
         success:function(data) {
-            console.log("Updated " + data)
-            // }.then(
-            //     window.location.replace(ROOT_PATH+"/pages/citizen/citizen_search.html")
-            // ),
+            alert("You have succesfully updated your appointment with the doctor " +data.doctor.user["lastname"] );
+            window.location.replace(ROOT_PATH+"/pages/citizen/citizen_search.html");
         },
         error: function () {
             alert("Could not execute update");
@@ -86,10 +82,10 @@ function deleteApp() {
         let url = new URL(url_string);
         let newId = url.searchParams.get("appointmentid");
         $.ajax({
-            url: ROOT_PATH + "/appointment/delete/"+ newId,
+            url: ROOT_PATH + "/citizen/appointment/delete/"+ newId,
             type: "GET",
             success:function (data) {
-                alert("You have succesfully deleted the appointment")
+                alert("You have succesfully deleted the appointment with the doctor "+data.doctor.user["lastname"]+" on "+data["createdAt"])
                 window.location.replace(ROOT_PATH+"/pages/citizen/citizen_search.html")
             },
             error:function () {

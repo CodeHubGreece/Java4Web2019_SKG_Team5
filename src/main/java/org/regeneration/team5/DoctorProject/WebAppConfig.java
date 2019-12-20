@@ -73,17 +73,19 @@ public class WebAppConfig extends WebSecurityConfigurerAdapter {
                 .authenticationEntryPoint(authenticationEntryPoint)
                 .and()
                 .authorizeRequests()
-                .antMatchers("/register").permitAll()
+                .antMatchers("/register.html").permitAll()
+                .antMatchers("/login.html").permitAll()
                 .antMatchers("/pages/doctor/**").hasRole("DOCTOR")
                 .antMatchers("/pages/citizen/**").hasRole("CITIZEN")
                 .and()
                 .formLogin()
-                .loginPage("/login.html")
-                .loginProcessingUrl("/login")
+//                .loginPage("/login.html")
+//                .loginProcessingUrl("/login")
                 .successHandler(apiSuccessHandler)
                 .failureHandler(new SimpleUrlAuthenticationFailureHandler())
                 .and()
                 .logout()
+                .logoutUrl("/logout")
                 .logoutSuccessUrl("/login.html");
     }
 

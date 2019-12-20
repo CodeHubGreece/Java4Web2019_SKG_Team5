@@ -15,8 +15,6 @@ $(document).ready(function () {
         for(var j=11;j<16;j++){
             timeFor[j-11] = datetime[j];
         }
-        //dateFor[4].replace('-','/');
-        //dateFor[]
         let d = dateFor.join('');
         let t = timeFor.join('');
         $("input[name=Date]").val(d);
@@ -32,5 +30,5 @@ function viewpatientinfo() {
     let url_string = window.location.href;
     let url1 = new URL(url_string);
     let id = url1.searchParams.get("appointmentid");
-    location.replace(ROOT_PATH + "/pages/doctor/citizen_info.html?appointmentid="+id);
-};
+    window.location.replace(ROOT_PATH + "/pages/doctor/citizen_info.html?appointmentid="+id);
+}

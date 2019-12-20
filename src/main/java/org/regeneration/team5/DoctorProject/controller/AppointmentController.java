@@ -49,7 +49,7 @@ public class AppointmentController {
         this.userService = userService;
     }
 
-    @PostMapping("/appointment/new")
+    @PostMapping("/citizen/appointment/new")
     public Appointment newAppointment(@RequestBody AppointmentDTO appointmentDTO, Principal principal) throws ParseException {
         User user = userService.findByUsername(principal.getName());
         return appointmentService.setNewAppointment(appointmentDTO,user);
@@ -60,7 +60,7 @@ public class AppointmentController {
        return appointmentService.findAll();
     }
 
-    @GetMapping("appointment/delete/{id}")
+    @GetMapping("/citizen/appointment/delete/{id}")
     public Appointment delete(@PathVariable Integer id) {
         return  appointmentService.deleteAppointment(id);
     }
@@ -85,23 +85,21 @@ public class AppointmentController {
 
     @GetMapping("/doctor/appointments")
     public List<Appointment> findAppointmentsByInfo(@RequestParam("from") String from, @RequestParam("to") String to, @RequestParam("symptoms") String symptoms,Principal principal) throws ParseException {
+        User user = userRepository.findByUsername(principal.getName());
+        Doctor doctor = doctorRepository.findByUser(user);
+        if(from.isEmpty() && to.isEmpty() && symptoms.isEmpty()){
+            return appointmentService.findByDoctor(doctorRepository.findByUser(user));
+        }
         SimpleDateFormat formatter6=new SimpleDateFormat("yyyy-MM-dd");
         Date fromDate = formatter6.parse(from);
         Date toDate = formatter6.parse(to);
-        User user = userRepository.findByUsername(principal.getName());
-        Doctor doctor = doctorRepository.findByUser(user);
+
         return appointmentRepository.findByCreatedAtBetweenAndDoctorAndSymptomsContains(fromDate,toDate,doctor, UDecoder.URLDecode(symptoms, StandardCharsets.UTF_8));
     }
 
 
-//    @PostMapping("/appointment/new")
-//    public Appointment newAppointment(@RequestBody AppointmentDTO appointmentDTO, Principal principal) throws ParseException {
-//        User user = userService.findByUsername(principal.getName());
-//        return appointmentService.setNewAppointment(appointmentDTO,user);
-//    }
 
-
-    @PutMapping("/appointment/update/{id}")
+    @PutMapping("/citizen/appointment/update/{id}")
     public Appointment updateAppointment(@RequestBody AppointmentDTO upAppointmentDTO, Principal principal,@PathVariable Integer id) throws ParseException {
         User user = userService.findByUsername(principal.getName());
         return appointmentService.updateAppointment(upAppointmentDTO,user,id);

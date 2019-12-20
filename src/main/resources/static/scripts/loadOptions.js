@@ -54,7 +54,7 @@ function create_appointment(specialityElem, doctornameElem, dateElem, timeElem, 
 
     //keep this element id  [..]
     $.ajax({
-        url: ROOT_PATH+ "/appointment/new",
+        url: ROOT_PATH+ "/citizen/appointment/new",
         type: "POST",
         dataType: 'json',
         data: JSON.stringify({
@@ -67,10 +67,11 @@ function create_appointment(specialityElem, doctornameElem, dateElem, timeElem, 
         }),
         contentType: 'application/json',
         success: function (result) {
-            alert("Data Saved: " + result);
+            alert("You have successfully created an appointment with " + result.doctor.user["lastname"]);
+            window.location.replace(ROOT_PATH+"/pages/citizen/citizen_index.html")
         },
         error: function () {
-
+            alert("Could not create the appointment. Please check the dates.")
         }
     })
 
