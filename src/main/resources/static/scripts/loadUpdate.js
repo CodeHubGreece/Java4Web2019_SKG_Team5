@@ -11,18 +11,40 @@ $(document).ready(function () {
         contentType:"application/json",
     }).then(function(data) {
         console.log(data);
-        let datetime = data.createdAt;
-        let dateFor = [];
-        let timeFor = [];
-        for(var i=0;i<10; i++){
-            dateFor[i] = datetime[i];
-        }
-        for(var j=11;j<16;j++){
-            timeFor[j-11] = datetime[j];
-        }
-        let d = dateFor.join('');
-        let t = timeFor.join('');
-        console.log(d,t,data.doctor.user["lastname"],data.specialityTitle);
+        //let datetime = data.createdAt;
+
+        let date = data.createdAt;
+
+        var d = new Date(date),
+            month = '' + (d.getMonth() + 1),
+            day = '' + d.getDate(),
+            year = d.getFullYear(),
+            hours = d.getHours().toString(),
+            minutes = d.getMinutes().toString();
+
+        if (hours.length < 2)
+            hours = '0' + hours;
+        if (minutes.length < 2)
+            minutes = '0' + minutes;
+
+        if (month.length < 2)
+            month = '0' + month;
+        if (day.length < 2)
+            day = '0' + day;
+
+        let d2 = [year, month, day].join('-');
+        let time = [hours,minutes].join(':');
+        // let dateFor = [];
+        // let timeFor = [];
+        // for(var i=0;i<10; i++){
+        //     dateFor[i] = datetime[i];
+        // }
+        // for(var j=11;j<16;j++){
+        //     timeFor[j-11] = datetime[j];
+        // }
+        // let d = dateFor.join('');
+        // let t = timeFor.join('');
+        //console.log(d,t,data.doctor.user["lastname"],data.specialityTitle);
         // const myNode = document.getElementById("specialty");
         // myNode.innerHTML = '';
         $("#specialty").append("<option value='" + id + "'>" + specialityTitle + "</option>")
@@ -30,8 +52,8 @@ $(document).ready(function () {
         $("#doctor").append("<option value='" + data.doctor.doctorId + "'>" + data.doctor.user["lastname"] + "</option>")
         //$("select[name=doctor]").val(data.doctor.user["lastname"]);
 
-        $("input[name=da]").val(d);
-        $("input[name=usr_time]").val(t);
+        $("input[name=da]").val(d2);
+        $("input[name=usr_time]").val(time);
 
         $("textarea[name=description]").val(data.symptoms);
         $("textarea[name=more_comments]").val(data.info);
