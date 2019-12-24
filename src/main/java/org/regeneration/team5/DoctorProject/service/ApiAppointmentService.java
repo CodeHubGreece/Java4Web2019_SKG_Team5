@@ -91,7 +91,7 @@ public class ApiAppointmentService {
             oldAppointment.setSymptoms(upAppointmentDTO.getSymptoms());
             appointmentRepository.save(oldAppointment);
         }else {
-            System.out.println("Not");
+            return null;
        }
         return oldAppointment;
     }

@@ -68,11 +68,12 @@ function register(amkaElement,firstnameElement,lastnameElement,usernameElement,p
 		contentType: 'application/json',
 		type: 'POST',
 		success: function(){
+			alert(firstname+" you have registered successfully");
 			window.location.replace(ROOT_PATH + "/login.html");
 		},
 		statusCode: {
 			401 : function() {
-				alert("Wrong Registration");
+				alert("Wrong Registration. Please try again.");
 			}
 		}
 	});

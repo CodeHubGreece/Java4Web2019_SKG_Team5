@@ -10,7 +10,15 @@ header {
     padding: 1em;
     background-color: #005BAA;
 }
+#appointmentsTable thead{
+  background-color: #1d2124;
+  border-radius: 15%;
+}
 
+#appointmentsTable thead th{
+  color: white;
+  font-size: 10pt;
+}
 
 #appointmentsTable tbody tr{
   background-color: #c8fffa;

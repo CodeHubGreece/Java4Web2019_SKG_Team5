@@ -92,7 +92,7 @@ function update(specialityElem, doctornameElem, dateElem, timeElem, descriptionE
             window.location.replace(ROOT_PATH+"/pages/citizen/citizen_search.html");
         },
         error: function () {
-            alert("Could not execute update");
+            alert("Could not execute update. Please check the date.");
         }
     })
 };

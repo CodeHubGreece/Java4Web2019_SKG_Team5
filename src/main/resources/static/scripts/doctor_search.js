@@ -60,7 +60,7 @@ function loadAppointments(fromElem,toElem,description){
 
         },
         error: function (xhr, resp, text) {
-            alert("Error: " + text);
+            alert("Please provide Date and Text " );
         }
     });
 }
